@@ -13,7 +13,6 @@ yarn-error.log
 vendor/
 node_modules/
 npm-debug.log
-storage/
 composer.lock
 .gitattributes
 
