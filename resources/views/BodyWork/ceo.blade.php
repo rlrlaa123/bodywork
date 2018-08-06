@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('style')
     <style>
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
+
         .ceo-wrapper-1 {
             margin: 50px;
             background-color: #f1b042;
@@ -48,10 +53,36 @@
             width: 60%;
             margin-bottom: 20px;
         }
+
+        @media (orientation: portrait) {
+            .cover-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .ceo-wrapper-1 {
+                width: 100%;
+                margin: 50px 0;
+                height: 100px;
+            }
+
+            .ceo-wrapper-2 {
+                grid-template-columns: unset;
+            }
+
+            .ceo-wrapper-2 img {
+                height: 200px;
+            }
+
+            .ceo-wrapper-3 {
+                grid-template-columns: unset;
+                padding: 20px 10%;
+            }
+        }
     </style>
 @endsection
 @section('content')
-    <img src="/img/pt_program/1.jpg" width="100%" height="400px">
+    <img class="cover-image" src="/img/pt_program/1.jpg" width="100%" height="400px">
     <h3 style="margin: 50px 0; font-weight: bold;">CEO 소개</h3>
     <hr>
     <div class="ceo-wrapper-1">

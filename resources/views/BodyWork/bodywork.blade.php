@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('style')
     <style>
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
+
         .bodywork-logo {
             display: grid;
             grid-template-columns: 45% 55%;
@@ -14,6 +19,15 @@
             width: 200px;
             height: 200px;
             border-radius: 100px;
+        }
+
+        .bodywork-log:nth-child(1) {
+            text-align: right;
+        }
+
+        .bodywork-log:nth-child(2) {
+            text-align: left;
+            padding-left: 50px;
         }
 
         .purple {
@@ -33,18 +47,55 @@
             margin: 50px 0 100px 0;
             line-height: 2.25;
         }
+
+        @media (orientation: portrait) {
+            .cover-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .bodywork-logo {
+                grid-template-columns: unset;
+                margin: 20px 50px;
+            }
+
+            .bodywork-logo img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .bodywork-logo div {
+                text-align: center;
+            }
+
+            .bodywork-logo p {
+                padding-top: 20px;
+            }
+
+            h4 {
+                font-size: 4.5vw;
+            }
+
+            .hr {
+                margin: 35px auto;
+            }
+
+            .purple {
+                margin-top: 100px;
+            }
+        }
     </style>
 @endsection
 @section('content')
-    <img src="/img/pt_program/1.jpg" width="100%" height="400px">
+    <img class="cover-image" src="/img/pt_program/1.jpg">
     <h3 style="margin: 50px 0; font-weight: bold;">바디웍 소개</h3>
     <hr>
     <h4 style="margin: 50px 0;">바디웍 로고</h4>
     <div class="bodywork-logo">
-        <div style="text-align: right;">
+        <div>
             <img src="/img/logo.jpg">
         </div>
-        <div style="text-align: left; padding-left: 50px;">
+        <div>
             <p style="line-height: 2.25; font-weight: bold;">바디웍의 신념은 엄마 뱃속의 태아,<br>
                 측 최초의 건강한 모습을 엄마의 마음으로<br>
                 고객 한분 한분의 몸을 기능 손상 없이<br>

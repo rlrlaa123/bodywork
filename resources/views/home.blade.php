@@ -36,8 +36,11 @@
             padding: 20px;
         }
 
+        #carouselExampleControls {
+            display: none;
+        }
+
         #recipeCarousel {
-            /*padding: 0 100px;*/
             width: 90%;
             margin: auto;
         }
@@ -112,6 +115,55 @@
             font-size: 1.5vw;
             font-weight: bold;
         }
+
+
+        @media (orientation: portrait) {
+            #main-carousel-inner img {
+                height: 250px;
+            }
+
+            #recipeCarousel {
+                display: none;
+            }
+
+            #carouselExampleControls {
+                display: block;
+            }
+
+            .before-after-wrapper {
+                margin: 50px 0;
+                padding: 25px;
+            }
+
+            .before-after-more-btn {
+                margin-top: 20px;
+            }
+
+            .bodywork-menu-wrapper {
+                margin: 50px 0;
+            }
+
+            .bodywork-menu-container {
+                grid-gap: unset;
+                width: unset;
+                margin: unset;
+            }
+
+            .bodywork-menu {
+                height: 120px;
+                background-size: 90%;
+            }
+
+            .bodywork-menu-text {
+                width: 70%;
+                height: 25px;
+            }
+
+            .carousel-item img {
+                width: 100%;
+                height: 250px;
+            }
+        }
     </style>
 @endsection
 @section('content')
@@ -142,12 +194,33 @@
         </a>
     </div>
 
+
     <div class="before-after-wrapper">
         <div class="before-after-title-wrapper">
             <h3>Before & After</h3>
             <p>바디웍 회원님들의 비포애프터 입니다.</p>
         </div>
-
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/img/bf.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/img/bf2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/img/bf3.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
         <div id="recipeCarousel" class="carousel slide" data-ride="carousel">
             <ol id="before-after-carousel-indicator" class="carousel-indicators">
                 <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>

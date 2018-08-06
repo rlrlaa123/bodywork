@@ -15,19 +15,6 @@
     <script src="/js/bootstrap.min.js" async></script>
     @include('layouts.partial.common_style')
     @yield('style')
-    <style>
-        body {
-            font-family: 'Avenir', Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        header {
-            font-weight: bold;
-            text-align: center;
-            font-size: 25px;
-            padding: 20px;
-        }
-    </style>
 </head>
 <body style="margin:0; text-align: center;">
     <header style="font-size: 2vw;">

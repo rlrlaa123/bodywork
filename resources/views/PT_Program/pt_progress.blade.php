@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('style')
     <style>
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
+
         .pt-progress {
             display: flex;
             justify-content: center;
@@ -35,10 +40,40 @@
         .pt-progress-info p{
             margin-bottom: 5px;
         }
+
+        @media (orientation: portrait) {
+            .cover-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .pt-progress {
+                width: 300px;
+                height: 300px;
+            }
+
+            .pt-progress img {
+                width: 15px;
+                height: 15px;
+            }
+
+            h4 {
+                font-size: 4.5vw;
+            }
+
+            h6 {
+                font-size: 4.0vw;
+                margin: 0 20px;
+            }
+
+            .pt-progress-info {
+                margin: 50px;
+            }
+        }
     </style>
 @endsection
 @section('content')
-    <img src="/img/pt_program/1.jpg" width="100%" height="400px">
+    <img class="cover-image" src="/img/pt_program/1.jpg">
     <h3 style="margin: 50px 0; font-weight: bold;">PT 진행순서</h3>
     <hr style="margin: 0 50px;">
     <h4 style="margin-top: 50px;">바디웍 전문 트레이너와 함께하는 맞춤 트레이닝</h4>

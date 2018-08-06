@@ -1,6 +1,15 @@
 <style>
     body {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-size: 1.5vw;
+    }
+    header {
+        font-weight: bold;
+        text-align: center;
+        font-size: 25px;
+        padding: 20px;
     }
 
     li {
@@ -14,6 +23,10 @@
     a:hover {
         color: inherit;
         text-decoration: none;
+    }
+
+    hr {
+        margin: 0 50px;
     }
 
     .custom-nav {
@@ -89,5 +102,25 @@
         height: 2px;
         width: 20%;
         border: 2px solid orange;
+    }
+
+    @media (orientation: portrait) {
+        .custom-nav {
+            display: none;
+        }
+
+        footer {
+            padding: 20px;
+            grid-template-columns: 25% 75%;
+        }
+
+        footer div:nth-child(2) {
+            padding: 0 10px;
+        }
+
+        .footer-image {
+            width: 75px;
+            height: 75px;
+        }
     }
 </style>
