@@ -117,20 +117,6 @@
             /*display: none;*/
         /*}*/
 
-        /*footer {*/
-            /*padding: 20px;*/
-            /*grid-template-columns: 25% 75%;*/
-        /*}*/
-
-        /*footer div:nth-child(2) {*/
-            /*padding: 0 10px;*/
-        /*}*/
-
-        /*.footer-image {*/
-            /*width: 75px;*/
-            /*height: 75px;*/
-        /*}*/
-
         /*.custom-navbar {*/
             /*height: 15px;*/
             /*display: flex;*/
@@ -209,6 +195,20 @@
     }
 
     @media (orientation: portrait) {
+        footer {
+            padding: 20px;
+            grid-template-columns: 25% 75%;
+        }
+
+        footer div:nth-child(2) {
+            padding: 0 10px;
+        }
+
+        .footer-image {
+            width: 75px;
+            height: 75px;
+        }
+
         .sidenav {
             display: block;
         }
