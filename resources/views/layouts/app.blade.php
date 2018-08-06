@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js" async></script>
     @include('layouts.partial.common_style')
     @yield('style')
     <style>
