@@ -104,23 +104,223 @@
         border: 2px solid orange;
     }
 
+    .custom-navbar {
+        display: none;
+    }
+
+    .custom-navbar-wrapper {
+        display: none;
+    }
+
+    /*@media (orientation: portrait) {*/
+        /*.custom-nav {*/
+            /*display: none;*/
+        /*}*/
+
+        /*footer {*/
+            /*padding: 20px;*/
+            /*grid-template-columns: 25% 75%;*/
+        /*}*/
+
+        /*footer div:nth-child(2) {*/
+            /*padding: 0 10px;*/
+        /*}*/
+
+        /*.footer-image {*/
+            /*width: 75px;*/
+            /*height: 75px;*/
+        /*}*/
+
+        /*.custom-navbar {*/
+            /*height: 15px;*/
+            /*display: flex;*/
+            /*justify-content: space-between;*/
+        /*}*/
+
+        /*.sidenav {*/
+            /*height: 100%;*/
+            /*width: 0;*/
+            /*position: fixed;*/
+            /*z-index: 1;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*background-color: white;*/
+            /*overflow-x: hidden;*/
+            /*transition: 0.5s;*/
+            /*padding-top: 30px;*/
+        /*}*/
+
+        /*.sidenav .closebtn {*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*right: 25px;*/
+            /*font-size: 36px;*/
+            /*margin-left: 50px;*/
+        /*}*/
+
+        /*.navbar-logo {*/
+            /*width: 60px;*/
+            /*height: 60px;*/
+            /*border-radius: 50px;*/
+            /*margin-bottom: 20px;*/
+        /*}*/
+
+        /*.navbar-menu {*/
+            /*height: 50px;*/
+            /*color: black;*/
+            /*padding: 0 10px;*/
+            /*margin: 10px 0;*/
+            /*border-bottom: 1px solid #e3e3e3;*/
+        /*}*/
+
+        /*.navbar-menu-container {*/
+            /*display: flex;*/
+            /*justify-content: space-between;*/
+            /*align-items: center;*/
+            /*height: 100%;*/
+        /*}*/
+
+        /*.home {*/
+            /*background-color: #f0f0f0;*/
+            /*font-size: 15px;*/
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+        /*}*/
+
+        /*ul, li {*/
+            /*padding: 0;*/
+        /*}*/
+
+        /*.dropdownnav ul {*/
+            /*display: none;*/
+        /*}*/
+
+        /*.dropdown-submenu {*/
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            /*background-color: grey;*/
+        /*}*/
+    /*}*/
+
+    .sidenav {
+        display: none;
+    }
+
     @media (orientation: portrait) {
+        .sidenav {
+            display: block;
+        }
+
         .custom-nav {
             display: none;
         }
 
-        footer {
-            padding: 20px;
-            grid-template-columns: 25% 75%;
+        .navbar-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            margin-bottom: 20px;
         }
 
-        footer div:nth-child(2) {
+        .navbar-menu {
+            height: 50px;
+            color: black;
             padding: 0 10px;
+            margin: 10px 0;
+            border-bottom: 1px solid #e3e3e3;
         }
 
-        .footer-image {
-            width: 75px;
-            height: 75px;
+        .navbar-menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .home {
+            background-color: #f0f0f0;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 5px;
+            font-size: 36px;
+            color: grey;
+            /*margin-left: 50px;*/
+        }
+
+        .custom-navbar {
+            height: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 30px;
+        }
+
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a, .dropdown-btn {
+            padding: 0 10px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width:100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            font-size: 13px;
+            height: 50px;
+            /*border-bottom: 1px solid #e3e3e3;*/
+        }
+
+        .down-arrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e3e3e3;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            /*font-size: 20px; !* Increased text to enable scrolling *!*/
+            /*padding: 0px 10px;*/
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: white;
+            padding-left: 8px;
+        }
+
+        .dropdown-container a {
+            height: 30px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
         }
     }
 </style>

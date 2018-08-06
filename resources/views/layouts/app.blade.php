@@ -17,6 +17,7 @@
     @yield('style')
 </head>
 <body style="margin:0; text-align: center;">
+    @include('layouts.partial.navigation_mobile')
     <header style="font-size: 2vw;">
         <a href="/">
             <img src="/img/logo.jpg" width="80px" height="80px"
