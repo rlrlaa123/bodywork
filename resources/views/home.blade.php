@@ -97,7 +97,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('img/menu.jpg');
+            background-image: url('img/menu.png');
             background-position: center;
             background-size: 100%;
             background-repeat: no-repeat;
@@ -175,7 +175,7 @@
         </ol>
         <div id="main-carousel-inner" class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/img/main.jpg" alt="First slide">
+                <img class="d-block w-100" src="/img/main1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="/img/main2.jpg" alt="Second slide">
@@ -283,10 +283,5 @@
 @endsection
 @section('script')
     <script>
-        $(document).ready(function() {
-            $('#Carousel').carousel({
-                interval: 5000
-            })
-        });
     </script>
 @endsection

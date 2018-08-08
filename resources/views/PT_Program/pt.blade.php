@@ -22,13 +22,14 @@
         }
 
         .content-image {
-            width: 100%;
+            width: 80%;
             height: 300px;
         }
 
         .comma-image {
+            display: block;
             width: 40px;
-            margin: 50px 0;
+            margin: 50px auto;
         }
 
         .content-1 {
@@ -37,10 +38,12 @@
 
         @media (orientation: portrait) {
             .cover-image {
+                width: 100%;
                 height: 250px;
             }
 
             .content-image {
+                width: 100%;
                 height: 250px;
                 margin: 0;
                 margin-bottom: 20px;
@@ -49,7 +52,7 @@
             .comma-image {
                 width: 25px;
                 height: 25px;
-                margin: 20px;
+                margin: 20px auto;
             }
 
             .pt-info-1 {

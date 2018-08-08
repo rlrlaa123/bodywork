@@ -19,6 +19,7 @@
     <div class="dropdown-container">
         <a href="/bodywork/1">CEO 인사말</a>
         <a href="/bodywork/2">바디웍 소개</a>
+        <a href="/bodywork/2">제휴 업체</a>
     </div>
     <div class="dropdown-btn down-arrow">
         지점소개

@@ -11,10 +11,11 @@
         <div class="nav-submenu-box 0">
             <div class="nav-submneu-container"><a href="/bodywork/1">CEO 인사말</a></div>
             <div class="nav-submneu-container"><a href="/bodywork/2">바디웍 소개</a></div>
+            <div class="nav-submneu-container"><a href="/bodywork/3">제휴 업체</a></div>
         </div>
         <div class="nav-submenu-box 1">
-            <div class="nav-submneu-container"><a href="#">지점 소개</a></div>
-            <div class="nav-submneu-container"><a href="#">트레이너 소개</a></div>
+            <div class="nav-submneu-container"><a href="/branch/1">지점 소개</a></div>
+            <div class="nav-submneu-container"><a href="/branch/2">트레이너 소개</a></div>
         </div>
         <div class="nav-submenu-box 2">
             <div class="nav-submneu-container"><a href="/ptprogram/1">퍼스널 트레이닝 소개</a></div>

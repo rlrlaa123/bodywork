@@ -23,15 +23,15 @@
 
         .ceo-wrapper-2 {
             margin: 50px;
-            display: grid;
-            grid-template-columns: 50% 50%;
+            display: flex;
+            /*grid-template-columns: 50% 50%;*/
             text-align: left;
             align-items: center;
             font-size: 1vw;
         }
 
         .ceo-wrapper-2 img {
-            width: 45%;
+            width: 80%;
             height: 300px;
         }
 
@@ -92,9 +92,8 @@
         </div>
     </div>
     <div class="ceo-wrapper-2">
-        <div>
-            <img src="/img/bodywork/ceo1.jpg" style="margin-bottom: 100px;">
-            <img src="/img/bodywork/ceo2.jpg" style="margin-top: 100px;">
+        <div style="text-align: center;">
+            <img src="/img/bodywork/ceo1.png">
         </div>
         <div>
             <h5>안녕하세요.</h5>
@@ -110,7 +109,7 @@
     <div class="hr"></div>
     <div class="ceo-wrapper-3">
         <div>
-            <img src="/img/bodywork/ceo3.png">
+            <img src="/img/bodywork/ceo2.png">
             <p>
                 생활체육지도자자격증(보디빌딩,유도)<br>
                 유도 공인 4단<br>

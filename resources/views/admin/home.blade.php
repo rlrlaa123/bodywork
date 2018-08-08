@@ -1,0 +1,12 @@
+@extends('layouts.admin')
+@section('style')
+    <style>
+    </style>
+@endsection
+@section('content')
+    관리자
+@endsection
+@section('script')
+    <script>
+    </script>
+@endsection

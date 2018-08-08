@@ -30,3 +30,20 @@ Route::get('/bodywork/1', function() {
 Route::get('/bodywork/2', function() {
     return view('BodyWork.bodywork');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function() {
+    Route::get('/admin', function() {
+        return view('admin.home');
+    });
+});
+
+Route::get('/branch/1', function() {
+    return view('Branch.branch');
+});
+
+Route::get('/branch/2', function() {
+    return view('Branch.trainer');
+});

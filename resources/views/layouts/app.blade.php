@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/bootstrap.min.js" async></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=OmiueUFkWx50WHTaLjZl&submodules=geocoder"></script>
     @include('layouts.partial.common_style')
     @yield('style')
 </head>
@@ -20,8 +21,7 @@
     @include('layouts.partial.navigation_mobile')
     <header style="font-size: 2vw;">
         <a href="/">
-            <img src="/img/logo.jpg" width="80px" height="80px"
-                 style="border-radius: 50px; margin-right: 10px;">
+            <img class="header-image" src="/img/logo.jpg">
             BODY WORK
         </a>
     </header>
