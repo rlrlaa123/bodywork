@@ -61,21 +61,21 @@ Route::get('/bodychallenger/2', function() {
 });
 
 Route::get('/notice/1', function() {
-    return view('CustomerCenter.notice');
+    return view('CustomerCenter.Notice.index');
 });
 
 Route::get('/notice/2', function() {
-    return view('CustomerCenter.notice');
+    return view('CustomerCenter.Event.index');
 });
 
 Route::get('/notice/3', function() {
-    return view('CustomerCenter.notice');
+    return view('CustomerCenter.Lesson.index');
 });
 
 Route::get('/notice/4', function() {
-    return view('CustomerCenter.notice');
+    return view('CustomerCenter.FreeLesson.index');
 });
 
 Route::get('/notice/5', function() {
-    return view('CustomerCenter.notice');
+    return view('CustomerCenter.Consult.index');
 });

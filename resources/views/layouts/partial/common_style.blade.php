@@ -38,7 +38,9 @@
 
     .custom-nav {
         display: grid;
+        display: -ms-grid;
         grid-template-columns: repeat(7, 14.5%);
+        -ms-grid-columns: 14.5% 14.5% 14.5% 14.5% 14.5% 14.5% 14.5%;
         justify-content: center;
         align-items: center;
         font-weight: bold;
@@ -62,7 +64,9 @@
 
     .nav-submenu {
         display: grid;
+        display: -ms-grid;
         grid-template-columns: repeat(7, 14.5%);
+        -ms-grid-columns: 14.5% 14.5% 14.5% 14.5% 14.5% 14.5% 14.5%;
         justify-content: center;
         align-items: flex-start;
         width: 100%;
@@ -92,7 +96,9 @@
         margin: 0;
         padding: 20px 50px;
         display: grid;
+        display: -ms-grid;
         grid-template-columns: 15% 85%;
+        -ms-grid-columns: 15% 85%;
         background-color: #4b4b4b;
         color: white;
         text-align: left;
@@ -140,7 +146,7 @@
 
         footer {
             padding: 20px;
-            grid-template-columns: 25% 75%;
+            -ms-grid-columns: 25% 75%;
         }
 
         footer div:nth-child(2) {

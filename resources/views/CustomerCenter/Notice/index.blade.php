@@ -1,55 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app_dashboard')
 @section('style')
-    <style>
-        h3 {
-            width: 80%;
-            margin: 50px auto;
-        }
-
-        hr {
-            width: 80%;
-            margin: 50px auto;
-        }
-
-        .table-responsive {
-            margin: auto;
-            width: 80%;
-            /*width: 100%;*/
-        }
-
-        .pagination {
-            width: 80%;
-            margin: 50px auto;
-            justify-content: center;
-        }
-
-        .page-link {
-            color: grey;
-        }
-
-        .page-link:hover {
-            color: unset;
-        }
-
-        .btn-wrapper {
-            width: 80%;
-            text-align: right;
-            margin: auto;
-        }
-
-        .btn {
-            background-color: dimgrey;
-            color: white;
-        }
-
-        @media(orientation: portrait) {
-            .btn {
-                width: 50px;
-                font-size: 10px;
-                height: 30px;
-            }
-        }
-    </style>
+    <style></style>
 @endsection
 @section('content')
     <h3>공지사항</h3>
@@ -70,7 +21,7 @@
                 <tr>
                     <td>{{ $i }}</td>
                     <td>바디웍 3호점 오픈!</td>
-                    <td>관리자</td>
+                    <td>관리</td>
                     <td>{{ $i }}</td>
                 </tr>
             @endfor
