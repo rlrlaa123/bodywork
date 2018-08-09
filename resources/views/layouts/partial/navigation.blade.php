@@ -27,11 +27,11 @@
             <div class="nav-submneu-container"><a href="/bodychallenger/2">Before & After</a></div>
         </div>
         <div class="nav-submenu-box 4">
-            <div class="nav-submneu-container"><a href="#">공지사항</a></div>
-            <div class="nav-submneu-container"><a href="#">이벤트</a></div>
-            <div class="nav-submneu-container"><a href="#">PT 레슨 문의</a></div>
-            <div class="nav-submneu-container"><a href="#">무료 PT 신청</a></div>
-            <div class="nav-submneu-container"><a href="#">실시간 상담</a></div>
+            <div class="nav-submneu-container"><a href="/notice/1">공지사항</a></div>
+            <div class="nav-submneu-container"><a href="/notice/2">이벤트</a></div>
+            <div class="nav-submneu-container"><a href="/notice/3">PT 레슨 문의</a></div>
+            <div class="nav-submneu-container"><a href="/notice/4">무료 PT 신청</a></div>
+            <div class="nav-submneu-container"><a href="/notice/5">실시간 상담</a></div>
         </div>
         <div></div>
     </div>

@@ -28,7 +28,19 @@
             margin: 50px;
             justify-content: center;
         }
+
+        .page-link {
+            color: grey;
+        }
+
+        .page-link:hover {
+            color: unset;
+        }
         @media (orientation: portrait) {
+            .review-wrapper {
+                display: block;
+                margin: 0 50px;
+            }
         }
     </style>
 @endsection
@@ -57,11 +69,11 @@
         </div>
     </div>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">이전</a></li>
         <li class="page-item"><a class="page-link" href="#">1</a></li>
         <li class="page-item"><a class="page-link" href="#">2</a></li>
         <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <li class="page-item"><a class="page-link" href="#">다음</a></li>
     </ul>
 @endsection
 @section('script')

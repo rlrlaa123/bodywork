@@ -59,3 +59,23 @@ Route::get('/bodychallenger/1', function() {
 Route::get('/bodychallenger/2', function() {
     return view('BodyChallenger.beforeafter');
 });
+
+Route::get('/notice/1', function() {
+    return view('CustomerCenter.notice');
+});
+
+Route::get('/notice/2', function() {
+    return view('CustomerCenter.notice');
+});
+
+Route::get('/notice/3', function() {
+    return view('CustomerCenter.notice');
+});
+
+Route::get('/notice/4', function() {
+    return view('CustomerCenter.notice');
+});
+
+Route::get('/notice/5', function() {
+    return view('CustomerCenter.notice');
+});
