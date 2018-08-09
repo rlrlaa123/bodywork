@@ -23,6 +23,10 @@ Route::get('/ptprogram/2', function() {
     return view('PT_Program.pt_progress');
 });
 
+Route::get('/ptprogram/3', function() {
+    return view('PT_Program.pt_program');
+});
+
 Route::get('/bodywork/1', function() {
     return view('BodyWork.ceo');
 });
@@ -46,4 +50,12 @@ Route::get('/branch/1', function() {
 
 Route::get('/branch/2', function() {
     return view('Branch.trainer');
+});
+
+Route::get('/bodychallenger/1', function() {
+    return view('BodyChallenger.bodychallenger');
+});
+
+Route::get('/bodychallenger/2', function() {
+    return view('BodyChallenger.beforeafter');
 });

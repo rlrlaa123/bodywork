@@ -67,6 +67,7 @@
 
             .trainer-container div:nth-child(1) img {
                 width: 100%;
+                height: 250px;
             }
 
             .trainer-container div:nth-child(2) {

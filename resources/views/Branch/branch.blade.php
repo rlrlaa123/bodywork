@@ -7,7 +7,7 @@
             justify-content: space-between;
             align-items: center;
             text-align: left;
-            border: 1px solid #e3e3e3;
+            /*border: 1px solid #e3e3e3;*/
         }
 
         .branch-btn {

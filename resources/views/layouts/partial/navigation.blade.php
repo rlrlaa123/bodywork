@@ -20,11 +20,11 @@
         <div class="nav-submenu-box 2">
             <div class="nav-submneu-container"><a href="/ptprogram/1">퍼스널 트레이닝 소개</a></div>
             <div class="nav-submneu-container"><a href="/ptprogram/2">PT 진행순서</a></div>
-            <div class="nav-submneu-container"><a href="#">PT 프로그램</a></div>
+            <div class="nav-submneu-container"><a href="/ptprogram/3">PT 프로그램</a></div>
         </div>
         <div class="nav-submenu-box 3">
-            <div class="nav-submneu-container"><a href="#">바디웍챌린져란?</a></div>
-            <div class="nav-submneu-container"><a href="#">Before & After</a></div>
+            <div class="nav-submneu-container"><a href="/bodychallenger/1">바디웍챌린져란?</a></div>
+            <div class="nav-submneu-container"><a href="/bodychallenger/2">Before & After</a></div>
         </div>
         <div class="nav-submenu-box 4">
             <div class="nav-submneu-container"><a href="#">공지사항</a></div>

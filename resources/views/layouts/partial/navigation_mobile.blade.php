@@ -19,7 +19,7 @@
     <div class="dropdown-container">
         <a href="/bodywork/1">CEO 인사말</a>
         <a href="/bodywork/2">바디웍 소개</a>
-        <a href="/bodywork/2">제휴 업체</a>
+        <a href="/bodywork/3">제휴 업체</a>
     </div>
     <div class="dropdown-btn down-arrow">
         지점소개
@@ -36,15 +36,15 @@
     <div class="dropdown-container">
         <a href="/ptprogram/1">퍼스널 트레이닝 소개</a>
         <a href="/ptprogram/2">PT 진행순서</a>
-        <a href="#">PT 프로그램</a>
+        <a href="/ptprogram/3">PT 프로그램</a>
     </div>
     <div class="dropdown-btn down-arrow">
         바디웍 바디챌린져
         <img src="/img/down-arrow.png" width="15px">
     </div>
     <div class="dropdown-container">
-        <a href="#">바디챌린져란?</a>
-        <a href="#">Before & After</a>
+        <a href="/bodychallenger/1">바디챌린져란?</a>
+        <a href="/bodychallenger/2">Before & After</a>
     </div>
     <div class="dropdown-btn down-arrow">
         상담신청
