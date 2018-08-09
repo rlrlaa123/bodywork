@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('style')
     <style>
-        .wrapper {
-            margin: 0 50px;
-        }
         .branch-selector {
+            margin: 0 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -13,20 +11,23 @@
         }
 
         .branch-btn {
-            /*margin-right: 20px;*/
             border-right: 1px solid #e3e3e3;
-            /*border-bottom: 1px solid #e3e3e3;*/
-            padding: 20px;
+            padding: 10px;
             background-color: darkgrey;
             color: white;
             width: 150px;
         }
 
+        h3 {
+            margin: 0 50px;
+        }
+
         hr {
-            margin: 50px 0;
+            margin: 50px;
         }
 
         .carousel {
+            margin: 0 50px;
             height: 500px;
         }
 
@@ -46,16 +47,17 @@
             display: grid;
             grid-template-columns: 50% 50%;
             /*padding: 40px;*/
-            margin: 50px 0;
+            margin: 50px;
             border-left: 2px solid orange;
+            text-align: left;
         }
 
-        .branch-location div:nth-child(1) {
+        .branch-location-text {
             text-align: left;
             padding: 20px;
         }
 
-        .branch-location div:nth-child(2) {
+        .branch-location-map {
             padding: 20px;
             width: 100%;
             display: flex;
@@ -64,6 +66,7 @@
 
         .branch-info-wrapper {
             text-align: left;
+            margin: 0 50px;
             margin-bottom: 50px;
         }
 
@@ -76,225 +79,277 @@
             background-color: grey;
             border: none;
         }
+
+        @media (orientation: portrait) {
+            .carousel {
+                height: 200px;
+            }
+
+            .carousel-inner {
+                height: 200px;
+            }
+
+            .carousel-indicators {
+                bottom: 30px;
+            }
+
+            .carousel-item img {
+                height: 200px;
+            }
+
+            .branch-selector {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                width: 100%;
+            }
+
+            .branch-btn {
+                padding: 10px;
+                width: unset;
+            }
+
+            .branch-location {
+                display: block;
+                border: none;
+            }
+
+            .branch-location-text {
+                text-align: left;
+                padding: 20px;
+                border-left: 2px solid orange;
+                margin: 50px 0;
+            }
+
+            .branch-location-map {
+                padding: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: 200px;
+            }
+
+        }
     </style>
 @endsection
 @section('content')
-    <div class="wrapper">
-        <h3 style="margin: 50px 0; font-weight: bold;">바디웍 지점 소개</h3>
-        <hr>
-        <div style="display: flex; width: 100%;">
-            <div class="branch-selector">
-                @for($i = 1; $i <= 3; $i++)
-                    @if($i == 1)
-                        <div class="branch-btn {{ $i }} active">{{ $i }}호점</div>
-                    @else
-                        <div class="branch-btn {{ $i }}">{{ $i }}호점</div>
-                    @endif
-                @endfor
-            </div>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=OmiueUFkWx50WHTaLjZl&submodules=geocoder"></script>
+    <h3 style="margin: 50px 0; font-weight: bold;">바디웍 지점 소개</h3>
+    <hr>
+    <div style="display: flex; width: 100%;">
+        <div class="branch-selector">
+            @for($i = 1; $i <= 3; $i++)
+                @if($i == 1)
+                    <div class="branch-btn {{ $i }} active">{{ $i }}호점</div>
+                @else
+                    <div class="branch-btn {{ $i }}">{{ $i }}호점</div>
+                @endif
+            @endfor
         </div>
-        @for($i = 1; $i <= 3; $i++)
-            @if($i == 1)
-                <div class="branch-location-wrapper {{ $i }}" style="display: block;">
-                    <div id="carouselMainIndicators{{ $i }}" class="carousel slide" data-ride="carousel">
-                        <ol id="main-carousel-indicator" class="carousel-indicators">
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="1"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="2"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="3"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="4"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="5"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="6"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="7"></li>
-                        </ol>
-                        <div id="main-carousel-inner" class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="/img/branch/1.jpg" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2.jpg" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/3.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/4.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/5.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/6.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/7.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/8.jpg" alt="Third slide">
-                            </div>
+    </div>
+    @for($i = 1; $i <= 3; $i++)
+        @if($i == 1)
+            <div class="branch-location-wrapper {{ $i }}" style="display: block;">
+                <div id="carouselMainIndicators{{ $i }}" class="carousel slide" data-ride="carousel">
+                    <ol id="main-carousel-indicator" class="carousel-indicators">
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="1"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="2"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="3"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="4"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="5"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="6"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="7"></li>
+                    </ol>
+                    <div id="main-carousel-inner" class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/img/branch/1.jpg" alt="First slide">
                         </div>
-                        <a class="carousel-control-prev" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/3.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/4.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/5.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/6.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/7.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/8.jpg" alt="Third slide">
+                        </div>
                     </div>
-                    <div class="branch-location">
-                        <div>
-                            <h3 style="text-align: center;">Location</h3>
-                            <p>1호점(본점)<br>
-                                바디웍 1호점은 personal training studio로 1:1 개인레슨만을 하는<br>
-                                프라이빗한 공간으로 다른사람의 시선을 신경쓰지 않고 운동에만 집중할 수 있는<br>
-                                개인피티전문 스튜디오입니다.
-                            </p>
-                            <p>송파구 위례성대로 20길 23 신승빌딩 3층</p>
-                        </div>
-                        <div id="map{{ $i }}"></div>
-                    </div>
-                    <div class="branch-info-wrapper">
-                        <h6>바디웍 1호점 운영시간</h6>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            월~금 AM 07:00 ~ PM 11:00
-                        </div>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            토요일 AM 10:00 ~ PM 5:00
-                        </div>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            국경일/일요일  휴관
-                        </div>
-                        <div class="note">Note: 국경일은 쉽니다.</div>
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-            @elseif($i == 2)
-                <div class="branch-location-wrapper {{ $i }}" style="display: none;">
-                    <div id="carouselMainIndicators{{ $i }}" class="carousel slide" data-ride="carousel">
-                        <ol id="main-carousel-indicator" class="carousel-indicators">
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="1"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="2"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="3"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="4"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="5"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="6"></li>
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="7"></li>
-                        </ol>
-                        <div id="main-carousel-inner" class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="/img/branch/2-1.jpg" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-2.jpg" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-3.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-4.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-5.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-6.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-7.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/branch/2-8.jpg" alt="Third slide">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                <div class="branch-location">
+                    <div class="branch-location-text">
+                        <h3 style="text-align: center;">Location</h3>
+                        <p>1호점(본점)<br>
+                            바디웍 1호점은 personal training studio로 1:1 개인레슨만을 하는<br>
+                            프라이빗한 공간으로 다른사람의 시선을 신경쓰지 않고 운동에만 집중할 수 있는<br>
+                            개인피티전문 스튜디오입니다.
+                        </p>
+                        <p>송파구 위례성대로 20길 23 신승빌딩 3층</p>
                     </div>
-                    <div class="branch-location">
-                        <div>
-                            <h3 style="text-align: center;">Location</h3>
-                            <p>{{ $i }}호점(방이역점)<br>
-                                바디웍 2호점은 open fitness center로 누구나 자유롭게 이용할 수 있으며
-                                주중 24시간 운영하여 시간에 제한없이 운동할 수 있는 공간이며
-                                다양한 기구를 이용한 퍼스널트레이닝 받을 수 있습니다.
-                            </p>
-                            <p>송파구 오금동 마천로 61 덕산빌딩 2층</p>
-                        </div>
-                        <div id="map{{ $i }}"></div>
-                    </div>
-                    <div class="branch-info-wrapper">
-                        <h6>바디웍 {{ $i }}호점 운영시간</h6>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            월요일 AM 06:00 ~ 24:00
-                        </div>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            화요일-금요일 AM 00:00 ~ 24:00
-                        </div>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            툐요일 AM 00:00 ~ 20:00
-                        </div>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            국경일 AM 00:00 ~ 17:00
-                        </div>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            일요일 휴관
-                        </div>
-                        <div class="note">Note: 휴무는 센터 사정에 따라 변동 됩니다</div>
-                    </div>
+                    <div id="map{{ $i }}" class="branch-location-map"></div>
                 </div>
-            @else
+                <div class="branch-info-wrapper">
+                    <h6>바디웍 1호점 운영시간</h6>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        월~금 AM 07:00 ~ PM 11:00
+                    </div>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        토요일 AM 10:00 ~ PM 5:00
+                    </div>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        국경일/일요일  휴관
+                    </div>
+                    <div class="note">Note: 국경일은 쉽니다.</div>
+                </div>
+            </div>
 
-                <div class="branch-location-wrapper {{ $i }}" style="display: none;">
-                    <div id="carouselMainIndicators{{ $i }}" class="carousel slide" data-ride="carousel">
-                        <ol id="main-carousel-indicator" class="carousel-indicators">
-                            <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="0" class="active"></li>
-                        </ol>
-                        <div id="main-carousel-inner" class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="/img/branch/comingsoon.jpeg" alt="First slide">
-                            </div>
+        @elseif($i == 2)
+            <div class="branch-location-wrapper {{ $i }}" style="display: none;">
+                <div id="carouselMainIndicators{{ $i }}" class="carousel slide" data-ride="carousel">
+                    <ol id="main-carousel-indicator" class="carousel-indicators">
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="1"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="2"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="3"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="4"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="5"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="6"></li>
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="7"></li>
+                    </ol>
+                    <div id="main-carousel-inner" class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/img/branch/2-1.jpg" alt="First slide">
                         </div>
-                        <a class="carousel-control-prev" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-2.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-3.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-4.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-5.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-6.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-7.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/img/branch/2-8.jpg" alt="Third slide">
+                        </div>
                     </div>
-                    <div class="branch-location">
-                        <div>
-                            <h3 style="text-align: center;">Location</h3>
-                            <p>{{ $i }}호점(오금역점)<br>
-                                바디웍 3호점은 호텔급 시설과 운동하기 좋은 최적의 웨이트시설로
-                                피트니스선수도 제대로 운동할 수 있도록 셋팅한 최적의 운동공간입니다.
-                                오금역점은 국가대표출신의 트레이너가 상주하여 일반인 PT만이 아닌
-                                피트니스선수육성 전문 휘트니스입니다.
-                            </p>
-                            <p>주소: 송파구 가락동 2-8 김해빌딩 5층</p>
+                    <a class="carousel-control-prev" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="branch-location">
+                    <div class="branch-location-text">
+                        <h3 style="text-align: center;">Location</h3>
+                        <p>{{ $i }}호점(방이역점)<br>
+                            바디웍 2호점은 open fitness center로 누구나 자유롭게 이용할 수 있으며
+                            주중 24시간 운영하여 시간에 제한없이 운동할 수 있는 공간이며
+                            다양한 기구를 이용한 퍼스널트레이닝 받을 수 있습니다.
+                        </p>
+                        <p>송파구 오금동 마천로 61 덕산빌딩 2층</p>
+                    </div>
+                    <div id="map{{ $i }}" class="branch-location-map"></div>
+                </div>
+                <div class="branch-info-wrapper">
+                    <h6>바디웍 {{ $i }}호점 운영시간</h6>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        월요일 AM 06:00 ~ 24:00
+                    </div>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        화요일-금요일 AM 00:00 ~ 24:00
+                    </div>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        툐요일 AM 00:00 ~ 20:00
+                    </div>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        국경일 AM 00:00 ~ 17:00
+                    </div>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        일요일 휴관
+                    </div>
+                    <div class="note">Note: 휴무는 센터 사정에 따라 변동 됩니다</div>
+                </div>
+            </div>
+        @else
+            <div class="branch-location-wrapper {{ $i }}" style="display: none;">
+                <div id="carouselMainIndicators{{ $i }}" class="carousel slide" data-ride="carousel">
+                    <ol id="main-carousel-indicator" class="carousel-indicators">
+                        <li data-target="#carouselMainIndicators{{ $i }}" data-slide-to="0" class="active"></li>
+                    </ol>
+                    <div id="main-carousel-inner" class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/img/branch/comingsoon.jpeg" alt="First slide">
                         </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselMainIndicators{{ $i }}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="branch-location">
+                    <div class="branch-location-text">
+                        <h3 style="text-align: center;">Location</h3>
+                        <p>{{ $i }}호점(오금역점)<br>
+                            바디웍 3호점은 호텔급 시설과 운동하기 좋은 최적의 웨이트시설로
+                            피트니스선수도 제대로 운동할 수 있도록 셋팅한 최적의 운동공간입니다.
+                            오금역점은 국가대표출신의 트레이너가 상주하여 일반인 PT만이 아닌
+                            피트니스선수육성 전문 휘트니스입니다.
+                        </p>
+                        <p>주소: 송파구 가락동 2-8 김해빌딩 5층</p>
+                    </div>
+                    <div class="branch-location-map">
                         <div id="map{{ $i }}"></div>
                     </div>
-                    <div class="branch-info-wrapper">
-                        <h6>바디웍 {{ $i }}호점 운영시간</h6>
-                        <div class="branch-info">
-                            <img src="/img/branch/time.png" width="25px">
-                            월-금 AM 06:00 ~ PM 12:00
+                </div>
+                <div class="branch-info-wrapper">
+                    <h6>바디웍 {{ $i }}호점 운영시간</h6>
+                    <div class="branch-info">
+                        <img src="/img/branch/time.png" width="25px">
+                        월-금 AM 06:00 ~ PM 12:00
                         <div class="branch-info">
                             <img src="/img/branch/time.png" width="25px">
                             토요일 AM 08:00 ~ PM 8:00
@@ -306,9 +361,9 @@
                         <div class="note">Note: 국경일은 쉽니다.</div>
                     </div>
                 </div>
-            @endif
-        @endfor
-    </div>
+            </div>
+        @endif
+    @endfor
 @endsection
 @section('script')
     <script>

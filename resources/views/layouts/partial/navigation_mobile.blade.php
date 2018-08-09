@@ -26,8 +26,8 @@
         <img src="/img/down-arrow.png" width="15px">
     </div>
     <div class="dropdown-container">
-        <a href="#">지점소개</a>
-        <a href="#">트레이너 소개</a>
+        <a href="/branch/1">지점소개</a>
+        <a href="/branch/2">트레이너 소개</a>
     </div>
     <div class="dropdown-btn down-arrow">
         PT 프로그램

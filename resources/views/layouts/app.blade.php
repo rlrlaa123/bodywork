@@ -13,7 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/bootstrap.min.js" async></script>
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=OmiueUFkWx50WHTaLjZl&submodules=geocoder"></script>
     @include('layouts.partial.common_style')
     @yield('style')
 </head>
@@ -29,18 +28,19 @@
     @include('layouts.partial.navigation')
     @yield('content')
 
-    <footer>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="/img/logo.jpg" class="footer-image">
-        </div>
-        <div>
-            <p>상호명:바디웍휘트니스/주소:서울특별시 송파구 오금동 위례성대로 20길 23 신승빌딩3층</p>
-            <p>대표: 이우석,장정훈/TEL: (02)408-3966/사업자등록번호:501-37-279974</p>
-            <p>Copyright all right reserved BODYWORK</p>
-        </div>
-    </footer>
     <!-- Scripts -->
     @include('layouts.partial.common_script')
     @yield('script')
 </body>
+
+<footer>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="/img/logo.jpg" class="footer-image">
+    </div>
+    <div>
+        <p>상호명:바디웍휘트니스/주소:서울특별시 송파구 오금동 위례성대로 20길 23 신승빌딩3층</p>
+        <p>대표: 이우석,장정훈/TEL: (02)408-3966/사업자등록번호:501-37-279974</p>
+        <p>Copyright all right reserved BODYWORK</p>
+    </div>
+</footer>
 </html>
