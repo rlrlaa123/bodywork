@@ -69,8 +69,8 @@
             @for($i = 1; $i <= 3; $i++)
                 <tr>
                     <td>{{ $i }}</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
+                    <td>바디웍 3호점 오픈!</td>
+                    <td>관리자</td>
                     <td>{{ $i }}</td>
                 </tr>
             @endfor
