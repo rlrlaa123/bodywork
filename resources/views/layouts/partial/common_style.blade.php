@@ -57,6 +57,14 @@
         height: 90%;
     }
 
+    .custom-nav-container-empty:nth-child(1) {
+        -ms-grid-column: 1;
+    }
+
+    .custom-nav-container:nth-child(1) {
+        -ms-grid-column: 3;
+    }
+
     .custom-nav-container:nth-child(2) {
         -ms-grid-column: 5;
     }
@@ -208,7 +216,7 @@
 
         footer {
             padding: 20px;
-            -ms-grid-columns: 25% 75%;
+            /*-ms-grid-columns: 25% 75%;*/
         }
 
         footer div:nth-child(2) {

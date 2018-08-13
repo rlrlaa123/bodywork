@@ -10,6 +10,7 @@
             margin: 50px;
             background-color: #f1b042;
             display: flex;
+            display: -ms-flex;
             justify-content: center;
             align-items: center;
             color: white;
@@ -24,6 +25,7 @@
         .ceo-wrapper-2 {
             margin: 50px;
             display: flex;
+            display: -ms-flex;
             text-align: left;
             align-items: center;
             font-size: 1vw;
@@ -41,11 +43,17 @@
         .ceo-wrapper-3 {
             background-color: #454551;
             display: grid;
+            display: -ms-grid;
             grid-template-columns: 50% 50%;
+            -ms-grid-columns: 50% 80%;
             padding: 50px 10%;
             margin: 50px;
             color: white;
             font-size: 1vw;
+        }
+
+        .ceo-wrapper-3 div:nth-child(2) {
+            -ms-grid-column: 3;
         }
 
         .ceo-wrapper-3 img {
