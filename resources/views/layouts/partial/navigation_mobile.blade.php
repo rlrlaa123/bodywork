@@ -51,10 +51,10 @@
         <img src="/img/down-arrow.png" width="15px">
     </div>
     <div class="dropdown-container">
-        <a href="/notice/1">공지사항</a>
-        <a href="/notice/1">이벤트</a>
-        <a href="/notice/1">PT 레슨문의</a>
-        <a href="/notice/1">무료 PT 신청</a>
-        <a href="/notice/1">실시간 상담</a>
+        <a href="/notice">공지사항</a>
+        <a href="/event">이벤트</a>
+        <a href="/lesson">PT 레슨문의</a>
+        <a href="/freelesson">무료 PT 신청</a>
+        <a href="/consult">실시간 상담</a>
     </div>
 </div>

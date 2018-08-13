@@ -8,39 +8,82 @@
     <h3>이벤트</h3>
     <hr>
     <div class="table-responsive">
-        <table class="table table-hover">
+        <table class="table table-hover landscape">
+            <col width="10%">
+            <col width="45%">
+            <col width="15%">
+            <col width="15%">
+            <col width="15%">
             <thead>
             <tr>
                 <th>No</th>
                 <th>제목</th>
                 <th>글쓴이</th>
+                <th>작성일</th>
                 <th>조회수</th>
             </tr>
             </thead>
             <tbody>
 
-            @for($i = 1; $i <= 3; $i++)
-                <tr>
-                    <td>{{ $i }}</td>
-                    <td>바디웍 3호점 오픈!</td>
-                    <td>관리</td>
-                    <td>{{ $i }}</td>
+            @forelse($events as $event)
+                <tr onclick="location.href = '{{ route('event.show', $event->id) }}'">
+                    <td>{{ $event->id }}</td>
+                    <td>{{ $event->title }}</td>
+                    <td>{{ $event->author }}</td>
+                    <td>{{ $event->created_at }}</td>
+                    <td>{{ $event->view }}</td>
                 </tr>
-            @endfor
+            @empty
+                <tr>
+                    <td colspan="5" style="min-width: 1200px;">게시글이 없습니다.</td>
+                </tr>
+            @endforelse
             </tbody>
         </table>
-    </div>
-    <div class="btn-wrapper">
-        <button class="btn">
-            글쓰기
-        </button>
+        <table class="table table-hover portrait">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>제목</th>
+                <th>글쓴이</th>
+                <th>작성일</th>
+                <th>조회수</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            @forelse($events as $event)
+                <tr onclick="location.href = '{{ route('event.show', $event->id) }}'">
+                    <td>{{ $event->id }}</td>
+                    <td>{{ $event->title }}</td>
+                    <td>{{ $event->author }}</td>
+                    <td>{{ $event->created_at }}</td>
+                    <td>{{ $event->view }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="5" style="min-width: 300px;">게시글이 없습니다.</td>
+                </tr>
+            @endforelse
+            </tbody>
+        </table>
+
     </div>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">이전</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">다음</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $events->previousPageUrl() }}">이전</a></li>
+        @if($events->total()/10 < 1)
+            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+        @else
+            @for($i = 1; $i <= $events->total()/10; $i++)
+                <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
+            @endfor
+        @endif
+        <li class="page-item"><a class="page-link" href="{{ $events->nextPageUrl() }}">다음</a></li>
     </ul>
 @endsection
 @section('script')

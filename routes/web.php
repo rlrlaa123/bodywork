@@ -60,22 +60,55 @@ Route::get('/bodychallenger/2', function() {
     return view('BodyChallenger.beforeafter');
 });
 
-Route::get('/notice/1', function() {
-    return view('CustomerCenter.Notice.index');
+Route::get('/error', function() {
+    return view('CustomerCenter.error');
 });
 
-Route::get('/notice/2', function() {
-    return view('CustomerCenter.Event.index');
-});
+Route::resource('/notice', 'NoticesController');
 
-Route::get('/notice/3', function() {
-    return view('CustomerCenter.Lesson.index');
-});
+Route::resource('/event', 'EventsController');
 
-Route::get('/notice/4', function() {
-    return view('CustomerCenter.FreeLesson.index');
-});
+Route::get('lesson', 'LessonsController@index')->name('lesson.index');
+Route::get('lesson/create', 'LessonsController@create')->name('lesson.create');
+Route::post('lesson', 'LessonsController@store')->name('lesson.store');
+Route::get('lesson/{lesson}', 'LessonsController@show')->name('lesson.show');
+Route::get('lesson/{lesson}/edit', 'LessonsController@edit')->name('lesson.edit');
+Route::put('lesson/{lesson}', 'LessonsController@update')->name('lesson.update');
+Route::delete('lesson/{lesson}', 'LessonsController@destroy')->name('lesson.destroy');
 
-Route::get('/notice/5', function() {
-    return view('CustomerCenter.Consult.index');
+Route::get('/lesson/{lesson}/lock', 'LessonsController@lock')->name('lesson.lock');
+Route::post('/lesson/{lesson}/lock', 'LessonsController@lockOpen')->name('lesson.lock.open');
+
+Route::prefix('admin')->group(function() {
+    Route::get('notice', 'Admin\NoticesController@index')->name('admin.notice.index');
+    Route::get('notice/create', 'Admin\NoticesController@create')->name('admin.notice.create');
+    Route::post('notice', 'Admin\NoticesController@store')->name('admin.notice.store');
+    Route::get('notice/{notice}', 'Admin\NoticesController@show')->name('admin.notice.show');
+    Route::get('notice/{notice}/edit', 'Admin\NoticesController@edit')->name('admin.notice.edit');
+    Route::put('notice/{notice}', 'Admin\NoticesController@update')->name('admin.notice.update');
+    Route::delete('notice/{notice}', 'Admin\NoticesController@destroy')->name('admin.notice.destroy');
+
+    Route::get('event', 'Admin\EventsController@index')->name('admin.event.index');
+    Route::get('event/create', 'Admin\EventsController@create')->name('admin.event.create');
+    Route::post('event', 'Admin\EventsController@store')->name('admin.event.store');
+    Route::get('event/{event}', 'Admin\EventsController@show')->name('admin.event.show');
+    Route::get('event/{event}/edit', 'Admin\EventsController@edit')->name('admin.event.edit');
+    Route::put('event/{event}', 'Admin\EventsController@update')->name('admin.event.update');
+    Route::delete('event/{event}', 'Admin\EventsController@destroy')->name('admin.event.destroy');
 });
+//
+//Route::get('/notice/2', function() {
+//    return view('CustomerCenter.Event.index');
+//});
+//
+//Route::get('/notice/3', function() {
+//    return view('CustomerCenter.Lesson.index');
+//});
+//
+//Route::get('/notice/4', function() {
+//    return view('CustomerCenter.FreeLesson.index');
+//});
+//
+//Route::get('/notice/5', function() {
+//    return view('CustomerCenter.Consult.index');
+//});

@@ -129,12 +129,21 @@
         display: none;
     }
 
+    .help-block {
+        text-align: left;
+        color: grey;
+    }
+
     @media (orientation: portrait) {
         body {
             font-family: 'Avenir', Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 2.5vw;
+        }
+
+        header {
+            border-bottom: 1px solid #e3e3e3;
         }
 
         .header-image {

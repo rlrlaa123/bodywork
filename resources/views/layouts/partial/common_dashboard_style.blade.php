@@ -9,6 +9,10 @@
         margin: 50px auto;
     }
 
+    table {
+        text-align: left;
+    }
+
     tr {
         cursor: pointer;
     }
@@ -43,11 +47,46 @@
         color: white;
     }
 
+    .landscape {
+        display: block;
+    }
+
+    .portrait {
+        display: none;
+    }
+
+    .password-wrapper {
+        width: 60%;
+        margin: 50px auto;
+        text-align: left;
+    }
+
+    .password-container {
+        border: 1px solid #e3e3e3;
+    }
+
+    .password-container div:nth-child(1) {
+        padding: 20px;
+    }
+
+    .password-container div:nth-child(2) {
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
     @media(orientation: portrait) {
         .btn {
             width: 50px;
             font-size: 10px;
             height: 30px;
+        }
+
+        .landscape {
+            display: none;
+        }
+
+        .portrait {
+            display: block;
         }
     }
 </style>
