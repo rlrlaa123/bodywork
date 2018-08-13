@@ -11,7 +11,11 @@
             background-color: #f1b042;
             display: flex;
             display: -ms-flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             color: white;
             height: 125px;
@@ -27,6 +31,8 @@
             display: flex;
             display: -ms-flex;
             text-align: left;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             font-size: 1vw;
         }

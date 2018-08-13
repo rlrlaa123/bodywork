@@ -41,7 +41,11 @@
         display: -ms-grid;
         grid-template-columns: repeat(7, 14.5%);
         -ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         font-weight: bold;
         width: 100%;
@@ -51,7 +55,12 @@
 
     .custom-nav-container {
         display: flex;
+        display: -ms-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         cursor: pointer;
         height: 90%;
@@ -91,8 +100,12 @@
         display: -ms-grid;
         grid-template-columns: repeat(7, 14.5%);
         -ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
-        justify-content: center;
-        align-items: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         width: 100%;
         color: grey;
         font-weight: bold;
@@ -133,15 +146,18 @@
         border-bottom: 3px solid orange;
     }
 
-    .nav-submneu-container {
+    .nav-submenu-container {
         display: flex;
+        display: -ms-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         margin-bottom: 15px;
         cursor: pointer;
         font-size: 1.25vw;
     }
 
-    .nav-submneu-container:hover {
+    .nav-submenu-container:hover {
         color: orange;
     }
 
@@ -253,7 +269,11 @@
 
         .navbar-menu-container {
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             height: 100%;
         }
@@ -262,7 +282,12 @@
             background-color: #f0f0f0;
             font-size: 15px;
             display: flex;
+            display: -ms-flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
         }
         .closebtn {
@@ -277,6 +302,9 @@
         .custom-navbar {
             height: 15px;
             display: flex;
+            display: -ms-flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
         }
 
@@ -313,7 +341,12 @@
 
         .down-arrow {
             display: flex;
+            display: -ms-flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             border-bottom: 1px solid #e3e3e3;
         }
