@@ -1,13 +1,13 @@
 <div class="custom-nav">
-    <div></div>
+    <div class="custom-nav-container"></div>
     <div class="custom-nav-container"><a href="/bodywork/1">바디웍휘트니스</a></div>
     <div class="custom-nav-container"><a>지점소개</a></div>
     <div class="custom-nav-container"><a href="/ptprogram/1">PT 프로그램</a></div>
     <div class="custom-nav-container"><a>바디웍 바디챌린져</a></div>
     <div class="custom-nav-container"><a>상담신청</a></div>
-    <div></div>
+    <div class="custom-nav-container"></div>
     <div class="nav-submenu" style="display: none;">
-        <div></div>
+        <div class="nav-submenu-box"></div>
         <div class="nav-submenu-box 0">
             <div class="nav-submneu-container"><a href="/bodywork/1">CEO 인사말</a></div>
             <div class="nav-submneu-container"><a href="/bodywork/2">바디웍 소개</a></div>
@@ -33,6 +33,6 @@
             <div class="nav-submneu-container"><a href="/freelesson">무료 PT 신청</a></div>
             <div class="nav-submneu-container"><a href="/consult">실시간 상담</a></div>
         </div>
-        <div></div>
+        <div class="nav-submenu-box"></div>
     </div>
 </div>
