@@ -61,10 +61,6 @@
         -ms-grid-column: 1;
     }
 
-    .custom-nav-container:nth-child(1) {
-        -ms-grid-column: 3;
-    }
-
     .custom-nav-container:nth-child(2) {
         -ms-grid-column: 5;
     }
@@ -159,6 +155,10 @@
         background-color: #4b4b4b;
         color: white;
         text-align: left;
+    }
+
+    footer div:nth-child(1) {
+        -ms-grid-column: 1;
     }
 
     footer div:nth-child(2) {
