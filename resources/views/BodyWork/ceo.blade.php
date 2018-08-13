@@ -52,8 +52,12 @@
             font-size: 1vw;
         }
 
+        .ceo-wrapper-3 div:nth-child(1) {
+            -ms-grid-column: 1;
+        }
+
         .ceo-wrapper-3 div:nth-child(2) {
-            -ms-grid-column: 3;
+            -ms-grid-column: 2;
         }
 
         .ceo-wrapper-3 img {
