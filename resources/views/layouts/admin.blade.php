@@ -67,16 +67,18 @@
         </div>
         <div class="grid-item basicinfo-selector {{ preg_match('/admin\/branch/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
-             onclick="location.href='/admin';">
+             onclick="location.href='/admin/branch';">
             지점소개
         </div>
         <div class="grid-item basicinfo-selector {{ preg_match('/admin\/bodychallenger/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
-             onclick="location.href='/admin';">
+             onclick="location.href='/admin/bodychallenger';">
             바디웍 바디챌린져
         </div>
         <div class="grid-item basicinfo-selector {{ preg_match('/admin\/notice/', $_SERVER['REQUEST_URI']) ||
-                                                    preg_match('/admin\/event/', $_SERVER['REQUEST_URI'])
+                                                    preg_match('/admin\/event/', $_SERVER['REQUEST_URI']) ||
+                                                    preg_match('/admin\/lesson/', $_SERVER['REQUEST_URI']) ||
+                                                    preg_match('/admin\/freelesson/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
              onclick="location.href='/admin/notice';">
             상담신청

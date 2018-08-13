@@ -56,12 +56,12 @@
     </style>
 @endsection
 @section('content')
-    <h3>PT 레슨 문의</h3>
+    <h3>무료 PT 신청</h3>
     <hr>
-    <h5>PT 레슨 문의 - 글쓰기</h5>
+    <h5>무료 PT 신청 - 글쓰기</h5>
     <hr>
     <div class="table-responsive">
-        <form method="POST" action="{{ route('lesson.store') }}" enctype="multipart/form-data" id="lesson">
+        <form method="POST" action="{{ route('freelesson.store') }}" enctype="multipart/form-data" id="freelesson">
             {!! csrf_field() !!}
             <table class="table table-bordered">
                 <col width="25%">
@@ -152,8 +152,8 @@
         </form>
     </div>
     <div class="btn-wrapper">
-        <button class="btn" type="submit" form="lesson">작성완료</button>
-        <button class="btn"><a href="{{ route('lesson.index') }}">취소</a></button>
+        <button class="btn" type="submit" form="freelesson">작성완료</button>
+        <button class="btn"><a href="{{ route('freelesson.index') }}">취소</a></button>
     </div>
 @endsection
 @section('script')

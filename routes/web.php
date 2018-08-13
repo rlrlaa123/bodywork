@@ -79,6 +79,17 @@ Route::delete('lesson/{lesson}', 'LessonsController@destroy')->name('lesson.dest
 Route::get('/lesson/{lesson}/lock', 'LessonsController@lock')->name('lesson.lock');
 Route::post('/lesson/{lesson}/lock', 'LessonsController@lockOpen')->name('lesson.lock.open');
 
+Route::get('freelesson', 'FreeLessonsController@index')->name('freelesson.index');
+Route::get('freelesson/create', 'FreeLessonsController@create')->name('freelesson.create');
+Route::post('freelesson', 'FreeLessonsController@store')->name('freelesson.store');
+Route::get('freelesson/{freelesson}', 'FreeLessonsController@show')->name('freelesson.show');
+Route::get('freelesson/{freelesson}/edit', 'FreeLessonsController@edit')->name('freelesson.edit');
+Route::put('freelesson/{freelesson}', 'FreeLessonsController@update')->name('freelesson.update');
+Route::delete('freelesson/{freelesson}', 'FreeLessonsController@destroy')->name('freelesson.destroy');
+
+Route::get('/freelesson/{freelesson}/lock', 'FreeLessonsController@lock')->name('freelesson.lock');
+Route::post('/freelesson/{freelesson}/lock', 'FreeLessonsController@lockOpen')->name('freelesson.lock.open');
+
 Route::prefix('admin')->group(function() {
     Route::get('notice', 'Admin\NoticesController@index')->name('admin.notice.index');
     Route::get('notice/create', 'Admin\NoticesController@create')->name('admin.notice.create');
@@ -95,20 +106,20 @@ Route::prefix('admin')->group(function() {
     Route::get('event/{event}/edit', 'Admin\EventsController@edit')->name('admin.event.edit');
     Route::put('event/{event}', 'Admin\EventsController@update')->name('admin.event.update');
     Route::delete('event/{event}', 'Admin\EventsController@destroy')->name('admin.event.destroy');
+
+    Route::get('lesson', 'Admin\LessonsController@index')->name('admin.lesson.index');
+    Route::get('lesson/create', 'Admin\LessonsController@create')->name('admin.lesson.create');
+    Route::post('lesson', 'Admin\LessonsController@store')->name('admin.lesson.store');
+    Route::get('lesson/{lesson}', 'Admin\LessonsController@show')->name('admin.lesson.show');
+    Route::get('lesson/{lesson}/edit', 'Admin\LessonsController@edit')->name('admin.lesson.edit');
+    Route::put('lesson/{lesson}', 'Admin\LessonsController@update')->name('admin.lesson.update');
+    Route::delete('lesson/{lesson}', 'Admin\LessonsController@destroy')->name('admin.lesson.destroy');
+
+    Route::get('freelesson', 'Admin\FreeLessonsController@index')->name('admin.freelesson.index');
+    Route::get('freelesson/create', 'Admin\FreeLessonsController@create')->name('admin.freelesson.create');
+    Route::post('freelesson', 'Admin\FreeLessonsController@store')->name('admin.freelesson.store');
+    Route::get('freelesson/{freelesson}', 'Admin\FreeLessonsController@show')->name('admin.freelesson.show');
+    Route::get('freelesson/{freelesson}/edit', 'Admin\FreeLessonsController@edit')->name('admin.freelesson.edit');
+    Route::put('freelesson/{freelesson}', 'Admin\FreeLessonsController@update')->name('admin.freelesson.update');
+    Route::delete('freelesson/{freelesson}', 'Admin\FreeLessonsController@destroy')->name('admin.freelesson.destroy');
 });
-//
-//Route::get('/notice/2', function() {
-//    return view('CustomerCenter.Event.index');
-//});
-//
-//Route::get('/notice/3', function() {
-//    return view('CustomerCenter.Lesson.index');
-//});
-//
-//Route::get('/notice/4', function() {
-//    return view('CustomerCenter.FreeLesson.index');
-//});
-//
-//Route::get('/notice/5', function() {
-//    return view('CustomerCenter.Consult.index');
-//});

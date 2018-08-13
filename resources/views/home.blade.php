@@ -87,10 +87,24 @@
 
         .bodywork-menu-container {
             display: grid;
+            display: -ms-grid;
             grid-template-columns: repeat(2, 50%);
+            -ms-grid-columns: 1fr 0 1fr;
             grid-gap: 30px;
             width: 90%;
             margin: auto;
+        }
+
+        .bodywork-menu:nth-child(2) {
+            -ms-grid-column: 3;
+        }
+
+        .bodywork-menu:nth-child(3) {
+            -ms-grid-column: 5;
+        }
+
+        .bodywork-menu:nth-child(4) {
+            -ms-grid-column: 7;
         }
 
         .bodywork-menu {

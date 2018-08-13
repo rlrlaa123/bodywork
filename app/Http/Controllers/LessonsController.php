@@ -56,15 +56,15 @@ class LessonsController extends Controller
                 ->withInput();
         }
 
-        $notice = new Lesson;
+        $lesson = new Lesson;
 
-        $notice->name = $request->name;
-        $notice->email = $request->email;
-        $notice->password = Hash::make($request->password);
-        $notice->title = $request->title;
-        $notice->contents = $request->contents;
+        $lesson->name = $request->name;
+        $lesson->email = $request->email;
+        $lesson->password = Hash::make($request->password);
+        $lesson->title = $request->title;
+        $lesson->contents = $request->contents;
 
-        $notice->save();
+        $lesson->save();
 
         return redirect('/lesson');
     }
@@ -155,7 +155,7 @@ class LessonsController extends Controller
                 ->withInput();
         }
 
-        $request->session()->put('password', $request->password);
+        $request->session()->flash('password', $request->password);
 
         return redirect(route('lesson.show', $id));
     }

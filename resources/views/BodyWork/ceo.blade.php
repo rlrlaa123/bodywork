@@ -24,7 +24,6 @@
         .ceo-wrapper-2 {
             margin: 50px;
             display: flex;
-            /*grid-template-columns: 50% 50%;*/
             text-align: left;
             align-items: center;
             font-size: 1vw;
@@ -67,6 +66,7 @@
             }
 
             .ceo-wrapper-2 {
+                display: block;
                 grid-template-columns: unset;
             }
 

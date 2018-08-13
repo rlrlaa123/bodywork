@@ -7,10 +7,10 @@
     </style>
 @endsection
 @section('content')
-    <form method="POST" action="{{ route('lesson.lock.open', $lesson->id) }}" enctype="multipart/form-data" id="lesson">
+    <form method="POST" action="{{ route('freelesson.lock.open', $freelesson->id) }}" enctype="multipart/form-data" id="freelesson">
         {!! csrf_field() !!}
         <div class="password-wrapper">
-            <h4>PT 레슨 문의 글</h4>
+            <h4>무료 PT 신청 글</h4>
             <div class="password-container">
                 <div>
                     <p style="font-weight: bold;">비밀글 기능으로 보호된 글입니다.</p>

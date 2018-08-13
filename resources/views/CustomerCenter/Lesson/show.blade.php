@@ -56,7 +56,7 @@
             <tr>
                 <th scope="row">답변 <img src="/img/reply.png" width="15px"></th>
                 <td colspan="3" class="content">
-                    {!! nl2br($lesson->answers) !!}
+                    {!! nl2br($lesson->reply) !!}
                 </td>
             </tr>
             </tbody>

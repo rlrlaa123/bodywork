@@ -8,7 +8,7 @@
     </style>
 @endsection
 @section('content')
-    <h3>PT 레슨 문의</h3>
+    <h3>무료 PT 신청</h3>
     <hr>
     <div class="table-responsive">
         <table class="table table-hover landscape">
@@ -28,20 +28,20 @@
             </thead>
             <tbody>
 
-            @forelse($lessons as $lesson)
-                <tr onclick="location.href = '{{ route('lesson.lock', $lesson->id) }}'">
-                    <td>{{ $lesson->id }}</td>
+            @forelse($freelessons as $freelesson)
+                <tr onclick="location.href = '{{ route('freelesson.lock', $freelesson->id) }}'">
+                    <td>{{ $freelesson->id }}</td>
                     <td>
-                        {{ $lesson->title }}
+                        {{ $freelesson->title }}
                         <img src="/img/lock.png" width="20px" style="margin-bottom: 5px;">
-                        @if($lesson->reply != null)
+                        @if($freelesson->reply != null)
                             <span style="color: red;">답변완료!</span>
                         @else
                         @endif
                     </td>
-                    <td>{{ $lesson->name }}</td>
-                    <td>{{ $lesson->created_at }}</td>
-                    <td>{{ $lesson->view }}</td>
+                    <td>{{ $freelesson->name }}</td>
+                    <td>{{ $freelesson->created_at }}</td>
+                    <td>{{ $freelesson->view }}</td>
                 </tr>
             @empty
                 <tr>
@@ -67,13 +67,13 @@
             </thead>
             <tbody>
 
-            @forelse($lessons as $lesson)
-                <tr onclick="location.href = '{{ route('lesson.lock', $lesson->id) }}'">
-                    <td>{{ $lesson->id }}</td>
-                    <td>{{ $lesson->title }}</td>
-                    <td>{{ $lesson->name }}</td>
-                    <td>{{ $lesson->created_at }}</td>
-                    <td>{{ $lesson->view }}</td>
+            @forelse($freelessons as $freelesson)
+                <tr onclick="location.href = '{{ route('freelesson.lock', $freelesson->id) }}'">
+                    <td>{{ $freelesson->id }}</td>
+                    <td>{{ $freelesson->title }}</td>
+                    <td>{{ $freelesson->name }}</td>
+                    <td>{{ $freelesson->created_at }}</td>
+                    <td>{{ $freelesson->view }}</td>
                 </tr>
             @empty
                 <tr>
@@ -84,18 +84,18 @@
         </table>
     </div>
     <div class="btn-wrapper">
-        <button class="btn"><a href="{{ route('lesson.create') }}">글쓰기</a></button>
+        <button class="btn"><a href="{{ route('freelesson.create') }}">글쓰기</a></button>
     </div>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $lessons->previousPageUrl() }}">이전</a></li>
-        @if($lessons->total()/10 < 1)
+        <li class="page-item"><a class="page-link" href="{{ $freelessons->previousPageUrl() }}">이전</a></li>
+        @if($freelessons->total()/10 < 1)
             <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
         @else
-            @for($i = 1; $i <= $lessons->total()/10; $i++)
+            @for($i = 1; $i <= $freelessons->total()/10; $i++)
                 <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
             @endfor
         @endif
-        <li class="page-item"><a class="page-link" href="{{ $lessons->nextPageUrl() }}">다음</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $freelessons->nextPageUrl() }}">다음</a></li>
     </ul>
 @endsection
 @section('script')

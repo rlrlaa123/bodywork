@@ -8,11 +8,17 @@
 
         .bodywork-logo {
             display: grid;
+            display: -ms-grid;
             grid-template-columns: 45% 55%;
+            -ms-grid-columns: 45% 55%;
             margin: 50px 20%;
             height: 200px;
             align-items: center;
             justify-content: center;
+        }
+
+        .bodywork-logo div:nth-child(2) {
+            -ms-grid-column: 3;
         }
 
         .bodywork-logo img {
@@ -21,11 +27,11 @@
             border-radius: 100px;
         }
 
-        .bodywork-log:nth-child(1) {
+        .bodywork-logo:nth-child(1) {
             text-align: right;
         }
 
-        .bodywork-log:nth-child(2) {
+        .bodywork-logo:nth-child(2) {
             text-align: left;
             padding-left: 50px;
         }
@@ -44,7 +50,7 @@
         }
 
         .bodywork-intro p {
-            margin: 50px 0 100px 0;
+            margin: 50px 50px 100px 50px;
             line-height: 2.25;
         }
 

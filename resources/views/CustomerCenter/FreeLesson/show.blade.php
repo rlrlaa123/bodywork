@@ -22,7 +22,7 @@
     </style>
 @endsection
 @section('content')
-    <h3>PT 레슨 문의</h3>
+    <h3>무료 PT 신청</h3>
     <hr>
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -33,30 +33,30 @@
             <tbody>
             <tr>
                 <th scope="row">제목</th>
-                <td colspan="3">{{ $lesson->title }}</td>
+                <td colspan="3">{{ $freelesson->title }}</td>
             </tr>
             <tr>
                 <th scope="row">이름</th>
-                <td>{{ $lesson->name }}</td>
+                <td>{{ $freelesson->name }}</td>
                 <th scope="row">이메일</th>
-                <td>{{ $lesson->email }}</td>
+                <td>{{ $freelesson->email }}</td>
             </tr>
             <tr>
                 <th scope="row">조회수</th>
-                <td>{{ $lesson->view }}</td>
+                <td>{{ $freelesson->view }}</td>
                 <th scope="row">등록일</th>
-                <td>{{ $lesson->created_at }}</td>
+                <td>{{ $freelesson->created_at }}</td>
             </tr>
             <tr>
                 <th scope="row">내용</th>
                 <td colspan="3" class="content">
-                    {!! nl2br($lesson->contents) !!}
+                    {!! nl2br($freelesson->contents) !!}
                 </td>
             </tr>
             <tr>
                 <th scope="row">답변 <img src="/img/reply.png" width="15px"></th>
                 <td colspan="3" class="content">
-                    {!! nl2br($lesson->reply) !!}
+                    {!! nl2br($freelesson->reply) !!}
                 </td>
             </tr>
             </tbody>

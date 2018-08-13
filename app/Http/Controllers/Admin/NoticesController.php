@@ -22,7 +22,7 @@ class NoticesController extends Controller
      */
     public function index()
     {
-        $notices = Notice::orderby('created_at', 'asc')->paginate(10);
+        $notices = Notice::orderby('created_at', 'desc')->paginate(10);
 
         return view('admin.Notice.index', compact('notices'));
     }
