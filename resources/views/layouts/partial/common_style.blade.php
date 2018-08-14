@@ -1,6 +1,6 @@
 <style>
     body {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: 'Nanum Barun Gothic', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-size: 2.5vw;
@@ -213,7 +213,7 @@
 
     @media (orientation: portrait) {
         body {
-            font-family: 'Avenir', Helvetica, Arial, sans-serif;
+            font-family: 'Nanum Barun Gothic', Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 2.5vw;
