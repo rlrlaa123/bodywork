@@ -140,9 +140,19 @@
         <div class="branch-selector">
             @for($i = 1; $i <= count($branches); $i++)
                 @if($i == 1)
-                    <div class="branch-btn {{ $i }} active"><a href="/branch/1/{{ $i }}">{{ $i }}호점</a></div>
+                    <a href="/branch/1/{{ $i }}">
+                    @php($pattern = '/\/branch\/1\/' . $i . '/')
+                        <div class="branch-btn {{ $i }} {{ preg_match($pattern, $_SERVER['REQUEST_URI']) ? ' active' : '' }}">
+                            {{ $i }}호점
+                        </div>
+                    </a>
                 @else
-                    <div class="branch-btn {{ $i }} active"><a href="/branch/1/{{ $i }}">{{ $i }}호점</a></div>
+                    @php($pattern = '/\/branch\/1\/' . $i . '/')
+                    <a href="/branch/1/{{ $i }}">
+                        <div class="branch-btn {{ $i }} {{ preg_match($pattern, $_SERVER['REQUEST_URI']) ? ' active' : '' }}">
+                            {{ $i }}호점
+                        </div>
+                    </a>
                 @endif
             @endfor
         </div>
