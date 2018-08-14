@@ -342,7 +342,7 @@
         $('.branch-btn').click(function () {
             var index = $(this).attr('class').slice(-1);
 
-            for (var i = 1; i <= 3; i++) {
+            for (var i = 1; i <= {{ count($branches) }}; i++) {
                 $('.branch-location-wrapper.' + i).css('display', 'none');
                 $('.branch-btn')[i - 1].classList.remove('active');
             }
