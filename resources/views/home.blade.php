@@ -122,7 +122,7 @@
         .bodywork-menu-text {
             border: 1px solid white;
             border-radius: 20px;
-            width: 150px;
+            width: 180px;
             height: 30px;
             background: transparent;
             color: white;
