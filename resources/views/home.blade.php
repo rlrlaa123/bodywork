@@ -205,6 +205,7 @@
 
             .before-after-more-btn {
                 margin-top: 20px;
+                font-size: 11px;
             }
 
             .bodywork-menu-wrapper {
