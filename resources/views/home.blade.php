@@ -198,6 +198,14 @@
                 font-size: 11px;
             }
 
+            .bodywork-menu-wrapper h3 {
+                font-size: 20px;
+            }
+
+            .bodywork-menu-wrapper p {
+                font-size: 11px;
+            }
+
             .before-after-wrapper {
                 margin: 50px 0;
                 padding: 25px;
