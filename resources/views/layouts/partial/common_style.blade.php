@@ -48,7 +48,7 @@
         font-family: 'NanumBarunGothic', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-size: 2.5vw;
+        font-size: 1.5vw;
     }
     header {
         font-weight: bold;
