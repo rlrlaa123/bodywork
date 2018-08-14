@@ -38,12 +38,12 @@ Route::get('/bodywork/2', function() {
 });
 
 Route::get('/bodywork/3', function() {
-    return view('BodyWork.alliance');
+    $alliances = \App\Alliance::orderby('created_at', 'desc')->paginate(6);
+
+    return view('BodyWork.alliance', compact('alliances'));
 });
 
 Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function() {
     Route::get('/admin', function() {
@@ -254,4 +254,12 @@ Route::prefix('admin')->group(function() {
     Route::get('freelesson/{freelesson}/edit', 'Admin\FreeLessonsController@edit')->name('admin.freelesson.edit');
     Route::put('freelesson/{freelesson}', 'Admin\FreeLessonsController@update')->name('admin.freelesson.update');
     Route::delete('freelesson/{freelesson}', 'Admin\FreeLessonsController@destroy')->name('admin.freelesson.destroy');
+
+    Route::get('alliance', 'Admin\AlliancesController@index')->name('admin.alliance.index');
+    Route::get('alliance/create', 'Admin\AlliancesController@create')->name('admin.alliance.create');
+    Route::post('alliance', 'Admin\AlliancesController@store')->name('admin.alliance.store');
+    Route::get('alliance/{alliance}', 'Admin\AlliancesController@show')->name('admin.alliance.show');
+    Route::get('alliance/{alliance}/edit', 'Admin\AlliancesController@edit')->name('admin.alliance.edit');
+    Route::put('alliance/{alliance}', 'Admin\AlliancesController@update')->name('admin.alliance.update');
+    Route::delete('alliance/{alliance}', 'Admin\AlliancesController@destroy')->name('admin.alliance.destroy');
 });

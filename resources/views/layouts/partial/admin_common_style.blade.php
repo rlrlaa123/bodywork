@@ -84,9 +84,9 @@
         display: grid;
         display: -ms-grid;
         grid-column-gap: 0;
-        -ms-grid-columns: 20% 20% 20% 20% 20%;
+        -ms-grid-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
         text-align: center;
-        grid-template-columns: repeat(5, 20%);
+        grid-template-columns: repeat(6, 16.6%);
         font-size: 1vw;
         border: 1px solid #e1e1e1;
     }
@@ -105,6 +105,10 @@
 
     .grid-item:nth-child(5) {
         -ms-grid-column: 9;
+    }
+
+    .grid-item:nth-child(6) {
+        -ms-grid-column: 11;
     }
 
     .navsubbar div {

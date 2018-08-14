@@ -65,6 +65,11 @@
              onclick="location.href='/admin';">
             기본 관리
         </div>
+        <div class="grid-item basicinfo-selector {{ preg_match('/admin\/alliance/', $_SERVER['REQUEST_URI'])
+                                                    ? 'active' : ''}}" style="-ms-grid-column: 1"
+             onclick="location.href='/admin/alliance';">
+            제휴업체
+        </div>
         <div class="grid-item basicinfo-selector {{ preg_match('/admin\/branch/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
              onclick="location.href='/admin/branch';">
@@ -92,6 +97,8 @@
     <div class="navlayout">
         <div class="grid-item">
             @component('Components.home')
+            @endcomponent
+            @component('Components.alliance')
             @endcomponent
             @component('Components.customercenter')
             @endcomponent
