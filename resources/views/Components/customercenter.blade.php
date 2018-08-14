@@ -15,7 +15,7 @@
             <li class="selector {{ preg_match('/\/admin\/event/', $_SERVER['REQUEST_URI']) ||
                                    preg_match('/\/admin\/event\?page\=[0-9]/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
-                <a href="/admin/event">공지사항</a>
+                <a href="/admin/event">이벤트</a>
             </li>
             <li class="selector {{ preg_match('/\/admin\/lesson/', $_SERVER['REQUEST_URI']) ||
                                    preg_match('/\/admin\/lesson\?page\=[0-9]/', $_SERVER['REQUEST_URI'])
