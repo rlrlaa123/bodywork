@@ -388,7 +388,7 @@
     </div>
 
     <div class="bodywork-call-wrapper">
-        <p style="text-align: left; margin: 10px 0 0 15px; font-size: 13px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
+        <p style="text-align: left; margin: 10px 0 0 15px; font-size: 11px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
         <div class="bodywork-call-box">
             <div class="bodywork-call-container" onclick="location.href='tel:010-7114-4542'">
                 <span>본점 1호점<br> 전화하기</span>
