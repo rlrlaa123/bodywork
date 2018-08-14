@@ -45,11 +45,16 @@ Route::middleware('auth')->group(function() {
 });
 
 Route::get('/branch/1', function() {
-    return view('Branch.branch');
+    $branches = \App\Branch::all();
+
+    return view('Branch.branch', compact('branches'));
 });
 
 Route::get('/branch/2', function() {
-    return view('Branch.trainer');
+    $trainers = \App\Trainer::all();
+    $branches = \App\Branch::all();
+
+    return view('Branch.trainer', compact('trainers', 'branches'));
 });
 
 Route::get('/bodychallenger/1', function() {
@@ -57,7 +62,9 @@ Route::get('/bodychallenger/1', function() {
 });
 
 Route::get('/bodychallenger/2', function() {
-    return view('BodyChallenger.beforeafter');
+    $bfs = \App\BeforeAfter::orderby('created_at', 'desc')->paginate(6);
+
+    return view('BodyChallenger.beforeafter', compact('bfs'));
 });
 
 Route::get('/error', function() {
@@ -91,6 +98,30 @@ Route::get('/freelesson/{freelesson}/lock', 'FreeLessonsController@lock')->name(
 Route::post('/freelesson/{freelesson}/lock', 'FreeLessonsController@lockOpen')->name('freelesson.lock.open');
 
 Route::prefix('admin')->group(function() {
+    Route::get('branch', 'Admin\BranchesController@index')->name('admin.branch.index');
+    Route::get('branch/create', 'Admin\BranchesController@create')->name('admin.branch.create');
+    Route::post('branch', 'Admin\BranchesController@store')->name('admin.branch.store');
+    Route::get('branch/{branch}', 'Admin\BranchesController@show')->name('admin.branch.show');
+    Route::get('branch/{branch}/edit', 'Admin\BranchesController@edit')->name('admin.branch.edit');
+    Route::put('branch/{branch}', 'Admin\BranchesController@update')->name('admin.branch.update');
+    Route::delete('branch/{branch}', 'Admin\BranchesController@destroy')->name('admin.branch.destroy');
+
+    Route::get('trainer', 'Admin\TrainersController@index')->name('admin.trainer.index');
+    Route::get('trainer/create', 'Admin\TrainersController@create')->name('admin.trainer.create');
+    Route::post('trainer', 'Admin\TrainersController@store')->name('admin.trainer.store');
+    Route::get('trainer/{trainer}', 'Admin\TrainersController@show')->name('admin.trainer.show');
+    Route::get('trainer/{trainer}/edit', 'Admin\TrainersController@edit')->name('admin.trainer.edit');
+    Route::put('trainer/{trainer}', 'Admin\TrainersController@update')->name('admin.trainer.update');
+    Route::delete('trainer/{trainer}', 'Admin\TrainersController@destroy')->name('admin.trainer.destroy');
+
+    Route::get('beforeafter', 'Admin\BeforeAftersController@index')->name('admin.beforeafter.index');
+    Route::get('beforeafter/create', 'Admin\BeforeAftersController@create')->name('admin.beforeafter.create');
+    Route::post('beforeafter', 'Admin\BeforeAftersController@store')->name('admin.beforeafter.store');
+    Route::get('beforeafter/{beforeafter}', 'Admin\BeforeAftersController@show')->name('admin.beforeafter.show');
+    Route::get('beforeafter/{beforeafter}/edit', 'Admin\BeforeAftersController@edit')->name('admin.beforeafter.edit');
+    Route::put('beforeafter/{beforeafter}', 'Admin\BeforeAftersController@update')->name('admin.beforeafter.update');
+    Route::delete('beforeafter/{beforeafter}', 'Admin\BeforeAftersController@destroy')->name('admin.beforeafter.destroy');
+
     Route::get('notice', 'Admin\NoticesController@index')->name('admin.notice.index');
     Route::get('notice/create', 'Admin\NoticesController@create')->name('admin.notice.create');
     Route::post('notice', 'Admin\NoticesController@store')->name('admin.notice.store');

@@ -1,4 +1,7 @@
 <style>
+    .help-block {
+        color: red;
+    }
     #wrapper {
         width: 100%;
         text-align: left;
@@ -81,9 +84,9 @@
         display: grid;
         display: -ms-grid;
         grid-column-gap: 0;
-        -ms-grid-columns: 25% 25% 25% 25%;
+        -ms-grid-columns: 20% 20% 20% 20% 20%;
         text-align: center;
-        grid-template-columns: repeat(4, 25%);
+        grid-template-columns: repeat(5, 20%);
         font-size: 1vw;
         border: 1px solid #e1e1e1;
     }
@@ -96,19 +99,12 @@
         -ms-grid-column: 5;
     }
 
-    .grid-item:nth-child(7) {
+    .grid-item:nth-child(4) {
+        -ms-grid-column: 7;
+    }
+
+    .grid-item:nth-child(5) {
         -ms-grid-column: 9;
-    }
-
-    .grid-item:nth-child(9) {
-        -ms-grid-column: 11;
-    }
-
-    .grid-item:nth-child(11) {
-        -ms-grid-column: 13;
-    }
-    .grid-item:nth-child(13) {
-        -ms-grid-column: 15;
     }
 
     .navsubbar div {

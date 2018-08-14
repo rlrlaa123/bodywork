@@ -5,41 +5,39 @@
 @endsection
 @section('content')
     <header>
-        <h4 style="display: inline-block;">※ 지점소개</h4>
+        <h4 style="display: inline-block;">※ 트레이너 소개</h4>
     </header>
     <hr>
     <table class="table">
         <col width="15%">
-        <col width="50%">
         <col width="15%">
         <col width="15%">
-        <col width="20%">
+        <col width="40%">
+        <col width="15%">
         <thead>
         <tr>
             <th>호점</th>
-            <th>소개글</th>
-            <th>주소</th>
-            <th>운영시간</th>
+            <th>사진</th>
+            <th>이름</th>
+            <th>자격사항</th>
             <th>삭제</th>
         </tr>
         </thead>
         <tbody>
-        @forelse($branches as $branch)
+        @forelse($trainers as $trainer)
             <tr>
-                <td>{{ $branch->number }}호점</td>
+                <td>{{ $trainer->branch->number }}호점</td>
+                <td><img src="/{{ $trainer->image }}" width="100px"></td>
+                <td>
+                    {{ $trainer->name }}
+                </td>
                 <td>
                     <a class="name-selector"
-                       href="{{ route('admin.branch.edit', [$branch->id]) }}">
-                        {{ $branch->description }}
+                       href="{{ route('admin.trainer.edit', [$trainer->id]) }}">
+                        {{ $trainer->description }}
                     </a>
                 </td>
-                <td>{{ $branch->location }}</td>
-                <td>
-                    <p>{{ $branch->time1 }}</p>
-                    <p>{{ $branch->time2 }}</p>
-                    <p>{{ $branch->time3 }}</p>
-                </td>
-                <td><a class="delete" onclick="deleteConversation({{ $branch->id }})">삭제</a></td>
+                <td><a class="delete" onclick="deleteConversation({{ $trainer->id }})">삭제</a></td>
             </tr>
         @empty
             <tr>
@@ -49,21 +47,21 @@
         </tbody>
     </table>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $branches->previousPageUrl() }}">이전</a></li>
-        @if($branches->total()/10 < 1)
+        <li class="page-item"><a class="page-link" href="{{ $trainers->previousPageUrl() }}">이전</a></li>
+        @if($trainers->total()/6 < 1)
             <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
         @else
-            @if($branches->total() % 10 == 0)
-                @for($i = 1; $i <= $branches->total()/10; $i++)
+            @if($trainers->total() % 6 == 0)
+                @for($i = 1; $i <= $trainers->total()/6; $i++)
                     <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
                 @endfor
             @else
-                @for($i = 1; $i <= $branches->total()/10 + 1; $i++)
+                @for($i = 1; $i <= $trainers->total()/6 + 1; $i++)
                     <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
                 @endfor
             @endif
         @endif
-        <li class="page-item"><a class="page-link" href="{{ $branches->nextPageUrl() }}">다음</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $trainers->nextPageUrl() }}">다음</a></li>
     </ul>
 @endsection
 @section('script')
@@ -78,9 +76,9 @@
             if (confirm('글을 삭제합니다.')) {
                 $.ajax({
                     type: 'DELETE',
-                    url: 'branch/' + id
+                    url: 'trainer/' + id
                 }).then(function (res) {
-                    window.location.href = '/admin/branch'
+                    window.location.href = '/admin/trainer'
                 })
             }
         }

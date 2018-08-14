@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class BeforeAfter extends Model
 {
-    //
+    protected $table = 'beforeafters';
 }

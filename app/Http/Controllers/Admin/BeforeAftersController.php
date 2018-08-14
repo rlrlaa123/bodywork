@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Event;
+use App\BeforeAfter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Validator;
 
-
-class EventsController extends Controller
+class BeforeAftersController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +17,9 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::orderby('created_at', 'desc')->paginate(10);
+        $bfs = BeforeAfter::orderby('created_at', 'desc')->paginate(5);
 
-        return view('admin.Event.index', compact('events'));
+        return view('admin.BeforeAfter.index', compact('bfs'));
     }
 
     /**
@@ -34,7 +29,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('admin.Event.create');
+        return view('admin.BeforeAfter.create');
     }
 
     /**
@@ -46,8 +41,7 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'contents' => 'required',
+            'image' => 'required',
         ]);
 
         $validator->after(function () {
@@ -62,29 +56,26 @@ class EventsController extends Controller
         if ($request->hasFile('image')) {
             if (!file_exists('storage')) {
                 File::makeDirectory('storage');
-                if(!file_exists('storage/events')) {
-                    File::makeDirectory('storage/events');
+                if(!file_exists('storage/beforeafters')) {
+                    File::makeDirectory('storage/beforeafters');
                 }
             }
 
-            $event = $request->file('image');
-            $event_name = 'event' . time() . '.' . $event->getClientOriginalExtension();
-            $destinationPath_event = public_path('storage/events/');
-            $event->move($destinationPath_event, $event_name);
+            $bf = $request->file('image');
+            $bf_name = 'bf' . time() . '.' . $bf->getClientOriginalExtension();
+            $destinationPath_bf = public_path('storage/beforeafters/');
+            $bf->move($destinationPath_bf, $bf_name);
         }
 
-        $event = new Event;
-
-        $event->title = $request->title;
-        $event->contents = $request->contents;
+        $bf = new BeforeAfter;
 
         if($request->has('image')) {
-            $event->image = 'storage/events/' . $event_name;
+            $bf->image = 'storage/beforeafters/' . $bf_name;
         }
 
-        $event->save();
+        $bf->save();
 
-        return redirect('admin/event');
+        return redirect('admin/beforeafter');
     }
 
     /**
@@ -106,9 +97,9 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::find($id);
+        $bf = BeforeAfter::find($id);
 
-        return view('admin.Event.edit', compact('event'));
+        return view('admin.BeforeAfter.edit', compact('bf'));
     }
 
     /**
@@ -123,34 +114,29 @@ class EventsController extends Controller
         if ($request->hasFile('image')) {
             if (!file_exists('storage')) {
                 File::makeDirectory('storage');
-                if(!file_exists('storage/events')) {
-                    File::makeDirectory('storage/events');
+                if(!file_exists('storage/beforeafters')) {
+                    File::makeDirectory('storage/beforeafters');
                 }
             }
-            $event = Event::find($id);
+            $bf = BeforeAfter::find($id);
 
-            if($event->image != null) {
-                File::delete($event->image);
+            if($bf->image != null) {
+                File::delete($bf->image);
             }
 
-            $event = $request->file('image');
-            $event_name = 'event' . time() . '.' . $event->getClientOriginalExtension();
-            $destinationPath_event = public_path('storage/events/');
-            $event->move($destinationPath_event, $event_name);
+            $bf = $request->file('image');
+            $bf_name = 'bf' . time() . '.' . $bf->getClientOriginalExtension();
+            $destinationPath_bf = public_path('storage/beforeafters/');
+            $bf->move($destinationPath_bf, $bf_name);
         }
 
-        Event::where('id', $id)->update([
-            'title' => $request->title,
-            'contents' => $request->contents,
-        ]);
-
         if($request->has('image')) {
-            Event::where('id', $id)->update([
-                'image' => 'storage/events/' . $event_name,
+            BeforeAfter::where('id', $id)->update([
+                'image' => 'storage/beforeafters/' . $bf_name,
             ]);
         }
 
-        return redirect('admin/event');
+        return redirect('admin/beforeafter');
     }
 
     /**
@@ -161,11 +147,11 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        $event = Event::find($id);
+        $bf = BeforeAfter::find($id);
 
-        File::delete($event->image);
+        File::delete($bf->image);
 
-        $event->delete();
+        $bf->delete();
 
         return response('success', 200);
     }

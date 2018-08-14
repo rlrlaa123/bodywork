@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Event;
+use App\Branch;
+use App\Trainer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Validator;
 
-
-class EventsController extends Controller
+class TrainersController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +18,9 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::orderby('created_at', 'desc')->paginate(10);
+        $trainers = Trainer::orderby('name')->paginate(6);
 
-        return view('admin.Event.index', compact('events'));
+        return view('admin.Trainer.index', compact('trainers'));
     }
 
     /**
@@ -34,7 +30,9 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('admin.Event.create');
+        $branches = Branch::all();
+
+        return view('admin.Trainer.create', compact('branches'));
     }
 
     /**
@@ -46,8 +44,9 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'contents' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required',
         ]);
 
         $validator->after(function () {
@@ -62,29 +61,30 @@ class EventsController extends Controller
         if ($request->hasFile('image')) {
             if (!file_exists('storage')) {
                 File::makeDirectory('storage');
-                if(!file_exists('storage/events')) {
-                    File::makeDirectory('storage/events');
+                if(!file_exists('storage/trainers')) {
+                    File::makeDirectory('storage/trainers');
                 }
             }
 
-            $event = $request->file('image');
-            $event_name = 'event' . time() . '.' . $event->getClientOriginalExtension();
-            $destinationPath_event = public_path('storage/events/');
-            $event->move($destinationPath_event, $event_name);
+            $trainer = $request->file('image');
+            $trainer_name = 'trainer' . time() . '.' . $trainer->getClientOriginalExtension();
+            $destinationPath_trainer = public_path('storage/trainers/');
+            $trainer->move($destinationPath_trainer, $trainer_name);
         }
 
-        $event = new Event;
+        $trainer = new Trainer;
 
-        $event->title = $request->title;
-        $event->contents = $request->contents;
+        $trainer->branch_id = Branch::find($request->branch)->id;
+        $trainer->name = $request->name;
+        $trainer->description = $request->description;
 
         if($request->has('image')) {
-            $event->image = 'storage/events/' . $event_name;
+            $trainer->image = 'storage/trainers/' . $trainer_name;
         }
 
-        $event->save();
+        $trainer->save();
 
-        return redirect('admin/event');
+        return redirect('admin/trainer');
     }
 
     /**
@@ -106,9 +106,11 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::find($id);
+        $trainer = Trainer::find($id);
 
-        return view('admin.Event.edit', compact('event'));
+        $branches = Branch::all();
+
+        return view('admin.Trainer.edit', compact('trainer', 'branches'));
     }
 
     /**
@@ -123,34 +125,35 @@ class EventsController extends Controller
         if ($request->hasFile('image')) {
             if (!file_exists('storage')) {
                 File::makeDirectory('storage');
-                if(!file_exists('storage/events')) {
-                    File::makeDirectory('storage/events');
+                if(!file_exists('storage/trainers')) {
+                    File::makeDirectory('storage/trainers');
                 }
             }
-            $event = Event::find($id);
+            $trainer = Trainer::find($id);
 
-            if($event->image != null) {
-                File::delete($event->image);
+            if($trainer->image != null) {
+                File::delete($trainer->image);
             }
 
-            $event = $request->file('image');
-            $event_name = 'event' . time() . '.' . $event->getClientOriginalExtension();
-            $destinationPath_event = public_path('storage/events/');
-            $event->move($destinationPath_event, $event_name);
+            $trainer = $request->file('image');
+            $trainer_name = 'trainer' . time() . '.' . $trainer->getClientOriginalExtension();
+            $destinationPath_trainer = public_path('storage/trainers/');
+            $trainer->move($destinationPath_trainer, $trainer_name);
         }
 
-        Event::where('id', $id)->update([
-            'title' => $request->title,
-            'contents' => $request->contents,
+        Trainer::where('id', $id)->update([
+            'branch_id' => Branch::find($request->branch)->id,
+            'name' => $request->name,
+            'description' => $request->description,
         ]);
 
         if($request->has('image')) {
-            Event::where('id', $id)->update([
-                'image' => 'storage/events/' . $event_name,
+            Trainer::where('id', $id)->update([
+                'image' => 'storage/trainers/' . $trainer_name,
             ]);
         }
 
-        return redirect('admin/event');
+        return redirect('admin/trainer');
     }
 
     /**
@@ -161,11 +164,11 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        $event = Event::find($id);
+        $trainer = Trainer::find($id);
 
-        File::delete($event->image);
+        File::delete($trainer->image);
 
-        $event->delete();
+        $trainer->delete();
 
         return response('success', 200);
     }

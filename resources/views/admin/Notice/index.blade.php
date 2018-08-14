@@ -10,14 +10,16 @@
     </header>
     <hr>
     <table class="table">
-        <col width="10%">
-        <col width="70%">
+        <col width="20%">
+        <col width="20%">
+        <col width="45%">
         <col width="10%">
         <col width="10%">
         <thead>
         <tr>
-            <th>일련번호</th>
+            <th>이미지</th>
             <th>제목</th>
+            <th>내용</th>
             <th>작성자</th>
             <th>삭제</th>
         </tr>
@@ -25,11 +27,17 @@
         <tbody>
         @forelse($notices as $notice)
             <tr>
-                <td>{{ $notice->id }}</td>
+                <td>
+                    @if($notice->image == null)
+                        <img src="/img/noimage.png" width="100px">
+                    @else
+                        <img src="/{{ $notice->image }}" width="100px"></td>
+                    @endif
+                <td>{{ $notice->title }}</td>
                 <td>
                     <a class="name-selector"
                        href="{{ route('admin.notice.edit', [$notice->id]) }}">
-                        {{ $notice->title }}
+                        {!! nl2br($notice->contents) !!}
                     </a>
                 </td>
                 <td>{{ $notice->author }}</td>
@@ -43,13 +51,19 @@
         </tbody>
     </table>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $notices->previousPageUrl() }}">이전</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $bfs->previousPageUrl() }}">이전</a></li>
         @if($notices->total()/10 < 1)
             <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
         @else
-            @for($i = 1; $i <= $notices->total()/10; $i++)
-                <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
-            @endfor
+            @if($notices->total() % 10 == 0)
+                @for($i = 1; $i <= $notices->total()/10; $i++)
+                    <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
+                @endfor
+            @else
+                @for($i = 1; $i <= $notices->total()/10 + 1; $i++)
+                    <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
+                @endfor
+            @endif
         @endif
         <li class="page-item"><a class="page-link" href="{{ $notices->nextPageUrl() }}">다음</a></li>
     </ul>

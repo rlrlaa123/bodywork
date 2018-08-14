@@ -70,10 +70,15 @@
              onclick="location.href='/admin/branch';">
             지점소개
         </div>
-        <div class="grid-item basicinfo-selector {{ preg_match('/admin\/bodychallenger/', $_SERVER['REQUEST_URI'])
+        <div class="grid-item basicinfo-selector {{ preg_match('/admin\/trainer/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
-             onclick="location.href='/admin/bodychallenger';">
-            바디웍 바디챌린져
+             onclick="location.href='/admin/trainer';">
+            트레이너 소개
+        </div>
+        <div class="grid-item basicinfo-selector {{ preg_match('/admin\/beforeafter/', $_SERVER['REQUEST_URI'])
+                                                    ? 'active' : ''}}" style="-ms-grid-column: 1"
+             onclick="location.href='/admin/beforeafter';">
+            Before & After
         </div>
         <div class="grid-item basicinfo-selector {{ preg_match('/admin\/notice/', $_SERVER['REQUEST_URI']) ||
                                                     preg_match('/admin\/event/', $_SERVER['REQUEST_URI']) ||
@@ -88,6 +93,12 @@
         <div class="grid-item">
             @component('Components.customercenter')
             @endcomponent
+            @component('Components.branch')
+            @endcomponent
+                @component('Components.trainer')
+                @endcomponent
+                @component('Components.beforeafter')
+                @endcomponent
         </div>
         <div class="grid-item">
             <div id="container">

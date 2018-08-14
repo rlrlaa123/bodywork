@@ -49,31 +49,28 @@
     <hr>
     <p style="text-align: left; margin: 20px 50px;">포토샵없는 리얼 후기사진입니다.</p>
     <div class="review-wrapper">
-        <div class="review-container">
-            <img src="/img/bf.jpg">
-        </div>
-        <div class="review-container">
-            <img src="/img/bf2.jpg">
-        </div>
-        <div class="review-container">
-            <img src="/img/bf3.jpg">
-        </div>
-        <div class="review-container">
-            <img src="/img/bf4.jpg">
-        </div>
-        <div class="review-container">
-            <img src="/img/bf5.jpg">
-        </div>
-        <div class="review-container">
-            <img src="/img/bf6.jpg">
-        </div>
+        @foreach($bfs as $bf)
+            <div class="review-container">
+                <img src="/{{ $bf->image }}">
+            </div>
+        @endforeach
     </div>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">이전</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">다음</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $bfs->previousPageUrl() }}">이전</a></li>
+        @if($bfs->total()/6 < 1)
+            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+        @else
+            @if($bfs->total() % 6 == 0)
+                @for($i = 1; $i <= $bfs->total()/6; $i++)
+                    <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
+                @endfor
+            @else
+                @for($i = 1; $i <= $bfs->total()/6 + 1; $i++)
+                    <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
+                @endfor
+            @endif
+        @endif
+        <li class="page-item"><a class="page-link" href="{{ $bfs->nextPageUrl() }}">다음</a></li>
     </ul>
 @endsection
 @section('script')
