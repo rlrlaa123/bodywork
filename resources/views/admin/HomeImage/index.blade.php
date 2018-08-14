@@ -87,21 +87,5 @@
 @endsection
 @section('script')
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        function deleteConversation(id) {
-            if (confirm('글을 삭제합니다.')) {
-                $.ajax({
-                    type: 'DELETE',
-                    url: 'lesson/' + id
-                }).then(function (res) {
-                    window.location.href = '/admin/lesson'
-                })
-            }
-        }
     </script>
 @endsection
