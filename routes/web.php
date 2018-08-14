@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    $home = \App\HomeImage::first();
+
+    return view('home', compact('home'));
 });
 
 Route::get('/ptprogram/1', function() {
@@ -34,13 +36,108 @@ Route::get('/bodywork/1', function() {
 Route::get('/bodywork/2', function() {
     return view('BodyWork.bodywork');
 });
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function() {
     Route::get('/admin', function() {
-        return view('admin.home');
+        $home = \App\HomeImage::first();
+
+        return view('admin.HomeImage.index', compact('home'));
+    });
+
+    Route::get('/admin/edit', function() {
+        $home = \App\HomeImage::first();
+
+        return view('admin.HomeImage.edit', compact('home'));
+    });
+
+    Route::put('/admin/update/{home}', function(\Illuminate\Http\Request $request, $id) {
+
+        $home_list = [
+            null, null, null
+        ];
+
+        for ($i = 1; $i <= 3; $i++) {
+            if ($request->hasFile('home' . $i)) {
+
+                if (!file_exists('storage')) {
+                    \Illuminate\Support\Facades\File::makeDirectory('storage');
+                    if (!file_exists('storage/home')) {
+                        \Illuminate\Support\Facades\File::makeDirectory('storage/home');
+                    }
+                }
+
+                $home = \App\HomeImage::first();
+
+                if ($home['home' . $i] != null) {
+                    \Illuminate\Support\Facades\File::delete($home['home' . $i]);
+                }
+
+                $home = $request->file('home' . $i);
+                $home_name = 'home' . $i . '.' . $home->getClientOriginalExtension();
+                $destinationPath_home = public_path('storage/home/');
+                $home->move($destinationPath_home, $home_name);
+
+                $home_list[$i - 1] = $home_name;
+            }
+        }
+
+
+        $bf_list = [
+            null, null, null, null, null, null, null, null
+        ];
+
+        for ($i = 1; $i <= 8; $i++) {
+            if ($request->hasFile('bf' . $i)) {
+
+                if (!file_exists('storage')) {
+                    \Illuminate\Support\Facades\File::makeDirectory('storage');
+                    if (!file_exists('storage/home')) {
+                        \Illuminate\Support\Facades\File::makeDirectory('storage/home');
+                    }
+                }
+
+                $home = \App\HomeImage::first();
+
+                if ($home['bf' . $i] != null) {
+                    \Illuminate\Support\Facades\File::delete($home['bf' . $i]);
+                }
+
+                $home = $request->file('bf' . $i);
+                $home_name = 'bf' . $i . '.' . $home->getClientOriginalExtension();
+                $destinationPath_home = public_path('storage/home/');
+                $home->move($destinationPath_home, $home_name);
+
+                $bf_list[$i - 1] = $home_name;
+            }
+        }
+
+        \App\HomeImage::first()->update([
+            'link1' => $request->link1,
+            'link2' => $request->link2,
+            'link3' => $request->link3,
+        ]);
+
+        for ($i = 1; $i <= 3; $i++) {
+            if ($request->has('home' . $i)) {
+                \App\HomeImage::where('id', $id)->update([
+                    'home' . $i => 'storage/home/'. $home_list[$i - 1],
+                ]);
+            }
+        }
+
+        for ($i = 1; $i <= 8; $i++) {
+            if ($request->has('bf' . $i)) {
+                \App\HomeImage::where('id', $id)->update([
+                    'bf' . $i => 'storage/home/'. $bf_list[$i - 1],
+                ]);
+            }
+        }
+
+        return redirect('admin');
     });
 });
 

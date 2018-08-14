@@ -63,7 +63,7 @@
         <div class="grid-item basicinfo-selector {{ preg_match('/admin$/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
              onclick="location.href='/admin';">
-            기본관리
+            기본 관리
         </div>
         <div class="grid-item basicinfo-selector {{ preg_match('/admin\/branch/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
@@ -91,14 +91,16 @@
     </div>
     <div class="navlayout">
         <div class="grid-item">
+            @component('Components.home')
+            @endcomponent
             @component('Components.customercenter')
             @endcomponent
             @component('Components.branch')
             @endcomponent
-                @component('Components.trainer')
-                @endcomponent
-                @component('Components.beforeafter')
-                @endcomponent
+            @component('Components.trainer')
+            @endcomponent
+            @component('Components.beforeafter')
+            @endcomponent
         </div>
         <div class="grid-item">
             <div id="container">

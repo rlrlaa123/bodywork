@@ -51,7 +51,7 @@
         </tbody>
     </table>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $bfs->previousPageUrl() }}">이전</a></li>
+        <li class="page-item"><a class="page-link" href="{{ $notices->previousPageUrl() }}">이전</a></li>
         @if($notices->total()/10 < 1)
             <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
         @else

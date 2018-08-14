@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        \Illuminate\Support\Facades\DB::table('homeimages')->delete();
+
+        $this->call(HomeImageSeeder::class);
     }
 }

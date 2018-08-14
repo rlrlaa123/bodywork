@@ -130,14 +130,6 @@
             font-weight: bold;
         }
 
-        .carousel-control-prev-icon.bf {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
-        }
-
-        .carousel-control-next-icon.bf {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
-        }
-
         @media (orientation: portrait) {
             #main-carousel-inner img {
                 height: 250px;
@@ -184,6 +176,14 @@
                 width: 100%;
                 height: 250px;
             }
+
+            .carousel-control-prev-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
+            }
+
+            .carousel-control-next-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
+            }
         }
     </style>
 @endsection
@@ -196,13 +196,19 @@
         </ol>
         <div id="main-carousel-inner" class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/img/main1.jpg" alt="First slide">
+                <a href="{{ $home->link1 }}">
+                    <img class="d-block w-100" src="/{{ $home->home1 }}" alt="First slide">
+                </a>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/img/main2.jpg" alt="Second slide">
+                <a href="{{ $home->link2 }}">
+                    <img class="d-block w-100" src="/{{ $home->home2 }}" alt="Second slide">
+                </a>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/img/main3.jpg" alt="Third slide">
+                <a href="{{ $home->link3 }}">
+                    <img class="d-block w-100" src="/{{ $home->home3 }}" alt="Third slide">
+                </a>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselMainIndicators" role="button" data-slide="prev">
@@ -215,7 +221,6 @@
         </a>
     </div>
 
-
     <div class="before-after-wrapper">
         <div class="before-after-title-wrapper">
             <h3>Before & After</h3>
@@ -224,13 +229,31 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="/img/bf.jpg" alt="First slide">
+                    <img class="d-block w-100" src="/{{ $home->bf1 }}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="/img/bf2.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="/{{ $home->bf2 }}" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="/img/bf3.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="/{{ $home->bf3 }}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/{{ $home->bf4 }}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/{{ $home->bf5 }}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/{{ $home->bf6 }}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/{{ $home->bf7 }}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/{{ $home->bf8 }}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/{{ $home->bf9 }}" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -247,28 +270,22 @@
                 <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#recipeCarousel" data-slide-to="1"></li>
                 <li data-target="#recipeCarousel" data-slide-to="2"></li>
-                <li data-target="#recipeCarousel" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner w-70" role="listbox">
                 <div class="carousel-item row no-gutters active">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf2.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf3.jpg"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf1 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf2 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf3 }}"></div>
                 </div>
                 <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf4.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf5.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf6.jpg"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf4 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf5 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf6 }}"></div>
                 </div>
                 <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf7.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf8.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf9.jpg"></div>
-                </div>
-                <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf10.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf11.jpg"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/img/bf12.jpg"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf7 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf8 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf9 }}"></div>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
