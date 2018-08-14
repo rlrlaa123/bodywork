@@ -295,7 +295,7 @@
             <h3>Before & After</h3>
             <p>바디웍 회원님들의 비포애프터 입니다.</p>
         </div>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="/{{ $home->bf1 }}" alt="First slide">
@@ -334,7 +334,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
             <ol id="before-after-carousel-indicator" class="carousel-indicators">
                 <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#recipeCarousel" data-slide-to="1"></li>
