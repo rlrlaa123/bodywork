@@ -14,7 +14,7 @@
             <div class="nav-submenu-container"><a href="/bodywork/3">제휴 업체</a></div>
         </div>
         <div class="nav-submenu-box 1">
-            <div class="nav-submenu-container"><a href="/branch/1">지점 소개</a></div>
+            <div class="nav-submenu-container"><a href="/branch/1/1">지점 소개</a></div>
             <div class="nav-submenu-container"><a href="/branch/2">트레이너 소개</a></div>
         </div>
         <div class="nav-submenu-box 2">

@@ -145,10 +145,11 @@ Route::middleware('auth')->group(function() {
     });
 });
 
-Route::get('/branch/1', function() {
+Route::get('/branch/1/{branch}', function($id) {
+    $branch = \App\Branch::find($id);
     $branches = \App\Branch::all();
 
-    return view('Branch.branch', compact('branches'));
+    return view('Branch.branch', compact('branch', 'branches'));
 });
 
 Route::get('/branch/2', function() {
