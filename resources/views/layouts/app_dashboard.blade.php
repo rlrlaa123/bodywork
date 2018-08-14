@@ -36,6 +36,10 @@
             header div:nth-child(1) {
                 display: none;
             }
+
+            footer {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
