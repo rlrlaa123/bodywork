@@ -27,9 +27,6 @@
                                    ? 'active' : '' }}">
                 <a href="/admin/freelesson">무료 PT 신청</a>
             </li>
-            <li class="selector {{ preg_match('/\/admin\/inquiry/', $_SERVER['REQUEST_URI']) ? 'active' : '' }}">
-                <a href="/admin/inquiry">실시간 상담</a>
-            </li>
         </ul>
     </div>
 </div>
