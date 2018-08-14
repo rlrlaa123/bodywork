@@ -37,7 +37,7 @@
                 display: none;
             }
 
-            footer {
+            footer p {
                 font-size: 11px;
             }
         }
