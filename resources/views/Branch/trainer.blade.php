@@ -127,7 +127,7 @@
         $('.trainer-btn').click(function () {
             var index = $(this).attr('class').slice(-1);
 
-            for (var i = 1; i <= 3; i++) {
+            for (var i = 1; i <= {{ count($trainers) }}; i++) {
                 $('.trainer-wrapper.' + i).css('display', 'none');
                 $('.trainer-btn')[i - 1].classList.remove('active');
             }
