@@ -71,6 +71,10 @@
             .content-2 {
                 margin: 20px;
             }
+
+            p {
+                font-size: 11px;
+            }
         }
     </style>
 @endsection

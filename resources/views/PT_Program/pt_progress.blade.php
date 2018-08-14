@@ -69,6 +69,10 @@
             .pt-progress-info {
                 margin: 50px;
             }
+
+            p {
+                font-size: 11px;
+            }
         }
     </style>
 @endsection

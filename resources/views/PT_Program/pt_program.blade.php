@@ -84,6 +84,10 @@
             .pt-program-wrapper-3 div:nth-child(2) h3 {
                 font-size: 20px;
             }
+
+            p {
+                font-size: 11px;
+            }
         }
     </style>
 @endsection
