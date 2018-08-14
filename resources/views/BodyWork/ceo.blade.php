@@ -72,6 +72,10 @@
         }
 
         @media (orientation: portrait) {
+            p {
+                font-size: 11px;
+            }
+
             .cover-image {
                 width: 100%;
                 height: 250px;
