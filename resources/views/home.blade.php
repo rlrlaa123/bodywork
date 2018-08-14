@@ -217,6 +217,7 @@
             .bodywork-menu-text {
                 width: 70%;
                 height: 25px;
+                font-size: 11px;
             }
 
             .carousel-item img {
