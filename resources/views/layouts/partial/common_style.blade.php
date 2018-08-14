@@ -1,6 +1,51 @@
 <style>
+    @font-face {
+        font-family: 'Nanum Barun Gothic';
+        font-style: normal;
+        font-weight: 200;
+        src: local('Nanum Barun Gothic UltraLight'), local('Nanum Barun Gothic-UltraLight'), local('NanumBarunGothic UltraLight');
+        src: url(/font/NanumBarunGothicUltraLight.eot);
+        src: url(/font/NanumBarunGothicUltraLight.eot?#iefix) format('embedded-opentype'),
+        url(/font/NanumBarunGothicUltraLight.woff) format('woff'),
+        url(/font/NanumBarunGothicUltraLight.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Nanum Barun Gothic';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Nanum Barun Gothic Light'), local('Nanum Barun Gothic-Light'), local('NanumBarunGothic Light');
+        src: url(/font/NanumBarunGothicLight.eot);
+        src: url(/font/NanumBarunGothicLight.eot?#iefix) format('embedded-opentype'),
+        url(/font/NanumBarunGothicLight.woff) format('woff'),
+        url(/font/NanumBarunGothicLight.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Nanum Barun Gothic';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Nanum Barun Gothic Regular'), local('Nanum Barun Gothic-Regular'), local('NanumBarunGothic Regular');
+        src: url(/font/NanumBarunGothic.eot);
+        src: url(/font/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+        url(/font/NanumBarunGothic.woff) format('woff'),
+        url(/font/NanumBarunGothic.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Nanum Barun Gothic';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Nanum Barun Gothic Bold'), local('Nanum Barun Gothic-Bold'), local('NanumBarunGothic Bold');
+        src: url(/font/NanumBarunGothicBold.eot);
+        src: url(/font/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+        url(/font/NanumBarunGothicBold.woff) format('woff'),
+        url(/font/NanumBarunGothicBold.ttf) format('truetype');
+    }
+
+
     body {
-        font-family: 'Nanum Barun Gothic', Helvetica, Arial, sans-serif;
+        font-family: 'NanumBarunGothic', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-size: 2.5vw;
@@ -51,6 +96,7 @@
         width: 100%;
         position: relative;
         height: 50px;
+        font-size: 1.5vw;
     }
 
     .custom-nav-container {
@@ -213,7 +259,7 @@
 
     @media (orientation: portrait) {
         body {
-            font-family: 'Nanum Barun Gothic', Helvetica, Arial, sans-serif;
+            font-family: 'NanumBarunGothic', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 2.5vw;
