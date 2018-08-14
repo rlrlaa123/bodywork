@@ -38,6 +38,10 @@
             footer p {
                 font-size: 10px;
             }
+
+            header a {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
