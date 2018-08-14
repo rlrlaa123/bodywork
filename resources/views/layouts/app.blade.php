@@ -15,14 +15,43 @@
     <script src="/js/bootstrap.min.js" async></script>
     @include('layouts.partial.common_style')
     @yield('style')
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media(orientation: portrait) {
+            header {
+                display: block;
+                justify-content: space-between;
+            }
+
+            .sns-wrapper {
+                display: none;
+            }
+
+            header div:nth-child(1) {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body style="margin:0; text-align: center;">
     @include('layouts.partial.navigation_mobile')
     <header style="font-size: 2vw;">
-        <a href="/">
-            <img class="header-image" src="/img/logo.jpg">
-            BODY WORK
-        </a>
+        <div style="width: 100px;"></div>
+        <div>
+            <a href="/">
+                <img class="header-image" src="/img/logo.jpg">
+                BODY WORK
+            </a>
+        </div>
+        <div class="sns-wrapper">
+            <a href=""><img src="/img/sns1.png" width="30px"></a>
+            <a href=""><img src="/img/sns2.png" width="30px"></a>
+            <a href=""><img src="/img/sns3.png" width="30px"></a>
+        </div>
     </header>
 
     @include('layouts.partial.navigation')

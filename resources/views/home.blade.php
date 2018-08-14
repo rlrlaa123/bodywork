@@ -130,6 +130,53 @@
             font-weight: bold;
         }
 
+        .bodywork-call-wrapper {
+            display: none;
+            background-color: #3b3b3b;
+            height: 100px;
+            align-items: center;
+            color: white;
+            border: 1px solid black;
+        }
+
+        .bodywork-call-box {
+            display: grid;
+            grid-template-columns: 33.3% 33.3% 33.3%;
+        }
+
+        /*.bodywork-call-container:nth-child(1) {*/
+            /*background-image: url('/img/main2.jpg');*/
+            /*-webkit-background-size: 100%;*/
+            /*background-size: 100%;*/
+            /*opacity: 0.9;*/
+        /*}*/
+
+        /*.bodywork-call-container:nth-child(2) {*/
+            /*background-image: url('/img/main2.jpg');*/
+            /*-webkit-background-size: 100%;*/
+            /*background-size: 100%;*/
+            /*opacity: 0.9;*/
+        /*}*/
+
+        /*.bodywork-call-container:nth-child(3) {*/
+            /*background-image: url('/img/main2.jpg');*/
+            /*-webkit-background-size: 100%;*/
+            /*background-size: 100%;*/
+            /*opacity: 0.9;*/
+        /*}*/
+
+        .bodywork-call-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            border: 1px solid #f9f9f9;
+            margin: 10px;
+            height: 50px;
+            padding: 5px;
+            font-size: 11px;
+        }
+
         @media (orientation: portrait) {
             #main-carousel-inner img {
                 height: 250px;
@@ -183,6 +230,10 @@
 
             .carousel-control-next-icon {
                 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
+            }
+
+            .bodywork-call-wrapper {
+                display: grid;
             }
         }
     </style>
@@ -273,19 +324,28 @@
             </ol>
             <div class="carousel-inner w-70" role="listbox">
                 <div class="carousel-item row no-gutters active">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf1 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf2 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf3 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf1 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf2 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf3 }}"></div>
                 </div>
                 <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf4 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf5 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf6 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf4 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf5 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf6 }}"></div>
                 </div>
                 <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf7 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf8 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid" src="/{{ $home->bf9 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf7 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf8 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf9 }}"></div>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
@@ -297,24 +357,47 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <button class="before-after-more-btn">더보기</button>
+        <button class="before-after-more-btn"><a href="/bodychallenger/2">더보기</a></button>
     </div>
 
     <div class="bodywork-menu-wrapper">
         <h3>BODY WORK</h3>
         <p>그들은 어떻게 다이어트에 성공했을까?</p>
         <div class="bodywork-menu-container">
-            <div class="bodywork-menu">
-                <button class="bodywork-menu-text">8주 바디체인지</button>
+            <a href="/bodychallenger/2">
+                <div class="bodywork-menu">
+                    <button class="bodywork-menu-text">8주 바디체인지</button>
+                </div>
+            </a>
+            <a href="/event">
+                <div class="bodywork-menu">
+                    <button class="bodywork-menu-text">이벤트</button>
+                </div>
+            </a>
+            <a href="/branch/1">
+                <div class="bodywork-menu">
+                    <button class="bodywork-menu-text">오시는 길</button>
+                </div>
+            </a>
+            <a href="/lesson">
+                <div class="bodywork-menu">
+                    <button class="bodywork-menu-text">상담신청</button>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="bodywork-call-wrapper">
+        <p style="text-align: left; margin: 10px 0 0 15px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
+        <div class="bodywork-call-box">
+            <div class="bodywork-call-container" onclick="location.href='tel:010-7114-4542'">
+                <span>본점 1호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-menu">
-                <button class="bodywork-menu-text">이벤트</button>
+            <div class="bodywork-call-container" onclick="location.href='tel:010-7114-4542'">
+                <span>방이 2호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-menu">
-                <button class="bodywork-menu-text">오시는 길</button>
-            </div>
-            <div class="bodywork-menu">
-                <button class="bodywork-menu-text">상담신청</button>
+            <div class="bodywork-call-container" onclick="location.href='tel:010-7114-4542'">
+                <span>오금 3호점<br> 전화하기</span>
             </div>
         </div>
     </div>

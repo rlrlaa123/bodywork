@@ -37,6 +37,10 @@ Route::get('/bodywork/2', function() {
     return view('BodyWork.bodywork');
 });
 
+Route::get('/bodywork/3', function() {
+    return view('BodyWork.alliance');
+});
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

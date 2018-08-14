@@ -57,4 +57,9 @@
         <a href="/freelesson">무료 PT 신청</a>
         <a href="/consult">실시간 상담</a>
     </div>
+    <div style="text-align: left; margin-left: 10px;">
+        <span onclick="location.href='https://blog.naver.com/crossfita2f'"><img src="/img/sns1.png" width="30px" style="margin-right: 5px;"></span>
+        <span onclick="location.href='https://www.instagram.com/bodywork119/'"><img src="/img/sns2.png" width="30px" style="margin-right: 5px;"></span>
+        <span onclick="location.href='/'"><img src="/img/sns3.png" width="30px" style="margin-right: 5px;"></span>
+    </div>
 </div>
