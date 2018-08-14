@@ -190,6 +190,14 @@
                 display: block;
             }
 
+            .before-after-title-wrapper h3 {
+                font-size: 20px;
+            }
+
+            .before-after-title-wrapper p {
+                font-size: 11px;
+            }
+
             .before-after-wrapper {
                 margin: 50px 0;
                 padding: 25px;
