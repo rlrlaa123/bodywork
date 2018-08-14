@@ -49,6 +49,7 @@
 
             p {
                 font-size: 11px;
+                text-align: left;
             }
         }
     </style>
