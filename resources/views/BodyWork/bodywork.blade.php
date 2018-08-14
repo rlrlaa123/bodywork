@@ -93,7 +93,7 @@
     </style>
 @endsection
 @section('content')
-    <img class="cover-image" src="/img/pt_program/1.jpg">
+    <img class="cover-image" src="/img/pt_program/10.jpg">
     <h3 style="margin: 50px 0; font-weight: bold;">바디웍 소개</h3>
     <hr>
     <h4 style="margin: 50px 0;">바디웍 로고</h4>

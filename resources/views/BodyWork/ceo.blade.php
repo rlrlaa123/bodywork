@@ -100,7 +100,7 @@
     </style>
 @endsection
 @section('content')
-    <img class="cover-image" src="/img/pt_program/1.jpg" width="100%" height="400px">
+    <img class="cover-image" src="/img/pt_program/10.jpg" width="100%" height="400px">
     <h3 style="margin: 50px 0; font-weight: bold;">CEO 소개</h3>
     <hr>
     <div class="ceo-wrapper-1">
