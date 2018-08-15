@@ -95,36 +95,31 @@
             margin: auto;
         }
 
-        .bodywork-menu-container {
+        .bodywork-menu-container div{
             cursor: pointer;
+            margin: 5px;
         }
 
         .bodywork-menu-container div:nth-child(1) {
             -ms-grid-row: 1;
             -ms-grid-column: 1;
-            /*margin: 0 px;*/
-            margin-right: 10px;
+
         }
 
         .bodywork-menu-container div:nth-child(2) {
             -ms-grid-row: 1;
             -ms-grid-column: 2;
-            /*margin: 0 px;*/
-            margin-left: 10px;
         }
 
         .bodywork-menu-container div:nth-child(3) {
             -ms-grid-row: 2;
             -ms-grid-column: 1;
-            /*margin: 0 px;*/
-            margin-right: 10px;
+
         }
 
         .bodywork-menu-container div:nth-child(4) {
             -ms-grid-row: 2;
             -ms-grid-column: 2;
-            /*margin: 0 px;*/
-            margin-left: 10px;
         }
 
         .bodywork-menu {
@@ -260,6 +255,11 @@
             .carousel-item img {
                 width: 100%;
                 height: 250px;
+            }
+
+            .bodywork-menu-container div{
+                cursor: pointer;
+                margin: 0;
             }
 
             .carousel-control-prev-icon {
