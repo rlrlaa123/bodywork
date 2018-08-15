@@ -46,7 +46,7 @@
         .branch-location {
             display: grid;
             grid-template-columns: 50% 50%;
-            /*padding: 40px;*/
+            -ms-grid-columns: 50% 50%;
             margin: 50px;
             border-left: 2px solid orange;
             text-align: left;
@@ -55,6 +55,7 @@
         .branch-location-text {
             text-align: left;
             padding: 20px;
+            -ms-grid-column: 1;
         }
 
         .branch-location-map {
@@ -62,6 +63,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            -ms-grid-column: 2;
         }
 
         .branch-info-wrapper {
