@@ -89,22 +89,22 @@
             display: grid;
             display: -ms-grid;
             grid-template-columns: repeat(2, 50%);
-            -ms-grid-columns: 1fr 0 1fr;
+            -ms-grid-columns: 50% 50%;
             grid-gap: 30px;
             width: 90%;
             margin: auto;
         }
 
         .bodywork-menu:nth-child(2) {
-            -ms-grid-column: 3;
+            -ms-grid-column: 2;
         }
 
         .bodywork-menu:nth-child(3) {
-            -ms-grid-column: 5;
+            -ms-grid-column: 1;
         }
 
         .bodywork-menu:nth-child(4) {
-            -ms-grid-column: 7;
+            -ms-grid-column: 2;
         }
 
         .bodywork-menu {
