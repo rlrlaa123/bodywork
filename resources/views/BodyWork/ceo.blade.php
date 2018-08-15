@@ -51,7 +51,7 @@
             display: grid;
             display: -ms-grid;
             grid-template-columns: 50% 50%;
-            -ms-grid-columns: 50% 80%;
+            -ms-grid-columns: 50% 50%;
             padding: 50px 10%;
             margin: 50px;
             color: white;
