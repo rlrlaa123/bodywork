@@ -12,7 +12,52 @@
         .review-wrapper {
             display: grid;
             grid-template-columns: repeat(3, 33.3%);
-            /*grid-gap: 20px;*/
+            -ms-grid-columns: 33.3% 33.3% 33.3%;
+        }
+
+        .review-container:nth-child(1) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+        }
+
+        .review-container:nth-child(2) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 1;
+        }
+
+        .review-container:nth-child(3) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 1;
+        }
+
+        .review-container:nth-child(4) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 2;
+        }
+
+        .review-container:nth-child(5) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+        }
+
+        .review-container:nth-child(6) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+        }
+
+        .review-container:nth-child(7) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 3;
+        }
+
+        .review-container:nth-child(8) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 3;
+        }
+
+        .review-container:nth-child(9) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 3;
         }
 
         .review-container {
