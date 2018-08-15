@@ -100,14 +100,17 @@
         }
 
         .bodywork-menu-container div:nth-child(2) {
+            -ms-grid-row: 1;
             -ms-grid-column: 2;
         }
 
         .bodywork-menu-container div:nth-child(3) {
+            -ms-grid-row: 2;
             -ms-grid-column: 1;
         }
 
         .bodywork-menu-container div:nth-child(4) {
+            -ms-grid-row: 2;
             -ms-grid-column: 2;
         }
 
