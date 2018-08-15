@@ -10,7 +10,7 @@
             margin: 50px;
             background-color: #f1b042;
             display: flex;
-            display: -ms-flex;
+            display: -ms-flexbox;
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
@@ -29,8 +29,11 @@
         .ceo-wrapper-2 {
             margin: 50px;
             display: flex;
-            display: -ms-flex;
+            display: -ms-flexbox;
             text-align: left;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
