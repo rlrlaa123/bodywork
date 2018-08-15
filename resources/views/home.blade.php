@@ -254,6 +254,12 @@
                 display: grid;
             }
         }
+
+        @media screen and (min-width: 1200px) {
+            .bodywork-menu-text {
+                height: 40px;
+            }
+        }
     </style>
 @endsection
 @section('content')

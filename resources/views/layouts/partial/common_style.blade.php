@@ -128,7 +128,11 @@
         -ms-grid-column: 9;
     }
 
-    .custom-nav-container:nth-child(2) {
+    .custom-nav-container:nth-child(6) {
+        -ms-grid-column: 11;
+    }
+
+    .custom-nav-container:nth-child(7) {
         -ms-grid-column: 11;
     }
 
