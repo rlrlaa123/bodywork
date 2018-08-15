@@ -90,7 +90,7 @@
             display: -ms-grid;
             grid-template-columns: repeat(2, 50%);
             -ms-grid-columns: 50% 50%;
-            grid-gap: 30px;
+            /*grid-gap: 30px;*/
             width: 90%;
             margin: auto;
         }
@@ -99,19 +99,32 @@
             cursor: pointer;
         }
 
+        .bodywork-menu-container div:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            /*margin: 0 px;*/
+            margin-right: 10px;
+        }
+
         .bodywork-menu-container div:nth-child(2) {
             -ms-grid-row: 1;
             -ms-grid-column: 2;
+            /*margin: 0 px;*/
+            margin-left: 10px;
         }
 
         .bodywork-menu-container div:nth-child(3) {
             -ms-grid-row: 2;
             -ms-grid-column: 1;
+            /*margin: 0 px;*/
+            margin-right: 10px;
         }
 
         .bodywork-menu-container div:nth-child(4) {
             -ms-grid-row: 2;
             -ms-grid-column: 2;
+            /*margin: 0 px;*/
+            margin-left: 10px;
         }
 
         .bodywork-menu {
