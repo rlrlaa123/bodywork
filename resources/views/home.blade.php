@@ -95,15 +95,15 @@
             margin: auto;
         }
 
-        .bodywork-menu:nth-child(2) {
+        .bodywork-menu-container a:nth-child(2) {
             -ms-grid-column: 2;
         }
 
-        .bodywork-menu:nth-child(3) {
+        .bodywork-menu-container a:nth-child(3) {
             -ms-grid-column: 1;
         }
 
-        .bodywork-menu:nth-child(4) {
+        .bodywork-menu-container a:nth-child(4) {
             -ms-grid-column: 2;
         }
 
