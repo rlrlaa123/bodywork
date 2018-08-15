@@ -95,15 +95,19 @@
             margin: auto;
         }
 
-        .bodywork-menu-container a:nth-child(2) {
+        .bodywork-menu-container {
+            cursor: pointer;
+        }
+
+        .bodywork-menu-container div:nth-child(2) {
             -ms-grid-column: 2;
         }
 
-        .bodywork-menu-container a:nth-child(3) {
+        .bodywork-menu-container div:nth-child(3) {
             -ms-grid-column: 1;
         }
 
-        .bodywork-menu-container a:nth-child(4) {
+        .bodywork-menu-container div:nth-child(4) {
             -ms-grid-column: 2;
         }
 
@@ -388,26 +392,26 @@
         <h3>BODY WORK</h3>
         <p>그들은 어떻게 다이어트에 성공했을까?</p>
         <div class="bodywork-menu-container">
-            <a href="/bodychallenger/2">
+            <div onclick="location.href='/bodychallenger/2'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">8주 바디체인지</button>
                 </div>
-            </a>
-            <a href="/event">
+            </div>
+            <div onclick="location.href='/event'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
-            </a>
-            <a href="/branch/1">
+            </div>
+            <div onclick="location.href='/branch/1'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>
-            </a>
-            <a href="/lesson">
+            </div>
+            <div onclick="location.href='/lesson'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">상담신청</button>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 
