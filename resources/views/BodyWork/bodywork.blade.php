@@ -18,7 +18,7 @@
         }
 
         .bodywork-logo div:nth-child(2) {
-            -ms-grid-column: 3;
+            -ms-grid-column: 2;
         }
 
         .bodywork-logo img {
