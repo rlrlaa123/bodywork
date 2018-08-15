@@ -1,8 +1,8 @@
 <div class="custom-nav">
     <div class="custom-nav-container-empty"></div>
-    <div class="custom-nav-container"><a href="/bodywork/1">바디웍휘트니스</a></div>
+    <div class="custom-nav-container"><a>바디웍휘트니스</a></div>
     <div class="custom-nav-container"><a>지점소개</a></div>
-    <div class="custom-nav-container"><a href="/ptprogram/1">PT 프로그램</a></div>
+    <div class="custom-nav-container"><a>PT 프로그램</a></div>
     <div class="custom-nav-container"><a>바디웍 바디챌린져</a></div>
     <div class="custom-nav-container"><a>상담신청</a></div>
     <div class="custom-nav-container-empty"></div>

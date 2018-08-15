@@ -85,7 +85,7 @@
         display: grid;
         display: -ms-grid;
         grid-template-columns: repeat(7, 14.5%);
-        -ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
+        -ms-grid-columns: 14.5% 14.5% 14.5% 14.5% 14.5% 14.5% 14.5%;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
@@ -112,10 +112,6 @@
         height: 90%;
     }
 
-    .custom-nav-container-empty:nth-child(1) {
-        -ms-grid-column: 1;
-    }
-
     .custom-nav-container:nth-child(2) {
         -ms-grid-column: 3;
     }
@@ -132,7 +128,7 @@
         -ms-grid-column: 9;
     }
 
-    .custom-nav-container-empty:nth-child(2) {
+    .custom-nav-container:nth-child(2) {
         -ms-grid-column: 11;
     }
 
