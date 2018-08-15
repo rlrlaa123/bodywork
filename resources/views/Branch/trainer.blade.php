@@ -46,7 +46,7 @@
             margin: 50px;
             border-left: 2px solid orange;
             text-align: left;
-            padding: 0 20px;
+            padding: 20px;
         }
 
         @media (orientation: portrait) {
@@ -99,7 +99,7 @@
                             <img src="/{{ $trainer->image }}">
                         </div>
                         <div>
-                            <h3 style="margin: 0 0 20px 0;">{{ $trainer->name }}</h3>
+                            <h3 style="margin: 20px 0;">{{ $trainer->name }}</h3>
                             <h6>자격사항</h6>
                             <p>{{ $trainer->description }}</p>
                         </div>
@@ -112,7 +112,7 @@
                             <img src="/{{ $trainer->image }}">
                         </div>
                         <div>
-                            <h3 style="margin:  20px 0;">{{ $trainer->name }}</h3>
+                            <h3 style="margin: 20px 0;">{{ $trainer->name }}</h3>
                             <h6>자격사항</h6>
                             <p>{{ $trainer->description }}</p>
                         </div>
@@ -127,7 +127,7 @@
         $('.trainer-btn').click(function () {
             var index = $(this).attr('class').slice(-1);
 
-            for (var i = 1; i <= {{ count($branches) }}; i++) {
+            for (var i = 1; i <= 3; i++) {
                 $('.trainer-wrapper.' + i).css('display', 'none');
                 $('.trainer-btn')[i - 1].classList.remove('active');
             }

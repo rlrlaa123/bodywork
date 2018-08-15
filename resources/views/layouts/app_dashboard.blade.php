@@ -9,11 +9,9 @@
     <title>{{ config('app.name', '바이웍') }}</title>
     <meta name="description" content=" 방이동 퍼스널트레이닝. 개인pt샵 바디웍입니다.">
 
-    {{--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">--}}
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>--}}
     @include('layouts.partial.bootstrap')
-    <script src="/js/jquery-3.3.1.min.js" async></script>
-    <script src="/js/bootstrap.min.js" async></script>
+    @include('layouts.partial.jquery_js')
+    @include('layouts.partial.boostrap_js')
     @include('layouts.partial.common_style')
     @include('layouts.partial.common_dashboard_style')
     @yield('style')
