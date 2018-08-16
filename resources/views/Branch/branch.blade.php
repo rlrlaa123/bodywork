@@ -45,6 +45,7 @@
 
         .branch-location {
             display: grid;
+            display: -ms-grid;
             grid-template-columns: 50% 50%;
             -ms-grid-columns: 50% 50%;
             margin: 50px;
