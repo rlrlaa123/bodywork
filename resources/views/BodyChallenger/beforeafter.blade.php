@@ -24,17 +24,17 @@
 
         .review-container:nth-child(2) {
             -ms-grid-column: 2;
-            -ms-grid-row: 2;
+            -ms-grid-row: 1;
         }
 
         .review-container:nth-child(3) {
             -ms-grid-column: 3;
-            -ms-grid-row: 3;
+            -ms-grid-row: 1;
         }
 
         .review-container:nth-child(4) {
             -ms-grid-column: 1;
-            -ms-grid-row: 1;
+            -ms-grid-row: 2;
         }
 
         .review-container:nth-child(5) {
@@ -44,7 +44,7 @@
 
         .review-container:nth-child(6) {
             -ms-grid-column: 3;
-            -ms-grid-row: 3;
+            -ms-grid-row: 2;
         }
 
         .review-container {
