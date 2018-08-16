@@ -152,12 +152,14 @@
         </form>
     </div>
     <div class="btn-wrapper">
-        <input class="btn" type="submit" form="lesson" value="작성완료">
+        <input class="btn" type="submit" form="lesson" value="작성완료" onclick="submit()">
         <a href="{{ route('lesson.index') }}"><button class="btn">취소</button></a>
     </div>
 @endsection
 @section('script')
     <script>
-
+        function submit() {
+            $('#freelesson').trigger('submit');
+        }
     </script>
 @endsection

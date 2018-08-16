@@ -258,7 +258,7 @@
 
     .help-block {
         text-align: left;
-        color: grey;
+        color: red;
     }
 
     @media (orientation: portrait) {
