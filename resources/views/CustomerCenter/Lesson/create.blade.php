@@ -7,7 +7,7 @@
             margin: auto;
         }
 
-        input {
+        input[type="text"] {
             width: 100%;
             height: 100%;
         }
@@ -152,8 +152,8 @@
         </form>
     </div>
     <div class="btn-wrapper">
-        <button class="btn" type="submit" form="lesson">작성완료</button>
-        <button class="btn"><a href="{{ route('lesson.index') }}">취소</a></button>
+        <input class="btn" type="submit" form="lesson">
+        <a href="{{ route('lesson.index') }}"><button class="btn">취소</button></a>
     </div>
 @endsection
 @section('script')

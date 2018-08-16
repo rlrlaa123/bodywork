@@ -84,7 +84,7 @@
         </table>
     </div>
     <div class="btn-wrapper">
-        <button class="btn"><a href="{{ route('freelesson.create') }}">글쓰기</a></button>
+        <a href="{{ route('freelesson.create') }}"><button class="btn">글쓰기</button></a>
     </div>
     <ul class="pagination">
         <li class="page-item"><a class="page-link" href="{{ $freelessons->previousPageUrl() }}">이전</a></li>
