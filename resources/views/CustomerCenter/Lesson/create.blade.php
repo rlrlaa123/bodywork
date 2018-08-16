@@ -152,7 +152,7 @@
         </form>
     </div>
     <div class="btn-wrapper">
-        <input class="btn" type="submit" form="lesson">
+        <input class="btn" type="submit" form="lesson" value="작성완료">
         <a href="{{ route('lesson.index') }}"><button class="btn">취소</button></a>
     </div>
 @endsection
