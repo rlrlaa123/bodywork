@@ -12,7 +12,7 @@
         .review-wrapper {
             display: grid;
             grid-template-columns: repeat(3, 33.3%);
-            /*grid-gap: 20px;*/
+            margin: 0 50px;
         }
 
         .review-container {
