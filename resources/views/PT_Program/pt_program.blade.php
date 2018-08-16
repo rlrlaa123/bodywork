@@ -40,9 +40,19 @@
 
         .pt-program-wrapper-2 {
             display: grid;
+            display: -ms-grid;
             grid-template-columns: 45% 55%;
+            -ms-grid-columns: 45% 55%;
             margin: 50px;
             text-align: left;
+        }
+
+        .pt-program-wrapper-2 div:nth-child(1) {
+            -ms-grid-column: 1;
+        }
+
+        .pt-program-wrapper-2 div:nth-child(2) {
+            -ms-grid-column: 2;
         }
 
         .pt-program-wrapper-2 div:nth-child(2) img {
