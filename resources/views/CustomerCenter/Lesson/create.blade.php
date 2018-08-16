@@ -159,7 +159,7 @@
 @section('script')
     <script>
         function submit() {
-            $('#freelesson').trigger('submit');
+            $('#lesson').trigger('submit');
         }
     </script>
 @endsection
