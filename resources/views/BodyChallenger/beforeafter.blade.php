@@ -22,6 +22,7 @@
 
         .review-container img {
             width: 100%;
+            max-width: 270px;
         }
 
         .pagination {
