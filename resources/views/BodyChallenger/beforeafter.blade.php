@@ -11,7 +11,9 @@
 
         .review-wrapper {
             display: grid;
+            display: -ms-grid;
             grid-template-columns: repeat(3, 33.3%);
+            -ms-grid-columns: 33.3% 33.3% 33.3%;
             margin: 0 50px;
         }
 
