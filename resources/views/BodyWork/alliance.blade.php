@@ -21,6 +21,36 @@
             cursor: pointer;
         }
 
+        .review-container:nth-child(1) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+        }
+
+        .review-container:nth-child(2) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+        }
+
+        .review-container:nth-child(3) {
+            -ms-grid-column: 3;
+            -ms-grid-row: 3;
+        }
+
+        .review-container:nth-child(4) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+        }
+
+        .review-container:nth-child(5) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+        }
+
+        .review-container:nth-child(6) {
+            -ms-grid-column: 3;
+            -ms-grid-row: 3;
+        }
+
         .review-container img {
             width: 100%;
             max-width: 270px;
