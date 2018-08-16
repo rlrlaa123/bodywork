@@ -17,6 +17,30 @@
             margin: 0 50px;
         }
 
+        .review-container:nth-child(1) {
+            -ms-grid-column: 1;
+        }
+
+        .review-container:nth-child(2) {
+            -ms-grid-column: 2;
+        }
+
+        .review-container:nth-child(3) {
+            -ms-grid-column: 3;
+        }
+
+        .review-container:nth-child(4) {
+            -ms-grid-column: 4;
+        }
+
+        .review-container:nth-child(5) {
+            -ms-grid-column: 5;
+        }
+
+        .review-container:nth-child(6) {
+            -ms-grid-column: 6;
+        }
+
         .review-container {
             margin: 20px 0;
             cursor: pointer;
