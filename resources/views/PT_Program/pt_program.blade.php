@@ -14,9 +14,19 @@
 
         .pt-program-wrapper-1 {
             display: grid;
+            display: -ms-grid;
             grid-template-columns: 55% 45%;
+            -ms-grid-columns: 55% 45%;
             margin: 50px;
             text-align: left;
+        }
+
+        .pt-program-wrapper-1 div:nth-child(1) {
+            -ms-grid-column: 1;
+        }
+
+        .pt-program-wrapper-1 div:nth-child(2) {
+            -ms-grid-column: 2;
         }
 
         .pt-program-wrapper-1 div:nth-child(1) img {
