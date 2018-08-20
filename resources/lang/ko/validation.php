@@ -121,5 +121,7 @@ return [
         'contents' => '내용',
         'name' => '이름',
         'image' => '이미지',
+        'password_new' =>'새 비밀번호',
+        'password_new_confirmation' =>'새 비밀번호 확인',
     ],
 ];

@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('home', compact('home'));
 });
 
+Route::get('/admin/password', 'Admin\PasswordController@edit');
+Route::put('/admin/password', 'Admin\PasswordController@update');
+
 Route::get('/ptprogram/1', function() {
     return view('PT_Program.pt');
 });
