@@ -55,7 +55,7 @@
 
         .branch-location-text {
             text-align: left;
-            padding: 20px;
+            padding: 0 20px;
             -ms-grid-column: 1;
         }
 
@@ -76,6 +76,10 @@
         .branch-info {
             margin: 20px 0;
             border-bottom: 1px solid #e3e3e3;
+        }
+
+        .branch-info img {
+            width: 25px;
         }
 
         .active {
@@ -118,7 +122,7 @@
 
             .branch-location-text {
                 text-align: left;
-                padding: 20px;
+                padding: 0 20px;
                 border-left: 2px solid orange;
                 margin: 50px 0;
             }
@@ -131,6 +135,9 @@
                 height: 200px;
             }
 
+            .branch-info img {
+                width: 20px;
+            }
         }
     </style>
 @endsection
@@ -222,15 +229,15 @@
         <div class="branch-info-wrapper">
             <h6>바디웍 {{ $branch->number }}호점 운영시간</h6>
             <div class="branch-info">
-                <img src="/img/branch/time.png" width="25px">
+                <img src="/img/branch/time.png">
                 {{ $branch->time1 }}
             </div>
             <div class="branch-info">
-                <img src="/img/branch/time.png" width="25px">
+                <img src="/img/branch/time.png">
                 {{ $branch->time2 }}
             </div>
             <div class="branch-info">
-                <img src="/img/branch/time.png" width="25px">
+                <img src="/img/branch/time.png">
                 {{ $branch->time3 }}
             </div>
             <div class="note">Note: {{ $branch->note }}</div>
