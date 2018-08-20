@@ -67,7 +67,6 @@
         .before-after-more-btn {
             width: 70px;
             height: 30px;
-            margin-top: 50px;
             border: 1px solid white;
             border-radius: 20px;
             background-color: #556169;
@@ -192,8 +191,23 @@
             font-size: 11px;
         }
 
-        .owl-carousel {
-            display: none !important;
+        .owl-prev {
+            position: absolute;
+            left: 0;
+            top: 45%;
+            color: black !important;
+            opacity: 0.7;
+            background-color: white !important;
+            font-weight: bold;
+        }
+
+        .owl-next {
+            position: absolute;
+            right: 0;
+            top: 45%;
+            color: black !important;
+            opacity: 0.7;
+            background-color: white !important;
         }
 
         .bodywork-kakao-wrapper {
@@ -201,36 +215,17 @@
         }
 
         @media (orientation: portrait) {
-            .owl-carousel {
-                display: block !important;
-            }
-
-            .owl-carousel img {
-                height: 125px;
-            }
-
-            .owl-prev {
-                position: absolute;
-                left: 0;
-                top: 50px;
-                color: black !important;
-                opacity: 0.7;
-                background-color: white !important;
-            }
-
-            .owl-next {
-                position: absolute;
-                right: 0;
-                top: 50px;
-                color: black !important;
-                opacity: 0.7;
-                background-color: white !important;
-            }
-
             #main-carousel-inner img {
                 height: 250px;
             }
 
+            .owl-prev {
+                top: 50px;
+            }
+
+            .owl-next {
+                top: 50px;
+            }
             #recipeCarousel {
                 display: none;
             }
@@ -267,6 +262,7 @@
 
             .bodywork-menu-wrapper {
                 margin: 50px 0;
+                padding: 10px;
             }
 
             .bodywork-menu-container {
@@ -332,6 +328,10 @@
                 background-color: #402a2d;
                 color: white;
             }
+
+            .owl-carousel img {
+                height: 125px;
+            }
         }
 
         @media screen and (min-width: 1200px) {
@@ -380,47 +380,6 @@
             <h3>Before & After</h3>
             <p>바디웍 회원님들의 비포애프터 입니다.</p>
         </div>
-        <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
-            <ol id="before-after-carousel-indicator" class="carousel-indicators">
-                <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#recipeCarousel" data-slide-to="1"></li>
-                <li data-target="#recipeCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner w-70" role="listbox">
-                <div class="carousel-item row no-gutters active">
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf1_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf1 }}"></a></div>
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf2_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf2 }}"></a></div>
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf3_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf3 }}"></a></div>
-                </div>
-                <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf4_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf4 }}"></a></div>
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf5_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf5 }}"></a></div>
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf6_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf6 }}"></a></div>
-                </div>
-                <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf7_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf7 }}"></a></div>
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf8_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf8 }}"></a></div>
-                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf9_link }}"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf9 }}"></a></div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bf" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bf" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
         <div class="owl-carousel owl-theme owl-loaded">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
@@ -434,10 +393,11 @@
                     <div class="owl-item"><a href="{{ $home->bf8_link }}"><img class="img-fluid" src="/{{ $home->bf8 }}"></a></div>
                     <div class="owl-item"><a href="{{ $home->bf9_link }}"><img class="img-fluid" src="/{{ $home->bf9 }}"></a></div>
                 </div>
-            </div>
-            <div class="owl-nav">
-                <div class="owl-prev"><</div>
-                <div class="owl-next">></div>
+
+                <div class="owl-nav">
+                    <div class="owl-prev"><</div>
+                    <div class="owl-next">></div>
+                </div>
             </div>
         </div>
         <button class="before-after-more-btn"><a href="/bodychallenger/2">더보기</a></button>
