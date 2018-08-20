@@ -81,6 +81,10 @@
             height: 30px;
         }
 
+        .btn-md {
+            width: 60px;
+        }
+
         .landscape {
             display: none;
         }

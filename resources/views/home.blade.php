@@ -74,6 +74,7 @@
             font-size: 1vw;
             padding: 5px;
             cursor: pointer;
+            box-shadow: 4px 4px 4px #5c5c5c;
         }
 
         .bodywork-menu-wrapper {
@@ -142,6 +143,7 @@
             color: white;
             font-size: 1.5vw;
             font-weight: bold;
+            box-shadow: 4px 4px 4px black;
         }
 
         .bodywork-call-wrapper {
@@ -189,6 +191,7 @@
             height: 50px;
             padding: 5px;
             font-size: 11px;
+            box-shadow: 4px 4px 4px black;
         }
 
         .owl-prev {
@@ -327,6 +330,7 @@
                 font-size: 11px;
                 background-color: #402a2d;
                 color: white;
+                box-shadow:2px 2px 2px 2px #999;
             }
 
             .owl-carousel img {

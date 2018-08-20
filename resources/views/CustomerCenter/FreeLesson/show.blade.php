@@ -19,6 +19,16 @@
         td {
             text-align: left;
         }
+
+        .reply-image {
+            width: 15px;
+        }
+
+        @media(orientation: portrait) {
+            .reply-image {
+                width: 10px;
+            }
+        }
     </style>
 @endsection
 @section('content')
@@ -54,7 +64,7 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row">답변 <img src="/img/reply.png" width="15px"></th>
+                <th scope="row">답변 <img class="reply-image" src="/img/reply.png"></th>
                 <td colspan="3" class="content">
                     {!! nl2br($freelesson->reply) !!}
                 </td>
