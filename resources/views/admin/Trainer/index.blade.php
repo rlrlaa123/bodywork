@@ -34,7 +34,7 @@
                 <td>
                     <a class="name-selector"
                        href="{{ route('admin.trainer.edit', [$trainer->id]) }}">
-                        {{ $trainer->description }}
+                        {!! nl2br($trainer->description) !!}
                     </a>
                 </td>
                 <td><a class="delete" onclick="deleteConversation({{ $trainer->id }})">삭제</a></td>

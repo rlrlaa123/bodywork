@@ -111,7 +111,7 @@
                         <div>
                             <h3 style="margin: 20px 0;">{{ $trainer->name }}</h3>
                             <h6>자격사항</h6>
-                            <p>{{ $trainer->description }}</p>
+                            <p>{!! nl2br($trainer->description) !!}</p>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                         <div>
                             <h3 style="margin: 20px 0;">{{ $trainer->name }}</h3>
                             <h6>자격사항</h6>
-                            <p>{{ $trainer->description }}</p>
+                            <p>{!! nl2br($trainer->description) !!}</p>
                         </div>
                     </div>
                 </div>
