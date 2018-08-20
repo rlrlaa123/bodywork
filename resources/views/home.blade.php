@@ -303,6 +303,30 @@
             .bodywork-call-wrapper {
                 display: grid;
             }
+
+            .bodywork-kakao-wrapper {
+                background-color: #fce94e;
+                color: #402a2d;
+                padding-top: 10px;
+            }
+
+            .bodywork-kakao-container {
+                display: grid;
+                grid-template-columns: 33.3% 33.3% 33.3%;
+            }
+
+            .bodywork-kakao {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                margin: 10px;
+                height: 50px;
+                padding: 5px;
+                font-size: 11px;
+                background-color: #402a2d;
+                color: white;
+            }
         }
 
         @media screen and (min-width: 1200px) {
@@ -480,8 +504,26 @@
         </div>
     </div>
 
+    <div class="bodywork-kakao-wrapper">
+        <p style="margin: 0; text-align: center; font-size: 11px">
+            <img src="/img/kakaoplus.png" width="15px" style="margin-right: 5px;">
+            클릭하시면 카카오 플러스 친구 페이지로 이동합니다.
+        </p>
+        <div class="bodywork-kakao-container">
+            <div class="bodywork-kakao" onclick="location.href='http://pf.kakao.com/_VZdxoC'">
+                <span>본점 1호점<br> 친구추가</span>
+            </div>
+            <div class="bodywork-kakao" onclick="location.href='http://pf.kakao.com/_cpSAj'">
+                <span>방이 2호점<br> 친구추가</span>
+            </div>
+            <div class="bodywork-kakao" onclick="location.href='http://pf.kakao.com/_pxjpxoC'">
+                <span>오금 3호점<br> 친구추가</span>
+            </div>
+        </div>
+    </div>
+
     <div class="bodywork-call-wrapper">
-        <p style="text-align: left; margin: 10px 0 0 15px; font-size: 11px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
+        <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
         <div class="bodywork-call-box">
             <div class="bodywork-call-container" onclick="location.href='tel:02-408-3966'">
                 <span>본점 1호점<br> 전화하기</span>
