@@ -15,7 +15,7 @@
         </div>
         <div class="nav-submenu-box 1">
             <div class="nav-submenu-container"><a href="/branch/1/1">지점 소개</a></div>
-            <div class="nav-submenu-container"><a href="/branch/2">트레이너 소개</a></div>
+            <div class="nav-submenu-container"><a href="/branch/2/1">트레이너 소개</a></div>
         </div>
         <div class="nav-submenu-box 2">
             <div class="nav-submenu-container"><a href="/ptprogram/1">퍼스널 트레이닝 소개</a></div>

@@ -27,7 +27,7 @@
     </div>
     <div class="dropdown-container">
         <a href="/branch/1/1">지점소개</a>
-        <a href="/branch/2">트레이너 소개</a>
+        <a href="/branch/2/1">트레이너 소개</a>
     </div>
     <div class="dropdown-btn down-arrow">
         PT 프로그램
