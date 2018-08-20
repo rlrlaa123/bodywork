@@ -12,6 +12,9 @@
     @include('layouts.partial.jquery_js')
     @include('layouts.partial.boostrap_js')
     @include('layouts.partial.common_style')
+    @include('layouts.partial.owl_carousel_style')
+    @include('layouts.partial.owl_theme_style')
+    @include('layouts.partial.owl_carousel_js')
     @yield('style')
     <style>
         header {

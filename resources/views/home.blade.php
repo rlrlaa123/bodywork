@@ -192,7 +192,37 @@
             font-size: 11px;
         }
 
+        .owl-carousel {
+            display: none !important;
+        }
+
         @media (orientation: portrait) {
+            .owl-carousel {
+                display: block !important;
+            }
+
+            .owl-carousel img {
+                height: 125px;
+            }
+
+            .owl-prev {
+                position: absolute;
+                left: 0;
+                top: 50px;
+                color: black !important;
+                opacity: 0.7;
+                background-color: white !important;
+            }
+
+            .owl-next {
+                position: absolute;
+                right: 0;
+                top: 50px;
+                color: black !important;
+                opacity: 0.7;
+                background-color: white !important;
+            }
+
             #main-carousel-inner img {
                 height: 250px;
             }
@@ -223,11 +253,11 @@
 
             .before-after-wrapper {
                 margin: 50px 0;
-                padding: 25px;
+                padding: 25px 0;
             }
 
             .before-after-more-btn {
-                margin-top: 20px;
+                margin-top: 0;
                 font-size: 11px;
             }
 
@@ -322,43 +352,43 @@
             <p>바디웍 회원님들의 비포애프터 입니다.</p>
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="/{{ $home->bf1 }}" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf2 }}" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf3 }}" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf4 }}" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf5 }}" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf6 }}" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf7 }}" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf8 }}" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/{{ $home->bf9 }}" alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bf" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bf" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            {{--<div class="carousel-inner">--}}
+                {{--<div class="carousel-item active">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf1 }}" alt="First slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf2 }}" alt="Second slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf3 }}" alt="Third slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf4 }}" alt="Third slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf5 }}" alt="Third slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf6 }}" alt="Third slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf7 }}" alt="Third slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf8 }}" alt="Third slide">--}}
+                {{--</div>--}}
+                {{--<div class="carousel-item">--}}
+                    {{--<img class="d-block w-100" src="/{{ $home->bf9 }}" alt="Third slide">--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--}}
+                {{--<span class="carousel-control-prev-icon bf" aria-hidden="true"></span>--}}
+                {{--<span class="sr-only">Previous</span>--}}
+            {{--</a>--}}
+            {{--<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--}}
+                {{--<span class="carousel-control-next-icon bf" aria-hidden="true"></span>--}}
+                {{--<span class="sr-only">Next</span>--}}
+            {{--</a>--}}
         </div>
         <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
             <ol id="before-after-carousel-indicator" class="carousel-indicators">
@@ -400,6 +430,25 @@
                 <span class="carousel-control-next-icon bf" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+        </div>
+        <div class="owl-carousel owl-theme owl-loaded">
+            <div class="owl-stage-outer">
+                <div class="owl-stage">
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf1 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf2 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf3 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf4 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf5 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf6 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf7 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf8 }}"></div>
+                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf9 }}"></div>
+                </div>
+            </div>
+            <div class="owl-nav">
+                <div class="owl-prev"><</div>
+                <div class="owl-next">></div>
+            </div>
         </div>
         <button class="before-after-more-btn"><a href="/bodychallenger/2">더보기</a></button>
     </div>
@@ -448,5 +497,24 @@
 @endsection
 @section('script')
     <script>
+        $(document).ready(function(){
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 3,
+                loop:true,
+                margin:0,
+                autoplay:true,
+                autoplayTimeout:2000,
+                autoplayHoverPause:true,
+                pagination: false,
+                slideSpeed: 600
+            });
+            $('.owl-next').on('click',function(){
+                owl.trigger('next.owl.carousel',[500])
+            });
+            $('.owl-prev').on('click',function(){
+                owl.trigger('prev.owl.carousel',[500])
+            })
+        });
     </script>
 @endsection
