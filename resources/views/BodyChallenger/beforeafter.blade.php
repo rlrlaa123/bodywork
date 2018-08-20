@@ -84,7 +84,10 @@
     <div class="review-wrapper">
         @foreach($bfs as $bf)
             <div class="review-container">
-                <img src="/{{ $bf->image }}">
+                <a href="{{ $bf->link }}">
+                    <img src="/{{ $bf->image }}">
+                    <p style="font-weight: bold; font-size: 12px;">[ 블로그에서 확인하기! ]</p>
+                </a>
             </div>
         @endforeach
     </div>

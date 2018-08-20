@@ -59,7 +59,6 @@ Route::middleware('auth')->group(function() {
     });
 
     Route::put('/admin/update/{home}', function(\Illuminate\Http\Request $request, $id) {
-
         $home_list = [
             null, null, null
         ];
@@ -91,10 +90,10 @@ Route::middleware('auth')->group(function() {
 
 
         $bf_list = [
-            null, null, null, null, null, null, null, null
+            null, null, null, null, null, null, null, null, null
         ];
 
-        for ($i = 1; $i <= 8; $i++) {
+        for ($i = 1; $i <= 9; $i++) {
             if ($request->hasFile('bf' . $i)) {
 
                 if (!file_exists('storage')) {
@@ -125,6 +124,18 @@ Route::middleware('auth')->group(function() {
             'link3' => $request->link3,
         ]);
 
+        \App\HomeImage::first()->update([
+            'bf1_link' => $request->bf1_link,
+            'bf2_link' => $request->bf2_link,
+            'bf3_link' => $request->bf3_link,
+            'bf4_link' => $request->bf4_link,
+            'bf5_link' => $request->bf5_link,
+            'bf6_link' => $request->bf6_link,
+            'bf7_link' => $request->bf7_link,
+            'bf8_link' => $request->bf8_link,
+            'bf9_link' => $request->bf9_link,
+        ]);
+
         for ($i = 1; $i <= 3; $i++) {
             if ($request->has('home' . $i)) {
                 \App\HomeImage::where('id', $id)->update([
@@ -133,10 +144,15 @@ Route::middleware('auth')->group(function() {
             }
         }
 
-        for ($i = 1; $i <= 8; $i++) {
+        for ($i = 1; $i <= 9; $i++) {
             if ($request->has('bf' . $i)) {
                 \App\HomeImage::where('id', $id)->update([
                     'bf' . $i => 'storage/home/'. $bf_list[$i - 1],
+                ]);
+            }
+            if ($request->has('bf' . $i . '_link')) {
+                \App\HomeImage::where('id', $id)->update([
+                    'bf' . $i . '_link' => $request['bf' . $i . '_link'],
                 ]);
             }
         }

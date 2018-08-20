@@ -9,12 +9,14 @@
     </header>
     <hr>
     <table class="table">
-        <col width="33.3%">
-        <col width="33.3%">
-        <col width="33.3%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="15%">
         <thead>
         <tr>
             <th>이미지</th>
+            <th>링크</th>
             <th>등록일</th>
             <th>삭제</th>
         </tr>
@@ -26,8 +28,14 @@
                 <td>
                     <a class="name-selector"
                        href="{{ route('admin.beforeafter.edit', [$bf->id]) }}">
-                        {{ $bf->created_at }}
+                        {{ $bf->link }}
                     </a>
+                    <a href="{{ $bf->link }}">
+                        <br>[ 블로그 이동하기 ]
+                    </a>
+                </td>
+                <td>
+                    {{ $bf->created_at }}
                 </td>
                 <td><a class="delete" onclick="deleteConversation({{ $bf->id }})">삭제</a></td>
             </tr>

@@ -124,6 +124,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="bf1_link">연결된 링크 1</label></td>
+                <td class="td-input">
+                    <input id="bf1_link" name="bf1_link" type="text" value="{{ old('bf1_link', $home->bf1_link) }}">
+                    @if ($errors->has('bf1_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf1_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="bf2">Before & After 사진 2</label></td>
                 <td class="td-input">
                     <input id="bf2" name="bf2" type="file" accept='image/*'
@@ -134,6 +146,18 @@
                         </div>
                     @endif
                     <a class="image-name" href="/{{ $home->bf2 }}">[ {{ substr($home->bf2, 13) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="bf2_link">연결된 링크 2</label></td>
+                <td class="td-input">
+                    <input id="bf2_link" name="bf2_link" type="text" value="{{ old('bf2_link', $home->bf2_link) }}">
+                    @if ($errors->has('bf2_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf2_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
                 </td>
             </tr>
             <tr>
@@ -150,6 +174,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="bf3_link">연결된 링크 3</label></td>
+                <td class="td-input">
+                    <input id="bf3_link" name="bf3_link" type="text" value="{{ old('bf3_link', $home->bf3_link) }}">
+                    @if ($errors->has('bf3_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf3_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="bf3">Before & After 사진 4</label></td>
                 <td class="td-input">
                     <input id="bf4" name="bf4" type="file" accept='image/*'
@@ -160,6 +196,18 @@
                         </div>
                     @endif
                     <a class="image-name" href="/{{ $home->bf4 }}">[ {{ substr($home->bf4, 13) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="bf4_link">연결된 링크 4</label></td>
+                <td class="td-input">
+                    <input id="bf4_link" name="bf4_link" type="text" value="{{ old('bf4_link', $home->bf4_link) }}">
+                    @if ($errors->has('bf4_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf4_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
                 </td>
             </tr>
             <tr>
@@ -176,6 +224,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="bf5_link">연결된 링크 5</label></td>
+                <td class="td-input">
+                    <input id="bf5_link" name="bf5_link" type="text" value="{{ old('bf5_link', $home->bf5_link) }}">
+                    @if ($errors->has('bf5_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf5_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="bf6">Before & After 사진 6</label></td>
                 <td class="td-input">
                     <input id="bf6" name="bf6" type="file" accept='image/*'
@@ -186,6 +246,18 @@
                         </div>
                     @endif
                     <a class="image-name" href="/{{ $home->bf6 }}">[ {{ substr($home->bf6, 13) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="bf6_link">연결된 링크 6</label></td>
+                <td class="td-input">
+                    <input id="bf6_link" name="bf6_link" type="text" value="{{ old('bf6_link', $home->bf6_link) }}">
+                    @if ($errors->has('bf6_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf6_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
                 </td>
             </tr>
             <tr>
@@ -202,6 +274,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="bf7_link">연결된 링크 7</label></td>
+                <td class="td-input">
+                    <input id="bf7_link" name="bf7_link" type="text" value="{{ old('bf7_link', $home->bf7_link) }}">
+                    @if ($errors->has('bf7_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf7_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="bf8">Before & After 사진 8</label></td>
                 <td class="td-input">
                     <input id="bf8" name="bf8" type="file" accept='image/*'
@@ -215,6 +299,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="bf8_link">연결된 링크 8</label></td>
+                <td class="td-input">
+                    <input id="bf8_link" name="bf8_link" type="text" value="{{ old('bf8_link', $home->bf8_link) }}">
+                    @if ($errors->has('bf8_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf8_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="bf9">Before & After 사진 9</label></td>
                 <td class="td-input">
                     <input id="bf9" name="bf9" type="file" accept='image/*'
@@ -225,6 +321,18 @@
                         </div>
                     @endif
                     <a class="image-name" href="/{{ $home->bf9 }}">[ {{ substr($home->bf9, 13) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="bf9_link">연결된 링크 9</label></td>
+                <td class="td-input">
+                    <input id="bf9_link" name="bf9_link" type="text" value="{{ old('bf9_link', $home->bf9_link) }}">
+                    @if ($errors->has('bf9_link'))
+                        <div class="help-block">
+                            {{ $errors->first('bf9_link') }}
+                        </div>
+                    @endif
+                    <span>ex) https://blog.naver.com/crossfita2f/221040984247</span>
                 </td>
             </tr>
         </table>

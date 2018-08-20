@@ -32,6 +32,18 @@
                     @endif
                 </td>
             </tr>
+            <tr>
+                <td><label for="link">링크</label></td>
+                <td class="td-input">
+                    <input id="link" name="link" type="text" value="{{ old('link') }}">
+                    @if ($errors->has('link'))
+                        <div class="help-block">
+                            {{ $errors->first('link') }}
+                        </div>
+                    @endif
+                    <span style="font-weight: bold;"></span>
+                </td>
+            </tr>
         </table>
         <hr style="visibility: hidden;">
         <div class="button-wrapper">

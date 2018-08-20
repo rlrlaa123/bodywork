@@ -73,6 +73,8 @@ class BeforeAftersController extends Controller
             $bf->image = 'storage/beforeafters/' . $bf_name;
         }
 
+        $bf->link = $request->link;
+
         $bf->save();
 
         return redirect('admin/beforeafter');
@@ -135,6 +137,10 @@ class BeforeAftersController extends Controller
                 'image' => 'storage/beforeafters/' . $bf_name,
             ]);
         }
+
+        BeforeAfter::where('id', $id)->update([
+            'link' => $request->link,
+        ]);
 
         return redirect('admin/beforeafter');
     }

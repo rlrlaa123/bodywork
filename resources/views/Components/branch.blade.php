@@ -5,8 +5,8 @@
     <div class="sidesubmenu">
         <ul>
             <li class="selector {{ preg_match('/\/admin\/branch$/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/branch\?page\=[0-9]/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/branch\/[0-9]\/edit/', $_SERVER['REQUEST_URI'])
+                                   preg_match('/\/admin\/branch\?page\=[1-9]|[1-9][0-9]/', $_SERVER['REQUEST_URI']) ||
+                                   preg_match('/\/admin\/branch\/[1-9]|[1-9][0-9]\/edit/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
                 <a href="/admin/branch">지점 리스트</a>
             </li>

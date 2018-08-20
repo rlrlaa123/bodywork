@@ -60,7 +60,8 @@
         </div>
     </div>
     <div class="navsubbar">
-        <div class="grid-item basicinfo-selector {{ preg_match('/admin$/', $_SERVER['REQUEST_URI'])
+        <div class="grid-item basicinfo-selector {{ preg_match('/admin$/', $_SERVER['REQUEST_URI']) ||
+                                                    preg_match('/admin\/edit/', $_SERVER['REQUEST_URI'])
                                                     ? 'active' : ''}}" style="-ms-grid-column: 1"
              onclick="location.href='/admin';">
             기본 관리

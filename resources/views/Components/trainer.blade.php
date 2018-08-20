@@ -5,8 +5,8 @@
     <div class="sidesubmenu">
         <ul>
             <li class="selector {{ preg_match('/\/admin\/trainer$/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/trainer\?page\=[0-9]/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/trainer\/[0-9]\/edit/', $_SERVER['REQUEST_URI'])
+                                   preg_match('/\/admin\/trainer\?page\=[1-9]|[1-9][0-9]/', $_SERVER['REQUEST_URI']) ||
+                                   preg_match('/\/admin\/trainer\/[1-9]|[1-9][0-9]\/edit/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
                 <a href="/admin/trainer">트레이너 리스트</a>
             </li>

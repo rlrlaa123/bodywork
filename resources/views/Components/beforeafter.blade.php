@@ -5,8 +5,8 @@
     <div class="sidesubmenu">
         <ul>
             <li class="selector {{ preg_match('/\/admin\/beforeafter$/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/beforeafter\?page\=[0-9]/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/beforeafter\/[0-9]\/edit/', $_SERVER['REQUEST_URI'])
+                                   preg_match('/\/admin\/beforeafter\?page\=[1-9]|[1-9][0-9]/', $_SERVER['REQUEST_URI']) ||
+                                   preg_match('/\/admin\/beforeafter\/[1-9]|[1-9][0-9]\/edit/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
                 <a href="/admin/beforeafter">Before & After 리스트</a>
             </li>

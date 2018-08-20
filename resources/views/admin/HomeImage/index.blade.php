@@ -28,15 +28,15 @@
         <tr>
             <td>
                 <img src="/{{ $home->home1 }}" width="200px">
-                <p>연결된 링크 1: {{ $home->link1 }}</p>
+                <p><a href="{{ $home->link1 }}">[연결된 링크 1 : <span style="font-weight: bold;">{{ $home->link1 }}</span> ]</a></p>
             </td>
             <td>
                 <img src="/{{ $home->home2 }}" width="200px">
-                <p>연결된 링크 2: {{ $home->link2 }}</p>
+                <p><a href="{{ $home->link2 }}">[연결된 링크 2 : <span style="font-weight: bold;">{{ $home->link2 }}</span> ]</a></p>
             </td>
             <td>
                 <img src="/{{ $home->home3 }}" width="200px">
-                <p>연결된 링크 3: {{ $home->link3 }}</p>
+                <p><a href="{{ $home->link3 }}">[연결된 링크 3 : <span style="font-weight: bold;">{{ $home->link3 }}</span> ]</a></p>
             </td>
         </tr>
         </tbody>
@@ -52,34 +52,51 @@
         <tr>
             <td>
                 <img src="/{{ $home->bf1 }}" width="200px">
+                <p><a href="{{ $home->bf1_link }}">[블로그 이동하기]</a></p>
             </td>
             <td>
                 <img src="/{{ $home->bf2 }}" width="200px">
+                <p><a href="{{ $home->bf2_link }}">[블로그 이동하기]</a></p>
+
             </td>
             <td>
                 <img src="/{{ $home->bf3 }}" width="200px">
+                <p><a href="{{ $home->bf3_link }}">[블로그 이동하기]</a></p>
+
             </td>
         </tr>
         <tr>
             <td>
                 <img src="/{{ $home->bf4 }}" width="200px">
+                <p><a href="{{ $home->bf4_link }}">[블로그 이동하기]</a></p>
+
             </td>
             <td>
                 <img src="/{{ $home->bf5 }}" width="200px">
+                <p><a href="{{ $home->bf5_link }}">[블로그 이동하기]</a></p>
+
             </td>
             <td>
                 <img src="/{{ $home->bf6 }}" width="200px">
+                <p><a href="{{ $home->bf6_link }}">[블로그 이동하기]</a></p>
+
             </td>
         </tr>
         <tr>
             <td>
                 <img src="/{{ $home->bf7 }}" width="200px">
+                <p><a href="{{ $home->bf7_link }}">[블로그 이동하기]</a></p>
+
             </td>
             <td>
                 <img src="/{{ $home->bf8 }}" width="200px">
+                <p><a href="{{ $home->bf8_link }}">[블로그 이동하기]</a></p>
+
             </td>
             <td>
                 <img src="/{{ $home->bf9 }}" width="200px">
+                <p><a href="{{ $home->bf9_link }}">[블로그 이동하기]</a></p>
+
             </td>
         </tr>
         </tbody>

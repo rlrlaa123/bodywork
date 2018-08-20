@@ -380,45 +380,6 @@
             <h3>Before & After</h3>
             <p>바디웍 회원님들의 비포애프터 입니다.</p>
         </div>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2000">
-            {{--<div class="carousel-inner">--}}
-                {{--<div class="carousel-item active">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf1 }}" alt="First slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf2 }}" alt="Second slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf3 }}" alt="Third slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf4 }}" alt="Third slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf5 }}" alt="Third slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf6 }}" alt="Third slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf7 }}" alt="Third slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf8 }}" alt="Third slide">--}}
-                {{--</div>--}}
-                {{--<div class="carousel-item">--}}
-                    {{--<img class="d-block w-100" src="/{{ $home->bf9 }}" alt="Third slide">--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--}}
-                {{--<span class="carousel-control-prev-icon bf" aria-hidden="true"></span>--}}
-                {{--<span class="sr-only">Previous</span>--}}
-            {{--</a>--}}
-            {{--<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--}}
-                {{--<span class="carousel-control-next-icon bf" aria-hidden="true"></span>--}}
-                {{--<span class="sr-only">Next</span>--}}
-            {{--</a>--}}
-        </div>
         <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
             <ol id="before-after-carousel-indicator" class="carousel-indicators">
                 <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>
@@ -427,28 +388,28 @@
             </ol>
             <div class="carousel-inner w-70" role="listbox">
                 <div class="carousel-item row no-gutters active">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf1 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf2 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf3 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf1_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf1 }}"></a></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf2_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf2 }}"></a></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf3_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf3 }}"></a></div>
                 </div>
                 <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf4 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf5 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf6 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf4_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf4 }}"></a></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf5_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf5 }}"></a></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf6_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf6 }}"></a></div>
                 </div>
                 <div class="carousel-item row no-gutters">
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf7 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf8 }}"></div>
-                    <div class="before-after-carousel-item col-4 float-left"><img class="img-fluid"
-                                                                                  src="/{{ $home->bf9 }}"></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf7_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf7 }}"></a></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf8_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf8 }}"></a></div>
+                    <div class="before-after-carousel-item col-4 float-left"><a href="{{ $home->bf9_link }}"><img class="img-fluid"
+                                                                                  src="/{{ $home->bf9 }}"></a></div>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
@@ -463,15 +424,15 @@
         <div class="owl-carousel owl-theme owl-loaded">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf1 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf2 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf3 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf4 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf5 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf6 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf7 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf8 }}"></div>
-                    <div class="owl-item"><img class="img-fluid" src="/{{ $home->bf9 }}"></div>
+                    <div class="owl-item"><a href="{{ $home->bf1_link }}"><img class="img-fluid" src="/{{ $home->bf1 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf2_link }}"><img class="img-fluid" src="/{{ $home->bf2 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf3_link }}"><img class="img-fluid" src="/{{ $home->bf3 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf4_link }}"><img class="img-fluid" src="/{{ $home->bf4 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf5_link }}"><img class="img-fluid" src="/{{ $home->bf5 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf6_link }}"><img class="img-fluid" src="/{{ $home->bf6 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf7_link }}"><img class="img-fluid" src="/{{ $home->bf7 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf8_link }}"><img class="img-fluid" src="/{{ $home->bf8 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf9_link }}"><img class="img-fluid" src="/{{ $home->bf9 }}"></a></div>
                 </div>
             </div>
             <div class="owl-nav">
