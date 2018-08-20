@@ -57,9 +57,9 @@
             </a>
         </div>
         <div class="sns-wrapper">
-            <a href=""><img src="/img/sns1.png" width="30px"></a>
-            <a href=""><img src="/img/sns2.png" width="30px"></a>
-            <a href=""><img src="/img/sns3.png" width="30px"></a>
+            <a href="https://blog.naver.com/crossfita2f"><img src="/img/sns1.png" width="30px"></a>
+            <a href="https://www.instagram.com/bodywork119/"><img src="/img/sns2.png" width="30px"></a>
+            <a href="#"><img src="/img/sns3.png" width="30px"></a>
         </div>
     </header>
 

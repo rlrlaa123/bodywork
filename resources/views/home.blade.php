@@ -196,6 +196,10 @@
             display: none !important;
         }
 
+        .bodywork-kakao-wrapper {
+            display: none;
+        }
+
         @media (orientation: portrait) {
             .owl-carousel {
                 display: block !important;
@@ -305,6 +309,7 @@
             }
 
             .bodywork-kakao-wrapper {
+                display: block;
                 background-color: #fce94e;
                 color: #402a2d;
                 padding-top: 10px;
