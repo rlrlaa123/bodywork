@@ -35,10 +35,7 @@
                     </a>
                 </td>
                 <td>
-                    <a class="name-selector"
-                       href="{{ route('admin.beforeafter.edit', [$bf->id]) }}">
-                        {{ $bf->created_at }}
-                    </a>
+                    {{ $bf->created_at }}
                 </td>
                 <td><a class="delete" onclick="deleteConversation({{ $bf->id }})">삭제</a></td>
             </tr>
