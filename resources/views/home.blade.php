@@ -461,7 +461,7 @@
             <div class="bodywork-call-container" onclick="location.href='tel:02-448-7102'">
                 <span>방이 2호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-call-container" onclick="location.href='tel:02-000-0000'">
+            <div class="bodywork-call-container" onclick="location.href='tel:02-448-7161'">
                 <span>오금 3호점<br> 전화하기</span>
             </div>
         </div>
