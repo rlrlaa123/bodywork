@@ -56,7 +56,7 @@
             margin: 50px;
             border-left: 2px solid orange;
             text-align: left;
-            padding: 20px;
+            padding-left: 30px;
         }
 
         @media (orientation: portrait) {
@@ -109,7 +109,7 @@
                             <img src="/{{ $trainer->image }}">
                         </div>
                         <div>
-                            <h3 style="margin: 20px 0;">{{ $trainer->name }}</h3>
+                            <h3 style="margin: 20px 0; margin-top: 0;">{{ $trainer->name }}</h3>
                             <h6>자격사항</h6>
                             <p>{!! nl2br($trainer->description) !!}</p>
                         </div>
@@ -122,7 +122,7 @@
                             <img src="/{{ $trainer->image }}">
                         </div>
                         <div>
-                            <h3 style="margin: 20px 0;">{{ $trainer->name }}</h3>
+                            <h3 style="margin: 20px 0; margin-top: 0;">{{ $trainer->name }}</h3>
                             <h6>자격사항</h6>
                             <p>{!! nl2br($trainer->description) !!}</p>
                         </div>
