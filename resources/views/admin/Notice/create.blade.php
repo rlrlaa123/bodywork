@@ -6,6 +6,7 @@
 @endsection
 @section('content')
     <h4 style="text-align: left;">※ 공지사항 리스트 -> 등록</h4>
+    <p style="margin: 0; color: red; text-align: left;">* 첨부 이미지는 1MB를 넘지 않도록 해주세요.</p>
     <hr>
     <form method="POST" action="{{ route('admin.notice.store') }}" enctype="multipart/form-data">
         {!! csrf_field() !!}

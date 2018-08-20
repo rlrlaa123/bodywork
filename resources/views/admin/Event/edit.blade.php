@@ -16,6 +16,7 @@
 @endsection
 @section('content')
     <h4 style="text-align: left;">※ 이벤트 리스트 -> 수정</h4>
+    <p style="margin: 0; color: red; text-align: left;">* 첨부 이미지는 1MB를 넘지 않도록 해주세요.</p>
     <hr>
     <form method="POST" action="{{ route('admin.event.update', $event->id) }}" enctype="multipart/form-data">
         {!! csrf_field() !!}
