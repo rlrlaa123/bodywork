@@ -1,6 +1,7 @@
 @extends('layouts.app_dashboard')
 @section('style')
-    <style></style>
+    <style>
+    </style>
 @endsection
 @section('content')
     <h3>실시간 상담</h3>

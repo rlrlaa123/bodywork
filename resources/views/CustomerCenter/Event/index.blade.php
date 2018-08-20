@@ -1,10 +1,20 @@
 @extends('layouts.app_dashboard')
 @section('style')
     <style>
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
 
+        @media(orientation: portrait) {
+            .cover-image {
+                height: 250px;
+            }
+        }
     </style>
 @endsection
 @section('content')
+    <img class="cover-image" src="/img/6.png">
     <h3>이벤트</h3>
     <hr>
     <div class="table-responsive">
