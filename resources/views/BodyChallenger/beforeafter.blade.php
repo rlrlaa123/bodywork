@@ -8,6 +8,10 @@
         hr {
             margin: 50px;
         }
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
 
         .review-wrapper {
             display: grid;
@@ -74,10 +78,16 @@
                 display: block;
                 margin: 0 50px;
             }
+
+            .cover-image {
+                width: 100%;
+                height: 250px;
+            }
         }
     </style>
 @endsection
 @section('content')
+    <img class="cover-image" src="/img/body_challenger/1.png">
     <h3 style="margin: 50px 0; font-weight: bold;">Before & After</h3>
     <hr>
     <p style="text-align: left; margin: 20px 50px;">포토샵없는 리얼 후기사진입니다.</p>
