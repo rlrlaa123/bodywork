@@ -168,8 +168,8 @@ Route::get('/branch/1/{branch}', function($id) {
     return view('Branch.branch', compact('branch', 'branches'));
 });
 
-Route::get('/branch/2', function() {
-    $trainers = \App\Trainer::all();
+Route::get('/branch/2/{branch}', function($id) {
+    $trainers = \App\Trainer::where('branch_id', $id)->get();
     $branches = \App\Branch::all();
 
     return view('Branch.trainer', compact('trainers', 'branches'));

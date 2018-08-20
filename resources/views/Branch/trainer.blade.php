@@ -41,6 +41,9 @@
 
         .trainer-container div:nth-child(1) {
             -ms-grid-column: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .trainer-container div:nth-child(2) {
@@ -92,58 +95,27 @@
     <div style="display: flex; width: 100%;">
         <div class="trainer-selector">
             @for($i = 1; $i <= count($branches); $i++)
-                @if($i == 1)
-                    <div class="trainer-btn {{ $i }} active">{{ $i }}호점</div>
-                @else
-                    <div class="trainer-btn {{ $i }}">{{ $i }}호점</div>
-                @endif
+                <div class="trainer-btn {{ preg_match('/branch\/2\/' . $i . '/', $_SERVER['REQUEST_URI'])
+                                           ? 'active' : ''}}"><a href="/branch/2/{{ $i }}">{{ $i }}호점</a></div>
             @endfor
         </div>
     </div>
-    @foreach($branches as $i => $branch)
-        @foreach(\App\Trainer::where('branch_id', $branch->number)->get() as $trainer)
-            @if($i== 0)
-                <div class="trainer-wrapper {{ $branch->number }}" style="display: block;">
-                    <div class="trainer-container">
-                        <div>
-                            <img src="/{{ $trainer->image }}">
-                        </div>
-                        <div>
-                            <h3 style="margin: 20px 0; margin-top: 0;">{{ $trainer->name }}</h3>
-                            <h6>자격사항</h6>
-                            <p>{!! nl2br($trainer->description) !!}</p>
-                        </div>
-                    </div>
+    @foreach($trainers as $trainer)
+        <div class="trainer-wrapper">
+            <div class="trainer-container">
+                <div>
+                    <img src="/{{ $trainer->image }}">
                 </div>
-            @else
-                <div class="trainer-wrapper {{ $branch->number }}" style="display: none;">
-                    <div class="trainer-container">
-                        <div>
-                            <img src="/{{ $trainer->image }}">
-                        </div>
-                        <div>
-                            <h3 style="margin: 20px 0; margin-top: 0;">{{ $trainer->name }}</h3>
-                            <h6>자격사항</h6>
-                            <p>{!! nl2br($trainer->description) !!}</p>
-                        </div>
-                    </div>
+                <div>
+                    <h3 style="margin: 20px 0; margin-top: 0;">{{ $trainer->name }}</h3>
+                    <h6>자격사항</h6>
+                    <p>{!! nl2br($trainer->description) !!}</p>
                 </div>
-            @endif
-        @endforeach
+            </div>
+        </div>
     @endforeach
 @endsection
 @section('script')
     <script>
-        $('.trainer-btn').click(function () {
-            var index = $(this).attr('class').slice(-1);
-
-            for (var i = 1; i <= 3; i++) {
-                $('.trainer-wrapper.' + i).css('display', 'none');
-                $('.trainer-btn')[i - 1].classList.remove('active');
-            }
-            $('.trainer-wrapper.' + index).css('display', 'block');
-
-            $(this).addClass('active');
-        });
     </script>
 @endsection
