@@ -8,6 +8,8 @@
 
     <title>바디웍</title>
     <meta name="description" content=" 방이동 퍼스널트레이닝. 개인pt샵 바디웍입니다.">
+    <meta name="google-site-verification" content="cOAveFcpl0J7z3FJpsZNSRW4Qw9E4FWwADNrd3Eh7Qc" />
+
     @include('layouts.partial.bootstrap')
     @include('layouts.partial.jquery_js')
     @include('layouts.partial.boostrap_js')
