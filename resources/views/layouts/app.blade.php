@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', '바이웍') }}</title>
+    <title>바디웍</title>
     <meta name="description" content=" 방이동 퍼스널트레이닝. 개인pt샵 바디웍입니다.">
     @include('layouts.partial.bootstrap')
     @include('layouts.partial.jquery_js')
