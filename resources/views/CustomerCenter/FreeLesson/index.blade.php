@@ -6,11 +6,6 @@
             margin: 0 50px;
         }
 
-        .cover-image {
-            width: 100%;
-            height: 400px;
-        }
-
         @media(orientation: portrait) {
             .cover-image {
                 height: 250px;

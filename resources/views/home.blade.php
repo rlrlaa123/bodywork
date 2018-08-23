@@ -9,8 +9,131 @@
             font-size: 1vw;
         }
 
-        #main-carousel-inner img {
-            height: 550px;
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+           #main-carousel-inner img {
+               height: 550px;
+           }
+
+
+            .bodywork-menu-text {
+                border: 1px solid white;
+                border-radius: 20px;
+                width: 180px;
+                height: 40px;
+                background: transparent;
+                color: white;
+                font-size: 1.5vw;
+                font-weight: bold;
+                box-shadow: 4px 4px 4px black;
+            }
+
+            .before-after-more-btn {
+                width: 70px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 20px;
+                background-color: #556169;
+                color: white;
+                font-size: 1vw;
+                padding: 5px;
+                cursor: pointer;
+                box-shadow: 4px 4px 4px #5c5c5c;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+           #main-carousel-inner img {
+               height: 550px;
+           }
+
+
+            .bodywork-menu-text {
+                border: 1px solid white;
+                border-radius: 20px;
+                width: 180px;
+                height: 30px;
+                background: transparent;
+                color: white;
+                font-size: 1.5vw;
+                font-weight: bold;
+                box-shadow: 4px 4px 4px black;
+            }
+
+            .before-after-more-btn {
+                width: 70px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 20px;
+                background-color: #556169;
+                color: white;
+                font-size: 1vw;
+                padding: 5px;
+                cursor: pointer;
+                box-shadow: 4px 4px 4px #5c5c5c;
+            }
+        }
+
+        @media screen and (min-width: 1441px) {
+           #main-carousel-inner img {
+               height: 750px;
+           }
+
+            .bodywork-menu-text {
+                border: 1px solid white;
+                border-radius: 20px;
+                width: 300px;
+                height: 60px;
+                background: transparent;
+                color: white;
+                font-size: 1.5vw;
+                font-weight: bold;
+                box-shadow: 4px 4px 4px black;
+            }
+
+            .before-after-more-btn {
+                width: 120px;
+                height: 40px;
+                border: 1px solid white;
+                border-radius: 20px;
+                background-color: #556169;
+                color: white;
+                font-size: 1vw;
+                padding: 5px;
+                cursor: pointer;
+                box-shadow: 4px 4px 4px #5c5c5c;
+            }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+           #main-carousel-inner img {
+               height: 550px;
+           }
+
+
+            .bodywork-menu-text {
+                border: 1px solid white;
+                border-radius: 20px;
+                width: 180px;
+                height: 30px;
+                background: transparent;
+                color: white;
+                font-size: 1.5vw;
+                font-weight: bold;
+                box-shadow: 4px 4px 4px black;
+            }
+
+            .before-after-more-btn {
+                width: 70px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 20px;
+                background-color: #556169;
+                color: white;
+                font-size: 1vw;
+                padding: 5px;
+                cursor: pointer;
+                box-shadow: 4px 4px 4px #5c5c5c;
+            }
         }
 
         #main-carousel-indicator {
@@ -64,19 +187,6 @@
             background-color: orange;
         }
 
-        .before-after-more-btn {
-            width: 70px;
-            height: 30px;
-            border: 1px solid white;
-            border-radius: 20px;
-            background-color: #556169;
-            color: white;
-            font-size: 1vw;
-            padding: 5px;
-            cursor: pointer;
-            box-shadow: 4px 4px 4px #5c5c5c;
-        }
-
         .bodywork-menu-wrapper {
             background-color: #64947f;
             color: white;
@@ -94,6 +204,7 @@
             width: 90%;
             margin: auto;
         }
+
 
         .bodywork-menu-container div{
             cursor: pointer;
@@ -132,18 +243,6 @@
             background-repeat: no-repeat;
             height: 300px;
             cursor: pointer;
-        }
-
-        .bodywork-menu-text {
-            border: 1px solid white;
-            border-radius: 20px;
-            width: 180px;
-            height: 30px;
-            background: transparent;
-            color: white;
-            font-size: 1.5vw;
-            font-weight: bold;
-            box-shadow: 4px 4px 4px black;
         }
 
         .bodywork-call-wrapper {
@@ -259,8 +358,17 @@
             }
 
             .before-after-more-btn {
-                margin-top: 0;
+                width: 70px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 20px;
+                background-color: #556169;
+                color: white;
                 font-size: 11px;
+                padding: 5px;
+                cursor: pointer;
+                box-shadow: 4px 4px 4px #5c5c5c;
+                margin-top: 0;
             }
 
             .bodywork-menu-wrapper {
@@ -335,12 +443,6 @@
 
             .owl-carousel img {
                 height: 125px;
-            }
-        }
-
-        @media screen and (min-width: 1200px) {
-            .bodywork-menu-text {
-                height: 40px;
             }
         }
     </style>
@@ -421,7 +523,7 @@
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
             </div>
-            <div onclick="location.href='/branch/1'">
+            <div onclick="location.href='/branch/1/1'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>

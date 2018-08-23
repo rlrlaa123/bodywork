@@ -43,8 +43,35 @@
         url(/font/NanumBarunGothicBold.ttf) format('truetype');
     }
 
+    @media screen and (min-width: 1024px) and (max-width: 1440px) {
+        .cover-image {
+            width: 100%;
+            height: 600px;
+        }
+    }
 
-    body {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
+    }
+
+    @media screen and (min-width: 1441px) {
+        .cover-image {
+            width: 100%;
+            height: 800px;
+        }
+    }
+
+    @media screen and (max-width: 768px) and (orientation: landscape) {
+        .cover-image {
+            width: 100%;
+            height: 400px;
+        }
+    }
+
+        body {
         font-family: 'NanumBarunGothic', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -57,11 +84,72 @@
         padding: 20px;
     }
 
-    .header-image {
-        width: 80px;
-        height: 80px;
-        border-radius: 50px;
-        margin-right: 10px;
+    @media screen and (max-width: 768px) and (orientation: landscape) {
+        .header-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+
+        .footer-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1440px) {
+        .header-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+
+        .footer-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+    }
+.
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .header-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+
+        .footer-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+        }
+    }
+
+    @media screen and (min-width: 1441px) and (orientation: landscape) {
+        .header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+
+        .footer-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 100%;
+        }
+    }
+
+    @media (orientation: portrait) {
+        .header-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
     }
 
     li {
@@ -231,12 +319,6 @@
         -ms-grid-column: 2;
     }
 
-    .footer-image {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-    }
-
     .hr {
         margin: 50px auto;
         height: 2px;
@@ -292,6 +374,7 @@
         .footer-image {
             width: 50px;
             height: 50px;
+            border-radius: 100%;
         }
 
         .sidenav {

@@ -2,14 +2,17 @@
 @section('style')
     <style>
 
+        h3 {
+            font-size: 3vw;
+        }
+
+        h4 {
+            font-size: 2vw;
+        }
+
         p {
             font-size: 1.5vw;
             margin: 20px 0;
-        }
-
-        .cover-image {
-            width: 100%;
-            height: 400px;
         }
 
         .pt-program-wrapper-1 {

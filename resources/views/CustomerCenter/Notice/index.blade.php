@@ -1,10 +1,6 @@
 @extends('layouts.app_dashboard')
 @section('style')
     <style>
-        .cover-image {
-            width: 100%;
-            height: 400px;
-        }
 
         @media(orientation: portrait) {
             .table-responsive {

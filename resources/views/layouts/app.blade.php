@@ -59,9 +59,9 @@
             </a>
         </div>
         <div class="sns-wrapper">
+            <a href="https://cafe.naver.com/bodywork119"><img src="/img/sns3.jpg" width="30px"></a>
             <a href="https://blog.naver.com/crossfita2f"><img src="/img/sns1.png" width="30px"></a>
             <a href="https://www.instagram.com/bodywork119/"><img src="/img/sns2.png" width="30px"></a>
-            <a href="#"><img src="/img/sns3.png" width="30px"></a>
         </div>
     </header>
 
@@ -79,7 +79,7 @@
     </div>
     <div>
         <p>상호명:바디웍휘트니스/주소:서울특별시 송파구 오금동 위례성대로 20길 23 신승빌딩3층</p>
-        <p>대표: 이우석,장정훈/TEL: (02)408-3966/사업자등록번호:501-37-279974</p>
+        <p>대표: 이우석,장정훈/TEL: (02)408-3966/사업자등록번호:501-37-27997</p>
         <p>Copyright all right reserved BODYWORK</p>
     </div>
 </footer>

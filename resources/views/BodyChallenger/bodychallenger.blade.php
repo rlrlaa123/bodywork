@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('style')
     <style>
+        h3 {
+            font-size: 2vw;
+        }
+
         .pt-info-1 {
             margin: 50px;
             background-color: #faf8f6;
@@ -14,11 +18,6 @@
 
         p {
             font-size: 1.0vw;
-        }
-
-        .cover-image {
-            width: 100%;
-            height: 400px;
         }
 
         .comma-image {

@@ -1,9 +1,25 @@
 @extends('layouts.app')
 @section('style')
     <style>
-        .cover-image {
-            width: 100%;
-            height: 400px;
+        @media screen and (min-width: 1441px) {
+            .ceo-wrapper-2 img {
+                width: 80%;
+                height: 600px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .ceo-wrapper-2 img {
+                width: 80%;
+                height: 500px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .ceo-wrapper-2 img {
+                width: 80%;
+                height: 300px;
+            }
         }
 
         .ceo-wrapper-1 {
@@ -38,11 +54,6 @@
             -ms-flex-align: center;
             align-items: center;
             font-size: 1vw;
-        }
-
-        .ceo-wrapper-2 img {
-            width: 80%;
-            height: 300px;
         }
 
         .ceo-wrapper-2 h5 {
@@ -112,7 +123,7 @@
     <hr>
     <div class="ceo-wrapper-1">
         <div>
-            <p>현역 보디빌 & 피트니스 팀으로 구성된</p>
+            <p>현역 보디빌딩 & 피트니스 팀으로 구성된</p>
             <p>퍼스널트레이닝 전문센터입니다.</p>
         </div>
     </div>

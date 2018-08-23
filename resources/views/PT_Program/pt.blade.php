@@ -12,18 +12,37 @@
             padding: 50px 100px;
         }
 
+        h3 {
+            font-size: 3vw;
+        }
+
+        h4 {
+            font-size: 2vw;
+        }
+
         p {
             font-size: 1.0vw;
         }
 
-        .cover-image {
-            width: 100%;
-            height: 400px;
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .content-image {
+                width: 80%;
+                height: 500px;
+            }
         }
 
-        .content-image {
-            width: 80%;
-            height: 300px;
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .content-image {
+                width: 80%;
+                height: 300px;
+            }
+        }
+
+        @media screen and (min-width: 1441px) {
+            .content-image {
+                width: 80%;
+                height: 500px;
+            }
         }
 
         .comma-image {

@@ -3,14 +3,11 @@
     <style>
         h3 {
             margin: 0 50px;
+            font-size: 2vw;
         }
 
         hr {
             margin: 50px;
-        }
-        .cover-image {
-            width: 100%;
-            height: 400px;
         }
 
         .review-wrapper {
@@ -56,9 +53,32 @@
             cursor: pointer;
         }
 
-        .review-container img {
-            width: 100%;
-            max-width: 270px;
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .review-container img {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .review-container img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media screen and (min-width: 1441px) {
+            .review-container img {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .review-container img {
+                width: 100%;
+                max-width: 300px;
+            }
         }
 
         .pagination {

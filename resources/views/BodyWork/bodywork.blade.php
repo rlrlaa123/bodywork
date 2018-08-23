@@ -1,18 +1,13 @@
 @extends('layouts.app')
 @section('style')
     <style>
-        .cover-image {
-            width: 100%;
-            height: 400px;
-        }
-
         .bodywork-logo {
             display: grid;
             display: -ms-grid;
             grid-template-columns: 45% 55%;
             -ms-grid-columns: 45% 55%;
             margin: 50px 20%;
-            height: 200px;
+            height: auto;
             align-items: center;
             justify-content: center;
         }
@@ -21,10 +16,28 @@
             -ms-grid-column: 2;
         }
 
-        .bodywork-logo img {
-            width: 200px;
-            height: 200px;
-            border-radius: 100px;
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .bodywork-logo img {
+                width: 250px;
+                height: 250px;
+                border-radius: 100%;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .bodywork-logo img {
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+            }
+        }
+
+        @media screen and (min-width: 1441px) {
+            .bodywork-logo img {
+                width: 350px;
+                height: 350px;
+                border-radius: 100%;
+            }
         }
 
         .bodywork-logo:nth-child(1) {
@@ -94,9 +107,9 @@
 @endsection
 @section('content')
     <img class="cover-image" src="/img/pt_program/10.jpg">
-    <h3 style="margin: 50px 0; font-weight: bold;">바디웍 소개</h3>
+    <h3 style="margin: 50px 0; font-weight: bold; font-size: 3vw;">바디웍 소개</h3>
     <hr>
-    <h4 style="margin: 50px 0;">바디웍 로고</h4>
+    <h4 style="margin: 50px 0; font-size: 2vw;">바디웍 로고</h4>
     <div class="bodywork-logo">
         <div>
             <img src="/img/logo.jpg">

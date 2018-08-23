@@ -20,6 +20,7 @@
 
         h3 {
             margin: 0 50px;
+            font-size: 2vw;
         }
 
         hr {

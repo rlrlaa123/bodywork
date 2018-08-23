@@ -19,6 +19,7 @@
         }
 
         h3 {
+            font-size: 2vw;
             margin: 0 50px;
         }
 
@@ -26,13 +27,48 @@
             margin: 50px;
         }
 
-        .carousel {
-            margin: 0 50px;
-            height: 500px;
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .carousel {
+                margin: 0 50px;
+                height: 650px;
+            }
+
+            .carousel-inner {
+                height: 650px;
+            }
         }
 
-        .carousel-inner {
-            height: 500px;
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .carousel {
+                margin: 0 50px;
+                height: 450px;
+            }
+
+            .carousel-inner {
+                height: 450px;
+            }
+        }
+
+        @media screen and (min-width: 1441px) {
+            .carousel {
+                margin: 0 50px;
+                height: 900px;
+            }
+
+            .carousel-inner {
+                height: 900px;
+            }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .carousel {
+                margin: 0 50px;
+                height: 450px;
+            }
+
+            .carousel-inner {
+                height: 450px;
+            }
         }
 
         .carousel-indicators li {

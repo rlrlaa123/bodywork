@@ -1,23 +1,67 @@
 @extends('layouts.app')
 @section('style')
     <style>
-        .cover-image {
-            width: 100%;
-            height: 400px;
+        h3 {
+            font-size: 3vw;
         }
 
-        .pt-progress {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 50px auto;
-            border-radius: 100%;
-            background-color: #efa19d;
-            width: 550px;
-            height: 550px;
+        h4 {
+            font-size: 2vw;
         }
 
-        .pt-progress img {
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .pt-progress {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto;
+                border-radius: 100%;
+                background-color: #efa19d;
+                width: 550px;
+                height: 550px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .pt-progress {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto;
+                border-radius: 100%;
+                background-color: #efa19d;
+                width: 550px;
+                height: 550px;
+            }
+        }
+
+        @media screen and (min-width: 1441px) {
+            .pt-progress {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto;
+                border-radius: 100%;
+                background-color: #efa19d;
+                width: 850px;
+                height: 850px;
+            }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .pt-progress {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto;
+                border-radius: 100%;
+                background-color: #efa19d;
+                width: 550px;
+                height: 550px;
+            }
+        }
+
+            .pt-progress img {
             width: 25px;
             height: 25px;
         }
@@ -34,7 +78,7 @@
             color: #efa19d;
             text-align: left;
             padding-left: 20px;
-            font-size: 13px;
+            font-size: 1vw;
         }
 
         .pt-progress-info p{
@@ -57,6 +101,10 @@
                 height: 15px;
             }
 
+            h3 {
+                font-size: 4.5vw;
+            }
+
             h4 {
                 font-size: 4.5vw;
             }
@@ -73,6 +121,16 @@
             p {
                 font-size: 11px;
             }
+            .pt-progress {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto;
+                border-radius: 100%;
+                background-color: #efa19d;
+                width: 250px;
+                height: 250px;
+            }
         }
     </style>
 @endsection
@@ -81,7 +139,7 @@
     <h3 style="margin: 50px 0; font-weight: bold;">PT 진행순서</h3>
     <hr style="margin: 0 50px;">
     <h4 style="margin-top: 50px;">바디웍 전문 트레이너와 함께하는 맞춤 트레이닝</h4>
-    <h6 style="font-weight: lighter;">바디웍은 고객님들의 체형, 성별, 연령에 맞는 최고의 1:1 퍼스널 트레이닝을 선사합니다.</h6>
+    <h6 style="font-weight: lighter; font-size: 1vw;">바디웍은 고객님들의 체형, 성별, 연령에 맞는 최고의 1:1 퍼스널 트레이닝을 선사합니다.</h6>
     <div class="pt-progress">
         <div>
             <p>고객상담</p>
