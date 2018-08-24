@@ -9,16 +9,18 @@
     </header>
     <hr>
     <table class="table">
-        <col width="15%">
+        <col width="5%">
         <col width="50%">
         <col width="15%">
         <col width="15%">
-        <col width="20%">
+        <col width="10%">
+        <col width="5%">
         <thead>
         <tr>
             <th>호점</th>
             <th>소개글</th>
             <th>주소</th>
+            <th>전화번호</th>
             <th>운영시간</th>
             <th>삭제</th>
         </tr>
@@ -34,6 +36,7 @@
                     </a>
                 </td>
                 <td>{{ $branch->location }}</td>
+                <td>{{ $branch->phone }}</td>
                 <td>
                     <p>{{ $branch->time1 }}</p>
                     <p>{{ $branch->time2 }}</p>

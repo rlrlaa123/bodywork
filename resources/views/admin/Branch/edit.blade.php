@@ -95,6 +95,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="phone">전화번호</label></td>
+                <td class="td-input">
+                    <input id="phone" name="phone" type="text" value="{{ old('phone', $branch->phone) }}">
+                    @if ($errors->has('phone'))
+                        <div class="help-block">
+                            {{ $errors->first('phone') }}
+                        </div>
+                    @endif
+                    <span style="font-weight: bold;">'-' 포함해서 다음과 같이 입력해주세요.<br> 02-408-3966</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="location">주소</label></td>
                 <td class="td-input">
                     <input id="location" name="location" type="text" value="{{ old('location', $branch->location) }}">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddLinkColumnInAlliancesTable extends Migration
+class AddColumnTelephoneInBranchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddLinkColumnInAlliancesTable extends Migration
      */
     public function up()
     {
-        Schema::table('alliances', function (Blueprint $table) {
-            $table->string('link')->nullable();
+        Schema::table('branches', function (Blueprint $table) {
+            $table->string('phone')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddLinkColumnInAlliancesTable extends Migration
      */
     public function down()
     {
-        Schema::table('alliances', function (Blueprint $table) {
-            $table->dropColumn('link');
+        Schema::table('branches', function (Blueprint $table) {
+            $table->dropColumn('phone');
         });
     }
 }

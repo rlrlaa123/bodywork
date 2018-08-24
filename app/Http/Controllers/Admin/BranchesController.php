@@ -45,6 +45,7 @@ class BranchesController extends Controller
             'description' => 'required|min:6',
             'time1' => 'required',
             'time2' => 'required',
+            'phone' => 'required',
             'location' => 'required',
         ]);
 
@@ -89,6 +90,7 @@ class BranchesController extends Controller
         $branch->time1 = $request->time1;
         $branch->time2 = $request->time2;
         $branch->location = $request->location;
+        $branch->phone = $request->phone;
 
         if ($request->has('time3')) {
             $branch->time3 = $request->time3;
@@ -168,6 +170,7 @@ class BranchesController extends Controller
             'description' => $request->description,
             'time1' => $request->time1,
             'location' => $request->location,
+            'phone' => $request->phone,
         ]);
 
         if ($request->has('time3')) {

@@ -569,13 +569,13 @@
     <div class="bodywork-call-wrapper">
         <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
         <div class="bodywork-call-box">
-            <div class="bodywork-call-container" onclick="location.href='tel:02-408-3966'">
+            <div class="bodywork-call-container" onclick="location.href='tel:{{ \App\Branch::where('number', 1)->first()->phone }}'">
                 <span>본점 1호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-call-container" onclick="location.href='tel:02-448-7102'">
+            <div class="bodywork-call-container" onclick="location.href='tel:{{ \App\Branch::where('number', 2)->first()->phone }}'">
                 <span>방이 2호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-call-container" onclick="location.href='tel:02-448-7161'">
+            <div class="bodywork-call-container" onclick="location.href='tel:{{ \App\Branch::where('number', 3)->first()->phone }}'">
                 <span>오금 3호점<br> 전화하기</span>
             </div>
         </div>

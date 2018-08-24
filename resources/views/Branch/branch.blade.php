@@ -36,6 +36,11 @@
             .carousel-inner {
                 height: 650px;
             }
+
+            .phone-image {
+                width: 25px;
+                margin-right: 5px;
+            }
         }
 
         @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -46,6 +51,11 @@
 
             .carousel-inner {
                 height: 450px;
+            }
+
+            .phone-image {
+                width: 25px;
+                margin-right: 5px;
             }
         }
 
@@ -58,6 +68,11 @@
             .carousel-inner {
                 height: 900px;
             }
+
+            .phone-image {
+                width: 40px;
+                margin-right: 5px;
+            }
         }
 
         @media screen and (max-width: 768px) and (orientation: landscape) {
@@ -68,6 +83,11 @@
 
             .carousel-inner {
                 height: 450px;
+            }
+
+            .phone-image {
+                width: 25px;
+                margin-right: 5px;
             }
         }
 
@@ -175,6 +195,11 @@
             .branch-info img {
                 width: 20px;
             }
+
+            .phone-image {
+                width: 15px;
+                margin-right: 5px;
+            }
         }
     </style>
 @endsection
@@ -278,6 +303,7 @@
                 {{ $branch->time3 }}
             </div>
             <div class="note">Note: {{ $branch->note }}</div>
+            <p><img src="/img/phone-call.png" class="phone-image"> {{ $branch->phone }}</p>
         </div>
     </div>
 @endsection
