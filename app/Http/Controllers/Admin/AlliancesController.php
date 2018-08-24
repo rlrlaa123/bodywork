@@ -71,6 +71,7 @@ class AlliancesController extends Controller
         $alliance = new Alliance;
 
         $alliance->description = $request->description;
+        $alliance->link = $request->link;
 
         if($request->has('image')) {
             $alliance->image = 'storage/alliances/' . $alliance_name;
@@ -135,6 +136,7 @@ class AlliancesController extends Controller
 
         Alliance::where('id', $id)->update([
             'description' => $request->description,
+            'link' => $request->link,
         ]);
 
         if($request->has('image')) {

@@ -34,6 +34,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="link">링크</label></td>
+                <td class="td-input">
+                    <input id="link" name="link" type="text" value="{{ old('link') }}">
+                    @if ($errors->has('link'))
+                        <div class="help-block">
+                            {{ $errors->first('link') }}
+                        </div>
+                    @endif
+                    <p style="font-weight: bold;">ex) http://www.bodywork119.com</p>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="image">이미지</label></td>
                 <td class="td-input">
                     <input id="image" name="image" type="file" accept='image/*' value="{{ old('image') }}">

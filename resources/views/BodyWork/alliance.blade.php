@@ -82,8 +82,10 @@
     <div class="review-wrapper">
         @foreach($alliances as $alliance)
             <div class="review-container">
-                <img src="/{{ $alliance->image }}">
-                <p style="font-weight: bold; margin: 10px 0;">{{ $alliance->description }}!</p>
+                <a href="{{ $alliance->link }}">
+                    <img src="/{{ $alliance->image }}">
+                    <p style="font-weight: bold; margin: 10px 0;">{{ $alliance->description }}!</p>
+                </a>
             </div>
         @endforeach
     </div>

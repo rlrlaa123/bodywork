@@ -24,7 +24,10 @@
         <tbody>
         @forelse($alliances as $alliance)
             <tr>
-                <td><img src="/{{ $alliance->image }}" width="200px"></td>
+                <td>
+                    <img src="/{{ $alliance->image }}" width="200px">
+                    <p style="font-weight: bold;"><a href="{{ $alliance->link }}">[ 링크 바로가기 ]</a></p>
+                </td>
                 <td>
                     <a class="name-selector"
                        href="{{ route('admin.alliance.edit', [$alliance->id]) }}">
