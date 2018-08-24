@@ -172,7 +172,7 @@ Route::get('/branch/1/{branch}', function($id) {
 });
 
 Route::get('/branch/2/{branch}', function($id) {
-    $trainers = \App\Trainer::where('branch_id', $id)->get();
+    $trainers = \App\Trainer::where('branch_id', $id)->orderby('index')->get();
     $branches = \App\Branch::all();
 
     return view('Branch.trainer', compact('trainers', 'branches'));
@@ -234,6 +234,7 @@ Route::prefix('admin')->group(function() {
     Route::get('trainer/{trainer}/edit', 'Admin\TrainersController@edit')->name('admin.trainer.edit');
     Route::put('trainer/{trainer}', 'Admin\TrainersController@update')->name('admin.trainer.update');
     Route::delete('trainer/{trainer}', 'Admin\TrainersController@destroy')->name('admin.trainer.destroy');
+    Route::post('trainer/{trainer}/index', 'Admin\TrainersController@indexChange')->name('admin.trainer.index');
 
     Route::get('beforeafter', 'Admin\BeforeAftersController@index')->name('admin.beforeafter.index');
     Route::get('beforeafter/create', 'Admin\BeforeAftersController@create')->name('admin.beforeafter.create');

@@ -1,6 +1,12 @@
 @extends('layouts.admin')
 @section('style')
     <style>
+        select {
+            margin: 10px 0;
+            /*background-color: white;*/
+            /*border: 1px solid #e3e3e3;*/
+            /*display: block;*/
+        }
     </style>
 @endsection
 @section('content')
@@ -9,13 +15,15 @@
     </header>
     <hr>
     <table class="table">
-        <col width="15%">
+        <col width="10%">
+        <col width="10%">
         <col width="15%">
         <col width="15%">
         <col width="40%">
-        <col width="15%">
+        <col width="10%">
         <thead>
         <tr>
+            <th>순서</th>
             <th>호점</th>
             <th>사진</th>
             <th>이름</th>
@@ -26,6 +34,18 @@
         <tbody>
         @forelse($trainers as $trainer)
             <tr>
+                <td>
+                    <form method="POST" action="{{ route('admin.trainer.index', $trainer->id) }}">
+                        {!! csrf_field() !!}
+                        <select id="index" name="index">
+                            @for($i=1; $i <= count(\App\Trainer::where('branch_id', $trainer->branch_id)->get()); $i++)
+                                <option @if($trainer->index == $i) selected @endif value="{{ $i }}">{{ $i }}번째</option>
+                            @endfor
+                        </select>
+                        <hr style="visibility: hidden; margin: 0;">
+                        <button type="submit" style="font-size: 11px;"><label for="index" style="margin: 0">변경</label></button>
+                    </form>
+                </td>
                 <td>{{ $trainer->branch->number }}호점</td>
                 <td><img src="/{{ $trainer->image }}" width="100px"></td>
                 <td>

@@ -18,7 +18,7 @@ class TrainersController extends Controller
      */
     public function index()
     {
-        $trainers = Trainer::orderby('name')->paginate(6);
+        $trainers = Trainer::orderby('branch_id')->orderby('index')->paginate(6);
 
         return view('admin.Trainer.index', compact('trainers'));
     }
@@ -171,5 +171,16 @@ class TrainersController extends Controller
         $trainer->delete();
 
         return response('success', 200);
+    }
+
+    public function indexChange(Request $request, $id)
+    {
+        $trainer = Trainer::find($id);
+
+        $trainer->index = $request->index;
+
+        $trainer->save();
+
+        return redirect('admin/trainer');
     }
 }
