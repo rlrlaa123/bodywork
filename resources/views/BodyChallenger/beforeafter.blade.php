@@ -103,6 +103,11 @@
                 width: 100%;
                 height: 250px;
             }
+
+            .review-container img {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 @endsection
