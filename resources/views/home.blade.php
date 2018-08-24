@@ -352,6 +352,18 @@
                 font-size: 11px;
             }
 
+            .bodywork-menu-text {
+                border: 1px solid white;
+                border-radius: 20px;
+                width: 180px;
+                height: 30px;
+                background: transparent;
+                color: white;
+                font-size: 1.5vw;
+                font-weight: bold;
+                box-shadow: 4px 4px 4px black;
+            }
+
             .before-after-wrapper {
                 margin: 50px 0;
                 padding: 25px 0;
