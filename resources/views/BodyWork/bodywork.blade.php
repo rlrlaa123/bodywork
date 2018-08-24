@@ -81,6 +81,7 @@
             .bodywork-logo img {
                 width: 100px;
                 height: 100px;
+                border-radius: 100%;
             }
 
             .bodywork-logo div {

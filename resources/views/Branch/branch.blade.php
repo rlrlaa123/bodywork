@@ -125,6 +125,7 @@
 
         @media (orientation: portrait) {
             .carousel {
+                margin: 0 50px;
                 height: 200px;
             }
 
