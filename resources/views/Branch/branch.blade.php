@@ -304,7 +304,7 @@
                 {{ $branch->time3 }}
             </div>
             <div class="note">Note: {{ $branch->note }}</div>
-            <p><img src="/img/phone-call.png" class="phone-image"> {{ $branch->phone }}</p>
+            <p><a href="tel:{{ $branch->phone }}"><img src="/img/phone-call.png" class="phone-image"> {{ $branch->phone }}</a></p>
         </div>
     </div>
 @endsection
