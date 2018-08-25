@@ -165,6 +165,7 @@
                 display: block;
                 grid-template-columns: repeat(1, 1fr);
                 width: 100%;
+                margin-bottom: 50px;
             }
 
             .branch-btn {
