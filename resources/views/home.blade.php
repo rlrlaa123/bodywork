@@ -255,8 +255,8 @@
         }
 
         .bodywork-call-box {
-            display: grid;
-            grid-template-columns: 33.3% 33.3% 33.3%;
+            display: flex;
+            justify-content: space-between;
         }
 
         /*.bodywork-call-container:nth-child(1) {*/
@@ -281,6 +281,7 @@
         /*}*/
 
         .bodywork-call-container {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -424,7 +425,7 @@
             }
 
             .bodywork-call-wrapper {
-                display: grid;
+                display: block;
             }
 
             .bodywork-kakao-wrapper {
@@ -435,11 +436,12 @@
             }
 
             .bodywork-kakao-container {
-                display: grid;
-                grid-template-columns: 33.3% 33.3% 33.3%;
+                display: flex;
+                justify-content: space-between;
             }
 
             .bodywork-kakao {
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
