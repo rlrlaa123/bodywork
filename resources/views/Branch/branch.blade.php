@@ -304,7 +304,7 @@
                 {{ $branch->time3 }}
             </div>
             <div class="note">Note: {{ $branch->note }}</div>
-            <p><a href="tel:{{ $branch->phone }}"><img src="/img/phone-call.png" class="phone-image"> {{ $branch->phone }}</a></p>
+            <p><a href="tel:{{ $branch->phone }}"><img src="/img/phone-call.png" class="phone-image"> {{ $branch->phone }} &nbsp;<b>[전화하기]</b></a></p>
         </div>
     </div>
 @endsection
