@@ -302,21 +302,23 @@
     footer {
         margin: 0;
         padding: 20px 50px;
-        display: grid;
-        display: -ms-grid;
-        grid-template-columns: 15% 85%;
-        -ms-grid-columns: 15% 85%;
+        display: flex;
+        /*display: -ms-grid;*/
+        /*grid-template-columns: 15% 85%;*/
+        /*-ms-grid-columns: 15% 85%;*/
         background-color: #4b4b4b;
         color: white;
         text-align: left;
     }
 
     footer div:nth-child(1) {
-        -ms-grid-column: 1;
+        /*-ms-grid-column: 1;*/
+        width: 15%;
     }
 
     footer div:nth-child(2) {
-        -ms-grid-column: 2;
+        /*-ms-grid-column: 2;*/
+        width: 85%;
     }
 
     .hr {

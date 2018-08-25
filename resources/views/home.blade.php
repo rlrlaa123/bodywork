@@ -245,6 +245,10 @@
             cursor: pointer;
         }
 
+        .bodywork-menu-box {
+            width: 100%;
+        }
+
         .bodywork-call-wrapper {
             display: none;
             background-color: #3b3b3b;
@@ -393,6 +397,8 @@
                 grid-gap: unset;
                 width: unset;
                 margin: unset;
+                display: flex;
+                justify-content: space-between;
             }
 
             .bodywork-menu {
@@ -526,23 +532,25 @@
     <div class="bodywork-menu-wrapper">
         <h3>BODY WORK</h3>
         <p>그들은 어떻게 다이어트에 성공했을까?</p>
-        <div class="bodywork-menu-container">
-            <div onclick="location.href='/bodychallenger/2'">
+        <div class="bodywork-menu-container" style="margin-bottom: 10px;">
+            <div class="bodywork-menu-box" onclick="location.href='/bodychallenger/2'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">8주 바디체인지</button>
                 </div>
             </div>
-            <div onclick="location.href='/event'">
+            <div class="bodywork-menu-box" onclick="location.href='/event'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
             </div>
-            <div onclick="location.href='/branch/1/1'">
+        </div>
+        <div class="bodywork-menu-container">
+            <div class="bodywork-menu-box" onclick="location.href='/branch/1/1'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>
             </div>
-            <div onclick="location.href='/lesson'">
+            <div class="bodywork-menu-box" onclick="location.href='/lesson'">
                 <div class="bodywork-menu">
                     <button class="bodywork-menu-text">상담신청</button>
                 </div>
