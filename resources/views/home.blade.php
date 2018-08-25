@@ -10,10 +10,9 @@
         }
 
         @media screen and (min-width: 1024px) and (max-width: 1440px) {
-           #main-carousel-inner img {
-               height: 550px;
-           }
-
+            #main-carousel-inner img {
+                height: 550px;
+            }
 
             .bodywork-menu-text {
                 border: 1px solid white;
@@ -43,10 +42,9 @@
         }
 
         @media screen and (min-width: 768px) and (max-width: 1024px) {
-           #main-carousel-inner img {
-               height: 550px;
-           }
-
+            #main-carousel-inner img {
+                height: 550px;
+            }
 
             .bodywork-menu-text {
                 border: 1px solid white;
@@ -76,9 +74,9 @@
         }
 
         @media screen and (min-width: 1441px) {
-           #main-carousel-inner img {
-               height: 750px;
-           }
+            #main-carousel-inner img {
+                height: 750px;
+            }
 
             .bodywork-menu-text {
                 border: 1px solid white;
@@ -108,10 +106,9 @@
         }
 
         @media screen and (max-width: 768px) and (orientation: landscape) {
-           #main-carousel-inner img {
-               height: 550px;
-           }
-
+            #main-carousel-inner img {
+                height: 550px;
+            }
 
             .bodywork-menu-text {
                 border: 1px solid white;
@@ -209,8 +206,7 @@
             margin: auto;
         }
 
-
-        .bodywork-menu-container div{
+        .bodywork-menu-container div {
             cursor: pointer;
             margin: 5px;
         }
@@ -268,24 +264,24 @@
         }
 
         /*.bodywork-call-container:nth-child(1) {*/
-            /*background-image: url('/img/main2.jpg');*/
-            /*-webkit-background-size: 100%;*/
-            /*background-size: 100%;*/
-            /*opacity: 0.9;*/
+        /*background-image: url('/img/main2.jpg');*/
+        /*-webkit-background-size: 100%;*/
+        /*background-size: 100%;*/
+        /*opacity: 0.9;*/
         /*}*/
 
         /*.bodywork-call-container:nth-child(2) {*/
-            /*background-image: url('/img/main2.jpg');*/
-            /*-webkit-background-size: 100%;*/
-            /*background-size: 100%;*/
-            /*opacity: 0.9;*/
+        /*background-image: url('/img/main2.jpg');*/
+        /*-webkit-background-size: 100%;*/
+        /*background-size: 100%;*/
+        /*opacity: 0.9;*/
         /*}*/
 
         /*.bodywork-call-container:nth-child(3) {*/
-            /*background-image: url('/img/main2.jpg');*/
-            /*-webkit-background-size: 100%;*/
-            /*background-size: 100%;*/
-            /*opacity: 0.9;*/
+        /*background-image: url('/img/main2.jpg');*/
+        /*-webkit-background-size: 100%;*/
+        /*background-size: 100%;*/
+        /*opacity: 0.9;*/
         /*}*/
 
         .bodywork-call-container {
@@ -337,6 +333,7 @@
             .owl-next {
                 top: 50px;
             }
+
             #recipeCarousel {
                 display: none;
             }
@@ -416,7 +413,7 @@
                 height: 250px;
             }
 
-            .bodywork-menu-container div{
+            .bodywork-menu-container div {
                 cursor: pointer;
                 margin: 0;
             }
@@ -457,7 +454,7 @@
                 font-size: 11px;
                 background-color: #402a2d;
                 color: white;
-                box-shadow:2px 2px 2px 2px #999;
+                box-shadow: 2px 2px 2px 2px #999;
             }
 
             .owl-carousel img {
@@ -508,15 +505,24 @@
         <div class="owl-carousel owl-theme owl-loaded">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
-                    <div class="owl-item"><a href="{{ $home->bf1_link }}"><img class="img-fluid" src="/{{ $home->bf1 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf2_link }}"><img class="img-fluid" src="/{{ $home->bf2 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf3_link }}"><img class="img-fluid" src="/{{ $home->bf3 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf4_link }}"><img class="img-fluid" src="/{{ $home->bf4 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf5_link }}"><img class="img-fluid" src="/{{ $home->bf5 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf6_link }}"><img class="img-fluid" src="/{{ $home->bf6 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf7_link }}"><img class="img-fluid" src="/{{ $home->bf7 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf8_link }}"><img class="img-fluid" src="/{{ $home->bf8 }}"></a></div>
-                    <div class="owl-item"><a href="{{ $home->bf9_link }}"><img class="img-fluid" src="/{{ $home->bf9 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf1_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf1 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf2_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf2 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf3_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf3 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf4_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf4 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf5_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf5 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf6_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf6 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf7_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf7 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf8_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf8 }}"></a></div>
+                    <div class="owl-item"><a href="{{ $home->bf9_link }}"><img class="img-fluid"
+                                                                               src="/{{ $home->bf9 }}"></a></div>
                 </div>
 
                 <div class="owl-nav">
@@ -580,15 +586,20 @@
     </div>
 
     <div class="bodywork-call-wrapper">
-        <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px" style="margin-right: 5px;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</p>
+        <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px"
+                                                                                 style="margin-right: 5px;">클릭하시면 바디웍
+            지점으로 전화연결이 됩니다.</p>
         <div class="bodywork-call-box">
-            <div class="bodywork-call-container" onclick="location.href='tel:{{ \App\Branch::where('number', 1)->first()->phone }}'">
+            <div class="bodywork-call-container"
+                 onclick="location.href='tel:{{ \App\Branch::where('number', 1)->first()->phone }}'">
                 <span>본점 1호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-call-container" onclick="location.href='tel:{{ \App\Branch::where('number', 2)->first()->phone }}'">
+            <div class="bodywork-call-container"
+                 onclick="location.href='tel:{{ \App\Branch::where('number', 2)->first()->phone }}'">
                 <span>방이 2호점<br> 전화하기</span>
             </div>
-            <div class="bodywork-call-container" onclick="location.href='tel:{{ \App\Branch::where('number', 3)->first()->phone }}'">
+            <div class="bodywork-call-container"
+                 onclick="location.href='tel:{{ \App\Branch::where('number', 3)->first()->phone }}'">
                 <span>오금 3호점<br> 전화하기</span>
             </div>
         </div>
@@ -596,23 +607,23 @@
 @endsection
 @section('script')
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             var owl = $('.owl-carousel');
             owl.owlCarousel({
                 items: 3,
-                loop:true,
-                margin:0,
-                autoplay:true,
-                autoplayTimeout:2000,
-                autoplayHoverPause:true,
+                loop: true,
+                margin: 0,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
                 pagination: false,
                 slideSpeed: 600
             });
-            $('.owl-next').on('click',function(){
-                owl.trigger('next.owl.carousel',[500])
+            $('.owl-next').on('click', function () {
+                owl.trigger('next.owl.carousel', [500])
             });
-            $('.owl-prev').on('click',function(){
-                owl.trigger('prev.owl.carousel',[500])
+            $('.owl-prev').on('click', function () {
+                owl.trigger('prev.owl.carousel', [500])
             })
         });
     </script>

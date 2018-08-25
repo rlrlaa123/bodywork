@@ -71,12 +71,13 @@
         }
     }
 
-        body {
+    body {
         font-family: 'NanumBarunGothic', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-size: 1.5vw;
     }
+
     header {
         font-weight: bold;
         text-align: center;
@@ -113,7 +114,7 @@
             border-radius: 100%;
         }
     }
-.
+
     @media screen and (min-width: 768px) and (max-width: 1024px) {
         .header-image {
             width: 80px;
@@ -425,6 +426,7 @@
             -ms-flex-align: center;
             align-items: center;
         }
+
         .closebtn {
             position: absolute;
             top: 0;
@@ -465,7 +467,7 @@
             display: block;
             border: none;
             background: none;
-            width:100%;
+            width: 100%;
             text-align: left;
             cursor: pointer;
             outline: none;
