@@ -101,6 +101,34 @@
         </tr>
         </tbody>
     </table>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="row" colspan="4">메뉴 사진</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <img src="/{{ $home->menu1 }}" width="200px">
+                <p><a href="{{ $home->menu1_link }}">[연결된 링크 1 : <span style="font-weight: bold;">{{ $home->menu1_link }}</span> ]</a></p>
+            </td>
+            <td>
+                <img src="/{{ $home->menu2 }}" width="200px">
+                <p><a href="{{ $home->menu2_link }}">[연결된 링크 2 : <span style="font-weight: bold;">{{ $home->menu2_link }}</span> ]</a></p>
+            </td>
+            <td>
+                <img src="/{{ $home->menu3 }}" width="200px">
+                <p><a href="{{ $home->menu3_link }}">[연결된 링크 3 : <span style="font-weight: bold;">{{ $home->menu3_link }}</span> ]</a></p>
+            </td>
+            <td>
+                <img src="/{{ $home->menu4 }}" width="200px">
+                <p><a href="{{ $home->menu4_link }}">[연결된 링크 3 : <span style="font-weight: bold;">{{ $home->menu4_link }}</span> ]</a></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 @endsection
 @section('script')
     <script>

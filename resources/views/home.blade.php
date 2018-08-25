@@ -25,6 +25,7 @@
                 font-size: 1.5vw;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
+                position: absolute;
             }
 
             .before-after-more-btn {
@@ -57,6 +58,7 @@
                 font-size: 1.5vw;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
+                position: absolute;
             }
 
             .before-after-more-btn {
@@ -88,6 +90,7 @@
                 font-size: 1.5vw;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
+                position: absolute;
             }
 
             .before-after-more-btn {
@@ -120,6 +123,7 @@
                 font-size: 1.5vw;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
+                position: absolute;
             }
 
             .before-after-more-btn {
@@ -237,10 +241,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('img/menu.png');
-            background-position: center;
-            background-size: 100%;
-            background-repeat: no-repeat;
+            /*background-image: url('img/menu.png');*/
+            /*background-position: center;*/
+            /*background-size: 100%;*/
+            /*background-repeat: no-repeat;*/
             height: 300px;
             cursor: pointer;
         }
@@ -360,13 +364,14 @@
             .bodywork-menu-text {
                 border: 1px solid white;
                 border-radius: 20px;
-                width: 180px;
-                height: 30px;
+                width: 100px;
+                height: 25px;
                 background: transparent;
                 color: white;
-                font-size: 1.5vw;
+                font-size: 11px;
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
+                position: absolute;
             }
 
             .before-after-wrapper {
@@ -404,12 +409,6 @@
             .bodywork-menu {
                 height: 120px;
                 background-size: 90%;
-            }
-
-            .bodywork-menu-text {
-                width: 70%;
-                height: 25px;
-                font-size: 11px;
             }
 
             .carousel-item img {
@@ -533,25 +532,29 @@
         <h3>BODY WORK</h3>
         <p>그들은 어떻게 다이어트에 성공했을까?</p>
         <div class="bodywork-menu-container" style="margin-bottom: 10px;">
-            <div class="bodywork-menu-box" onclick="location.href='/bodychallenger/2'">
-                <div class="bodywork-menu">
+            <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu1_link }}'">
+                <div class="bodywork-menu" style="margin-right: 5px;">
+                    <img src="{{ $home->menu1 }}" style="position: relative" width="100%">
                     <button class="bodywork-menu-text">8주 바디체인지</button>
                 </div>
             </div>
-            <div class="bodywork-menu-box" onclick="location.href='/event'">
-                <div class="bodywork-menu">
+            <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu2_link }}'">
+                <div class="bodywork-menu" style="margin-left: 5px;">
+                    <img src="{{ $home->menu2 }}" style="position: relative" width="100%">
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
             </div>
         </div>
         <div class="bodywork-menu-container">
-            <div class="bodywork-menu-box" onclick="location.href='/branch/1/1'">
-                <div class="bodywork-menu">
+            <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu3_link }}'">
+                <div class="bodywork-menu" style="margin-right: 5px;">
+                    <img src="{{ $home->menu3 }}" style="position: relative" width="100%">
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>
             </div>
-            <div class="bodywork-menu-box" onclick="location.href='/lesson'">
-                <div class="bodywork-menu">
+            <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu4_link }}'">
+                <div class="bodywork-menu" style="margin-left: 5px;">
+                    <img src="{{ $home->menu4 }}" style="position: relative" width="100%">
                     <button class="bodywork-menu-text">상담신청</button>
                 </div>
             </div>

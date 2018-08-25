@@ -338,6 +338,109 @@
             </tr>
         </table>
         <hr style="visibility: hidden;">
+        <table>
+            <tr>
+                <td><label for="menu1">메뉴 사진 1</label></td>
+                <td class="td-input">
+                    <input id="menu1" name="menu1" type="file" accept='image/*'
+                           value="{{ old('menu1', $home->menu1) }}">
+                    @if ($errors->has('menu1'))
+                        <div class="help-block">
+                            {{ $errors->first('menu1') }}
+                        </div>
+                    @endif
+                    <a class="image-name" href="/{{ $home->menu1 }}">[ {{ substr($home->menu1, 4) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu1_link">연결된 링크 1</label></td>
+                <td class="td-input">
+                    <input id="menu1_link" name="menu1_link" type="text" value="{{ old('menu1_link', $home->menu1_link) }}">
+                    @if ($errors->has('link1'))
+                        <div class="help-block">
+                            {{ $errors->first('link1') }}
+                        </div>
+                    @endif
+                    <span>ex) /bodywork/1</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu2">메뉴 사진 2</label></td>
+                <td class="td-input">
+                    <input id="menu2" name="menu2" type="file" accept='image/*'
+                           value="{{ old('menu2', $home->menu2) }}">
+                    @if ($errors->has('menu2'))
+                        <div class="help-block">
+                            {{ $errors->first('menu2') }}
+                        </div>
+                    @endif
+                    <a class="image-name" href="/{{ $home->menu2 }}">[ {{ substr($home->menu2, 4) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu2_link">연결된 링크 2</label></td>
+                <td class="td-input">
+                    <input id="menu2_link" name="menu2_link" type="text" value="{{ old('menu2_link', $home->menu2_link) }}">
+                    @if ($errors->has('menu2_link'))
+                        <div class="help-block">
+                            {{ $errors->first('menu2_link') }}
+                        </div>
+                    @endif
+                    <span>ex) /bodywork/2</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu3">메뉴 사진 3</label></td>
+                <td class="td-input">
+                    <input id="menu3" name="menu3" type="file" accept='image/*'
+                           value="{{ old('menu3', $home->menu3) }}">
+                    @if ($errors->has('menu3'))
+                        <div class="help-block">
+                            {{ $errors->first('menu3') }}
+                        </div>
+                    @endif
+                    <a class="image-name" href="/{{ $home->menu3 }}">[ {{ substr($home->menu3, 4) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu3_link">연결된 링크 3</label></td>
+                <td class="td-input">
+                    <input id="menu3_link" name="menu3_link" type="text" value="{{ old('menu3_link', $home->menu3_link) }}">
+                    @if ($errors->has('menu3_link'))
+                        <div class="help-block">
+                            {{ $errors->first('menu3_link') }}
+                        </div>
+                    @endif
+                    <span>ex) /bodywork/3</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu3">메뉴 사진 4</label></td>
+                <td class="td-input">
+                    <input id="menu4" name="menu4" type="file" accept='image/*'
+                           value="{{ old('menu4', $home->menu4) }}">
+                    @if ($errors->has('menu4'))
+                        <div class="help-block">
+                            {{ $errors->first('menu4') }}
+                        </div>
+                    @endif
+                    <a class="image-name" href="/{{ $home->menu4 }}">[ {{ substr($home->menu4, 4) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="menu4_link">연결된 링크 4</label></td>
+                <td class="td-input">
+                    <input id="menu4_link" name="menu4_link" type="text" value="{{ old('menu4_link', $home->menu4_link) }}">
+                    @if ($errors->has('menu4_link'))
+                        <div class="help-block">
+                            {{ $errors->first('menu4_link') }}
+                        </div>
+                    @endif
+                    <span>ex) /bodywork/4</span>
+                </td>
+            </tr>
+        </table>
+        <hr style="visibility: hidden;">
         <div class="button-wrapper">
             <button type="submit">확인</button>
             <button type="button"><a href="/admin">취소</a></button>
