@@ -15,7 +15,13 @@
         .bodywork-logo div:nth-child(2) {
             -ms-grid-column: 2;
         }
-
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .bodywork-logo img {
+                width: 125px;
+                height: 125px;
+                border-radius: 100%;
+            }
+        }
         @media screen and (min-width: 1024px) and (max-width: 1440px) {
             .bodywork-logo img {
                 width: 250px;
