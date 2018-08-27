@@ -547,13 +547,13 @@
         <div class="bodywork-menu-container" style="margin-bottom: 10px;">
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu1_link }}'">
                 <div class="bodywork-menu" style="margin-right: 5px;">
-                    <img src="{{ $home->menu1 }}" style="position: relative" width="100%">
+                    <img src="{{ $home->menu1 }}" width="100%">
                     <button class="bodywork-menu-text">8주 바디체인지</button>
                 </div>
             </div>
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu2_link }}'">
                 <div class="bodywork-menu" style="margin-left: 5px;">
-                    <img src="{{ $home->menu2 }}" style="position: relative" width="100%">
+                    <img src="{{ $home->menu2 }}" width="100%">
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
             </div>
@@ -561,13 +561,13 @@
         <div class="bodywork-menu-container">
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu3_link }}'">
                 <div class="bodywork-menu" style="margin-right: 5px;">
-                    <img src="{{ $home->menu3 }}" style="position: relative" width="100%">
+                    <img src="{{ $home->menu3 }}" width="100%">
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>
             </div>
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu4_link }}'">
                 <div class="bodywork-menu" style="margin-left: 5px;">
-                    <img src="{{ $home->menu4 }}" style="position: relative" width="100%">
+                    <img src="{{ $home->menu4 }}" width="100%">
                     <button class="bodywork-menu-text">상담신청</button>
                 </div>
             </div>
