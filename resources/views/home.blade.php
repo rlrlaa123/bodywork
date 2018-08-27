@@ -25,6 +25,7 @@
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
+                margin: auto;
             }
 
             .before-after-more-btn {
@@ -57,6 +58,7 @@
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
+                margin: auto;
             }
 
             .before-after-more-btn {
@@ -89,6 +91,7 @@
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
+                margin: auto;
             }
 
             .before-after-more-btn {
@@ -121,6 +124,7 @@
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
+                margin: auto;
             }
 
             .before-after-more-btn {
@@ -243,6 +247,7 @@
             /*background-repeat: no-repeat;*/
             height: 300px;
             cursor: pointer;
+            position: relative;
         }
 
         .bodywork-menu-box {
@@ -369,6 +374,7 @@
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
+                margin: auto;
             }
 
             .before-after-wrapper {
@@ -406,6 +412,7 @@
             .bodywork-menu {
                 height: 120px;
                 background-size: 90%;
+                position: relative;
             }
 
             .carousel-item img {
