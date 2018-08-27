@@ -1,46 +1,62 @@
 @extends('layouts.app_dashboard')
 @section('style')
     <style>
+        .bodywork-kakao {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 50px;
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #3f2121;
+        }
+
+        .bodywork-kakao div {
+            margin: 0 20px;
+        }
+
+        @media (orientation: portrait) {
+            .cover-image {
+                height: 250px;
+            }
+
+            .bodywork-kakao {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 50px;
+                margin-bottom: 50px;
+                padding: 5px;
+                background-color: #3f2121;
+            }
+
+            .bodywork-kakao div {
+                margin: 0 5px;
+            }
+        }
     </style>
 @endsection
 @section('content')
     <h3>실시간 상담</h3>
     <hr>
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>No</th>
-                <th>제목</th>
-                <th>글쓴이</th>
-                <th>조회수</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            @for($i = 1; $i <= 3; $i++)
-                <tr>
-                    <td>{{ $i }}</td>
-                    <td>바디웍 3호점 오픈!</td>
-                    <td>관리</td>
-                    <td>{{ $i }}</td>
-                </tr>
-            @endfor
-            </tbody>
-        </table>
+    <div style="margin: 0 50px;">
+        <img src="/img/consult1.png" width="100%">
     </div>
-    <div class="btn-wrapper">
-        <button class="btn">
-            글쓰기
-        </button>
+    <div class="bodywork-kakao">
+        <div>
+            <a href="http://pf.kakao.com/_VZdxoC">
+                <img src="/img/consult2.png" width="100%">
+            </a>
+        </div>
+        <div>
+            <a href="http://pf.kakao.com/_cpSAj">
+                <img src="/img/consult3.png" width="100%">
+            </a>
+        </div>
+        <div>
+            <a href="http://pf.kakao.com/_pxjpxoC">
+                <img src="/img/consult4.png" width="100%">
+            </a>
+        </div>
     </div>
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">이전</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">다음</a></li>
-    </ul>
 @endsection
 @section('script')
 @endsection

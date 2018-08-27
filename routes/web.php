@@ -106,6 +106,10 @@ Route::delete('freelesson/{freelesson}', 'FreeLessonsController@destroy')->name(
 Route::get('/freelesson/{freelesson}/lock', 'FreeLessonsController@lock')->name('freelesson.lock');
 Route::post('/freelesson/{freelesson}/lock', 'FreeLessonsController@lockOpen')->name('freelesson.lock.open');
 
+Route::get('/consult', function() {
+    return view('CustomerCenter.Consult.index');
+});
+
 Route::prefix('admin')->group(function() {
     Route::get('branch', 'Admin\BranchesController@index')->name('admin.branch.index');
     Route::get('branch/create', 'Admin\BranchesController@create')->name('admin.branch.create');
