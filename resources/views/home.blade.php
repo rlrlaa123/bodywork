@@ -375,6 +375,8 @@
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
                 margin: auto;
+                vertical-align: middle;
+                horiz-align: center;
             }
 
             .before-after-wrapper {
