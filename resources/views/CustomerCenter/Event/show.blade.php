@@ -48,7 +48,7 @@
                     @else
                         <img src="/{{ $event->image }}">
                     @endif
-                    {!! nl2br($lesson->contents) !!}
+                    {!! nl2br($event->contents) !!}
                 </td>
             </tr>
             <tr>
