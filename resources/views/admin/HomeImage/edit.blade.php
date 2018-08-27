@@ -109,6 +109,7 @@
                 </td>
             </tr>
         </table>
+        <p style="text-align: left; font-weight: lighter; color: red;">* 배너 사진 규격은 1440 x 800 을 지켜주세요.</p>
         <hr style="visibility: hidden;">
         <table>
             <tr>
@@ -337,6 +338,7 @@
                 </td>
             </tr>
         </table>
+        <p style="text-align: left; font-weight: lighter; color: red;">* Before & After 사진 규격은 1000 x 700 을 지켜주세요.</p>
         <hr style="visibility: hidden;">
         <table>
             <tr>
@@ -440,6 +442,7 @@
                 </td>
             </tr>
         </table>
+        <p style="text-align: left; font-weight: lighter; color: red;">* 메뉴 사진 규격은 1440 x 800 을 지켜주세요.</p>
         <hr style="visibility: hidden;">
         <div class="button-wrapper">
             <button type="submit">확인</button>
