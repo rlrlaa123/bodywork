@@ -30,7 +30,7 @@
                 <td>{{ $freelesson->title }}</td>
                 <td style="text-align: left;">
                     <a class="name-selector"
-                       href="{{ route('admin.lesson.show', [$freelesson->id]) }}">
+                       href="{{ route('admin.freelesson.show', [$freelesson->id]) }}">
                         {!! nl2br($freelesson->contents) !!}
                     </a>
                 </td>
