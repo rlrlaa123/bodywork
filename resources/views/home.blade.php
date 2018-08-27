@@ -377,6 +377,8 @@
                 margin: auto;
                 vertical-align: middle;
                 horiz-align: center;
+                top: 0;
+                left: 0;
             }
 
             .before-after-wrapper {
