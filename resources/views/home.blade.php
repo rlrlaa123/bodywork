@@ -374,11 +374,13 @@
                 font-weight: bold;
                 box-shadow: 4px 4px 4px black;
                 position: absolute;
-                margin: auto;
-                vertical-align: middle;
-                horiz-align: center;
+                text-align: center;
                 top: 0;
                 left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                vertical-align: middle;
             }
 
             .before-after-wrapper {
