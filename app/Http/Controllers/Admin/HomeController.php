@@ -56,6 +56,8 @@ class HomeController extends Controller
                 $home->move($destinationPath_home, $home_name);
 
                 $home_list[$i - 1] = $home_name;
+
+                chmod($destinationPath_home . $home_name, 0775);
             }
         }
 
@@ -85,6 +87,8 @@ class HomeController extends Controller
                 $home->move($destinationPath_home, $home_name);
 
                 $bf_list[$i - 1] = $home_name;
+
+                chmod($destinationPath_home . $home_name, 0775);
             }
         }
 

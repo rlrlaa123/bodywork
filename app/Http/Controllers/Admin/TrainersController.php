@@ -70,6 +70,7 @@ class TrainersController extends Controller
             $trainer_name = 'trainer' . time() . '.' . $trainer->getClientOriginalExtension();
             $destinationPath_trainer = public_path('storage/trainers/');
             $trainer->move($destinationPath_trainer, $trainer_name);
+            chmod($destinationPath_trainer . $trainer_name, 0775);
         }
 
         $trainer = new Trainer;
@@ -139,6 +140,7 @@ class TrainersController extends Controller
             $trainer_name = 'trainer' . time() . '.' . $trainer->getClientOriginalExtension();
             $destinationPath_trainer = public_path('storage/trainers/');
             $trainer->move($destinationPath_trainer, $trainer_name);
+            chmod($destinationPath_trainer . $trainer_name, 0775);
         }
 
         Trainer::where('id', $id)->update([

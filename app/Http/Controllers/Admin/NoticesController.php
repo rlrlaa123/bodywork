@@ -71,6 +71,7 @@ class NoticesController extends Controller
             $notice_name = 'notice' . time() . '.' . $notice->getClientOriginalExtension();
             $destinationPath_notice = public_path('storage/notices/');
             $notice->move($destinationPath_notice, $notice_name);
+            chmod($destinationPath_notice . $notice_name, 0775);
         }
 
         $notice = new Notice;
@@ -137,6 +138,7 @@ class NoticesController extends Controller
             $notice_name = 'notice' . time() . '.' . $notice->getClientOriginalExtension();
             $destinationPath_notice = public_path('storage/notices/');
             $notice->move($destinationPath_notice, $notice_name);
+            chmod($destinationPath_notice . $notice_name, 0775);
         }
 
         Notice::where('id', $id)->update([

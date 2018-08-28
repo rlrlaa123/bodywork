@@ -65,6 +65,7 @@ class BeforeAftersController extends Controller
             $bf_name = 'bf' . time() . '.' . $bf->getClientOriginalExtension();
             $destinationPath_bf = public_path('storage/beforeafters/');
             $bf->move($destinationPath_bf, $bf_name);
+            chmod($destinationPath_bf . $bf_name, 0775);
         }
 
         $bf = new BeforeAfter;
@@ -130,6 +131,7 @@ class BeforeAftersController extends Controller
             $bf_name = 'bf' . time() . '.' . $bf->getClientOriginalExtension();
             $destinationPath_bf = public_path('storage/beforeafters/');
             $bf->move($destinationPath_bf, $bf_name);
+            chmod($destinationPath_bf . $bf_name, 0775);
         }
 
         if($request->has('image')) {

@@ -71,6 +71,7 @@ class EventsController extends Controller
             $event_name = 'event' . time() . '.' . $event->getClientOriginalExtension();
             $destinationPath_event = public_path('storage/events/');
             $event->move($destinationPath_event, $event_name);
+            chmod($destinationPath_event . $event_name, 0775);
         }
 
         $event = new Event;
@@ -137,6 +138,7 @@ class EventsController extends Controller
             $event_name = 'event' . time() . '.' . $event->getClientOriginalExtension();
             $destinationPath_event = public_path('storage/events/');
             $event->move($destinationPath_event, $event_name);
+            chmod($destinationPath_event. $event_name, 0775);
         }
 
         Event::where('id', $id)->update([

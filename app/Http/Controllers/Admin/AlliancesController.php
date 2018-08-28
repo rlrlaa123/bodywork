@@ -66,6 +66,7 @@ class AlliancesController extends Controller
             $alliance_name = 'alliance' . time() . '.' . $alliance->getClientOriginalExtension();
             $destinationPath_alliance = public_path('storage/alliances/');
             $alliance->move($destinationPath_alliance, $alliance_name);
+            chmod($destinationPath_alliance . $alliance_name, 0775);
         }
 
         $alliance = new Alliance;
@@ -132,6 +133,7 @@ class AlliancesController extends Controller
             $alliance_name = 'alliance' . time() . '.' . $alliance->getClientOriginalExtension();
             $destinationPath_alliance = public_path('storage/alliances/');
             $alliance->move($destinationPath_alliance, $alliance_name);
+            chmod($destinationPath_alliance . $alliance_name, 0775);
         }
 
         Alliance::where('id', $id)->update([

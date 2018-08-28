@@ -163,6 +163,7 @@ class BranchesController extends Controller
                 $branch->move($destinationPath_branch, $branch_name);
 
                 $branch_list[$i - 1] = $branch_name;
+                chmod($destinationPath_branch . $branch_name, 0775);
             }
         }
 

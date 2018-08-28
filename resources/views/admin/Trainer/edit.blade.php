@@ -82,7 +82,7 @@
         <hr style="visibility: hidden;">
         <div class="button-wrapper">
             <button type="submit">확인</button>
-            <button type="button"><a href="{{ route('admin.trainer.index') }}">취소</a></button>
+            <button type="button"><a href="/admin/trainer">취소</a></button>
         </div>
     </form>
 @endsection
