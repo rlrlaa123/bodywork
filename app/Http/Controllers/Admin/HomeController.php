@@ -105,10 +105,9 @@ class HomeController extends Controller
                 $menu = HomeImage::first();
 
                 if ($menu['menu' . $i] != null) {
-                    return 1;
+                    return $request->file('menu' . $i);
                     File::delete($menu['menu' . $i]);
                 }
-
                 $menu = $request->file('menu' . $i);
                 $menu_name = 'menu' . $i . '.' . $menu->getClientOriginalExtension();
                 $destinationPath_menu = public_path('storage/home/');
