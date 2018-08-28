@@ -105,6 +105,7 @@ class HomeController extends Controller
                 $menu = HomeImage::first();
 
                 if ($menu['menu' . $i] != null) {
+                    return 1;
                     File::delete($menu['menu' . $i]);
                 }
 
