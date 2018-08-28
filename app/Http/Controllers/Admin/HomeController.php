@@ -106,13 +106,13 @@ class HomeController extends Controller
 
                 if ($menu['menu' . $i] != null) {
                     File::delete($menu['menu' . $i]);
-                    return 1;
+//                    return 1;
                 }
                 $menu = $request->file('menu' . $i);
                 $menu_name = 'menu' . $i . '.' . $menu->getClientOriginalExtension();
                 $destinationPath_menu = public_path('storage/home/');
                 $menu->move($destinationPath_menu, $menu_name);
-
+                return 1;
                 $menu_list[$i - 1] = $menu_name;
 
                 chmod($destinationPath_menu . $menu_name, 0775);
