@@ -30,7 +30,6 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        return $request;
         $home_list = [
             null, null, null
         ];
@@ -106,8 +105,8 @@ class HomeController extends Controller
                 $menu = HomeImage::first();
 
                 if ($menu['menu' . $i] != null) {
-                    return $request['menu' . $i];
                     File::delete($menu['menu' . $i]);
+                    return 1;
                 }
                 $menu = $request->file('menu' . $i);
                 $menu_name = 'menu' . $i . '.' . $menu->getClientOriginalExtension();
