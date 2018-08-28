@@ -116,7 +116,7 @@ class HomeController extends Controller
                 $menu_list[$i - 1] = $menu_name;
 
                 chmod($destinationPath_menu . $menu_name, 0775);
-//                chown($destinationPath_menu . $menu_name, 'root:www-data');
+                chown($destinationPath_menu . $menu_name, 'root');
             }
         }
 
