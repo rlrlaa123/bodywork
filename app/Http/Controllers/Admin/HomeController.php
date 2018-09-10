@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -51,7 +52,7 @@ class HomeController extends Controller
                 }
 
                 $home = $request->file('home' . $i);
-                $home_name = 'home' . $i . '.' . $home->getClientOriginalExtension();
+                $home_name = 'home' . $i . Carbon::now() . '.' . $home->getClientOriginalExtension();
                 $destinationPath_home = public_path('storage/home/');
                 $home->move($destinationPath_home, $home_name);
 
@@ -82,7 +83,7 @@ class HomeController extends Controller
                 }
 
                 $home = $request->file('bf' . $i);
-                $home_name = 'bf' . $i . '.' . $home->getClientOriginalExtension();
+                $home_name = 'bf' . $i . Carbon::now() . '.' . $home->getClientOriginalExtension();
                 $destinationPath_home = public_path('storage/home/');
                 $home->move($destinationPath_home, $home_name);
 
@@ -113,7 +114,7 @@ class HomeController extends Controller
 //                    return 1;
                 }
                 $menu = $request->file('menu' . $i);
-                $menu_name = 'menu' . $i . '.' . $menu->getClientOriginalExtension();
+                $menu_name = 'menu' . $i . Carbon::now() . '.' . $menu->getClientOriginalExtension();
                 $destinationPath_menu = public_path('storage/home/');
                 $menu->move($destinationPath_menu, $menu_name);
 //                return 1;
