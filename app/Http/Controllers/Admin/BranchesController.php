@@ -75,7 +75,7 @@ class BranchesController extends Controller
                 }
 
                 $branch = $request->file('image' . $i);
-                $branch_name = 'branch' . $i . '.' . $branch->getClientOriginalExtension();
+                $branch_name = 'branch' . $i . time() . '.' . $branch->getClientOriginalExtension();
                 $destinationPath_branch = public_path('storage/branches/' . $request->number);
                 $branch->move($destinationPath_branch, $branch_name);
 
@@ -158,7 +158,7 @@ class BranchesController extends Controller
                 }
 
                 $branch = $request->file('image' . $i);
-                $branch_name = 'branch' . $i . '.' . $branch->getClientOriginalExtension();
+                $branch_name = 'branch' . $i . time() . '.' . $branch->getClientOriginalExtension();
                 $destinationPath_branch = public_path('storage/branches/' . $request->number);
                 $branch->move($destinationPath_branch, $branch_name);
 

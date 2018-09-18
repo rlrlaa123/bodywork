@@ -52,7 +52,7 @@ class HomeController extends Controller
                 }
 
                 $home = $request->file('home' . $i);
-                $home_name = 'home' . $i . Carbon::now() . '.' . $home->getClientOriginalExtension();
+                $home_name = 'home' . $i . time() . '.' . $home->getClientOriginalExtension();
                 $destinationPath_home = public_path('storage/home/');
                 $home->move($destinationPath_home, $home_name);
 
@@ -83,7 +83,7 @@ class HomeController extends Controller
                 }
 
                 $home = $request->file('bf' . $i);
-                $home_name = 'bf' . $i . Carbon::now() . '.' . $home->getClientOriginalExtension();
+                $home_name = 'bf' . $i . time() . '.' . $home->getClientOriginalExtension();
                 $destinationPath_home = public_path('storage/home/');
                 $home->move($destinationPath_home, $home_name);
 
@@ -114,7 +114,7 @@ class HomeController extends Controller
 //                    return 1;
                 }
                 $menu = $request->file('menu' . $i);
-                $menu_name = 'menu' . $i . Carbon::now() . '.' . $menu->getClientOriginalExtension();
+                $menu_name = 'menu' . $i . time() . '.' . $menu->getClientOriginalExtension();
                 $destinationPath_menu = public_path('storage/home/');
                 $menu->move($destinationPath_menu, $menu_name);
 //                return 1;
