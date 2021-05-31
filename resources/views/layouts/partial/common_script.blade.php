@@ -44,4 +44,13 @@
             dropdownContent.stop(true, false, true).slideToggle(400);
         });
     }
+
+    var video = document.getElementsByTagName("video")[0];
+    video.addEventListener("click", function() {
+        if(video.muted){
+            video.muted = false;
+        } else {
+            video.muted = true;
+        }
+    });
 </script>

@@ -507,7 +507,7 @@
 @endsection
 @section('content')
     <div>
-        <video class="d-block w-100" src="storage/home/bodywork.mp4" autoplay height="750px">
+        <video class="d-block w-100" src="storage/home/bodywork.mp4" autoplay muted loop height="750px">
     </div>
     <div id="carouselMainIndicators" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: 50px;">
         <ol id="main-carousel-indicator" class="carousel-indicators">
