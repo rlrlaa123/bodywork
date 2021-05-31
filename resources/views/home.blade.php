@@ -9,6 +9,11 @@
             font-size: 1vw;
         }
 
+        .carousel-inner {
+            width: 80%;
+            margin: auto;
+        }
+
         @media screen and (min-width: 1024px) and (max-width: 1440px) {
             #main-carousel-inner img {
                 height: 550px;
@@ -501,7 +506,10 @@
     </style>
 @endsection
 @section('content')
-    <div id="carouselMainIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+    <div>
+        <video class="d-block w-100" src="storage/home/bodywork.mp4" autoplay height="750px">
+    </div>
+    <div id="carouselMainIndicators" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: 50px;">
         <ol id="main-carousel-indicator" class="carousel-indicators">
             <li data-target="#carouselMainIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselMainIndicators" data-slide-to="1"></li>
