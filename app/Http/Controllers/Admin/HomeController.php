@@ -31,13 +31,14 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $home_list = [
-            null, null, null
-        ];
+        $file = $request->file('video');
+        $filename = $file->getClientOriginalName();
+        echo $filename;
+
+        $home_list = [null, null, null];
 
         for ($i = 1; $i <= 3; $i++) {
             if ($request->hasFile('home' . $i)) {
-
                 if (!file_exists('storage')) {
                     File::makeDirectory('storage');
                     if (!file_exists('storage/home')) {
@@ -52,7 +53,12 @@ class HomeController extends Controller
                 }
 
                 $home = $request->file('home' . $i);
-                $home_name = 'home' . $i . time() . '.' . $home->getClientOriginalExtension();
+                $home_name =
+                    'home' .
+                    $i .
+                    time() .
+                    '.' .
+                    $home->getClientOriginalExtension();
                 $destinationPath_home = public_path('storage/home/');
                 $home->move($destinationPath_home, $home_name);
 
@@ -62,13 +68,10 @@ class HomeController extends Controller
             }
         }
 
-        $bf_list = [
-            null, null, null, null, null, null, null, null, null
-        ];
+        $bf_list = [null, null, null, null, null, null, null, null, null];
 
         for ($i = 1; $i <= 9; $i++) {
             if ($request->hasFile('bf' . $i)) {
-
                 if (!file_exists('storage')) {
                     File::makeDirectory('storage');
                     if (!file_exists('storage/home')) {
@@ -83,7 +86,12 @@ class HomeController extends Controller
                 }
 
                 $home = $request->file('bf' . $i);
-                $home_name = 'bf' . $i . time() . '.' . $home->getClientOriginalExtension();
+                $home_name =
+                    'bf' .
+                    $i .
+                    time() .
+                    '.' .
+                    $home->getClientOriginalExtension();
                 $destinationPath_home = public_path('storage/home/');
                 $home->move($destinationPath_home, $home_name);
 
@@ -93,13 +101,10 @@ class HomeController extends Controller
             }
         }
 
-        $menu_list = [
-            null, null, null, null
-        ];
+        $menu_list = [null, null, null, null];
 
         for ($i = 1; $i <= 4; $i++) {
             if ($request->hasFile('menu' . $i)) {
-
                 if (!file_exists('storage')) {
                     File::makeDirectory('storage');
                     if (!file_exists('storage/home')) {
@@ -111,13 +116,18 @@ class HomeController extends Controller
 
                 if ($menu['menu' . $i] != null) {
                     File::delete($menu['menu' . $i]);
-//                    return 1;
+                    //                    return 1;
                 }
                 $menu = $request->file('menu' . $i);
-                $menu_name = 'menu' . $i . time() . '.' . $menu->getClientOriginalExtension();
+                $menu_name =
+                    'menu' .
+                    $i .
+                    time() .
+                    '.' .
+                    $menu->getClientOriginalExtension();
                 $destinationPath_menu = public_path('storage/home/');
                 $menu->move($destinationPath_menu, $menu_name);
-//                return 1;
+                //                return 1;
                 $menu_list[$i - 1] = $menu_name;
 
                 chmod($destinationPath_menu . $menu_name, 0775);
@@ -152,7 +162,7 @@ class HomeController extends Controller
         for ($i = 1; $i <= 3; $i++) {
             if ($request->has('home' . $i)) {
                 HomeImage::where('id', $id)->update([
-                    'home' . $i => 'storage/home/'. $home_list[$i - 1],
+                    'home' . $i => 'storage/home/' . $home_list[$i - 1],
                 ]);
             }
         }
@@ -160,7 +170,7 @@ class HomeController extends Controller
         for ($i = 1; $i <= 9; $i++) {
             if ($request->has('bf' . $i)) {
                 HomeImage::where('id', $id)->update([
-                    'bf' . $i => 'storage/home/'. $bf_list[$i - 1],
+                    'bf' . $i => 'storage/home/' . $bf_list[$i - 1],
                 ]);
             }
             if ($request->has('bf' . $i . '_link')) {
@@ -173,7 +183,7 @@ class HomeController extends Controller
         for ($i = 1; $i <= 4; $i++) {
             if ($request->has('menu' . $i)) {
                 HomeImage::where('id', $id)->update([
-                    'menu' . $i => 'storage/home/'. $menu_list[$i - 1],
+                    'menu' . $i => 'storage/home/' . $menu_list[$i - 1],
                 ]);
             }
             if ($request->has('menu' . $i . '_link')) {

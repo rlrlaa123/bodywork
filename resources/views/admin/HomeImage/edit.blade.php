@@ -34,6 +34,18 @@
         {!! method_field('PUT') !!}
         <table>
             <tr>
+                <td><label for="video">메인 영상</label></td>
+                <td class="td-input">
+                    <input id="video" name="video" type="file" accept='video/*'
+                           value="">
+                    @if ($errors->has('video'))
+                        <div class="help-block">
+                        </div>
+                    @endif
+                    <a class="image-name" href=""></a>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="home1">배너 사진 1</label></td>
                 <td class="td-input">
                     <input id="home1" name="home1" type="file" accept='image/*'
