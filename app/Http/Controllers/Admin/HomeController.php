@@ -31,9 +31,41 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $file = $request->file('video');
-        $filename = $file->getClientOriginalName();
-        echo $filename;
+        // $file = $request->file('video');
+        // $filename = $file->getClientOriginalName();
+        // echo $filename;
+        // dd($request->all());
+
+        $video = null;
+
+        // if ($request->file('video')) {
+        if (!file_exists('storage')) {
+            File::makeDirectory('storage');
+            if (!file_exists('storage/home')) {
+                File::makeDirectory('storage/home');
+            }
+        }
+
+        $home = HomeImage::first();
+
+        echo $home . '\n';
+
+        if ($home['video'] != null) {
+            File::delete($home['video']);
+        }
+
+        $home = $request->file('video');
+        $home_name =
+            'video' . time() . '.' . $home->getClientOriginalExtension();
+        echo $home_name . '\n';
+        $destinationPath_home = public_path('storage/home/');
+        echo $destinationPath_home . '\n';
+        $home->move($destinationPath_home, $home_name);
+
+        $video = $home_name;
+
+        chmod($destinationPath_home . $home_name, 0775);
+        // }
 
         $home_list = [null, null, null];
 
@@ -158,6 +190,12 @@ class HomeController extends Controller
             'menu3_link' => $request->menu3_link,
             'menu4_link' => $request->menu4_link,
         ]);
+
+        if ($request->has('video')) {
+            HomeImage::where('id', $id)->update([
+                'video' => 'storage/home/' . $video,
+            ]);
+        }
 
         for ($i = 1; $i <= 3; $i++) {
             if ($request->has('home' . $i)) {

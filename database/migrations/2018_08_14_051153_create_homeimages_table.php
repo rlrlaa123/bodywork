@@ -15,6 +15,9 @@ class CreateHomeimagesTable extends Migration
     {
         Schema::create('homeimages', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('video');
+
             $table->string('home1');
             $table->string('link1');
             $table->string('home2');

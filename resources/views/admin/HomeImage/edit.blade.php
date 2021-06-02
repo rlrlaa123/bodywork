@@ -37,12 +37,13 @@
                 <td><label for="video">메인 영상</label></td>
                 <td class="td-input">
                     <input id="video" name="video" type="file" accept='video/*'
-                           value="">
+                           value="{{ old('video', $home->video) }}">
                     @if ($errors->has('video'))
                         <div class="help-block">
+                            {{ $errors->first('video') }}
                         </div>
                     @endif
-                    <a class="image-name" href=""></a>
+                    <a class="image-name" href="/{{ $home->video }}">[ {{ substr($home->video, 4) }} ]</a>
                 </td>
             </tr>
             <tr>
