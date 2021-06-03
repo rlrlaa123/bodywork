@@ -38,34 +38,38 @@ class HomeController extends Controller
 
         $video = null;
 
-        // if ($request->file('video')) {
-        if (!file_exists('storage')) {
-            File::makeDirectory('storage');
-            if (!file_exists('storage/home')) {
-                File::makeDirectory('storage/home');
+        if ($request->file('video')) {
+            if (!file_exists('storage')) {
+                File::makeDirectory('storage');
+                if (!file_exists('storage/home')) {
+                    File::makeDirectory('storage/home');
+                }
             }
+
+            $home = HomeImage::first();
+
+            echo $home . '\n';
+
+            if ($home['video'] != null) {
+                File::delete($home['video']);
+            }
+
+            $home = $request->file('video');
+            $home_name =
+                pathinfo($home->getClientOriginalName(), PATHINFO_FILENAME) .
+                '_' .
+                time() .
+                '.' .
+                $home->getClientOriginalExtension();
+            echo $home_name . '\n';
+            $destinationPath_home = public_path('storage/home/');
+            echo $destinationPath_home . '\n';
+            $home->move($destinationPath_home, $home_name);
+
+            $video = $home_name;
+
+            chmod($destinationPath_home . $home_name, 0775);
         }
-
-        $home = HomeImage::first();
-
-        echo $home . '\n';
-
-        if ($home['video'] != null) {
-            File::delete($home['video']);
-        }
-
-        $home = $request->file('video');
-        $home_name =
-            'video' . time() . '.' . $home->getClientOriginalExtension();
-        echo $home_name . '\n';
-        $destinationPath_home = public_path('storage/home/');
-        echo $destinationPath_home . '\n';
-        $home->move($destinationPath_home, $home_name);
-
-        $video = $home_name;
-
-        chmod($destinationPath_home . $home_name, 0775);
-        // }
 
         $home_list = [null, null, null];
 
