@@ -1,5 +1,6 @@
 <div class="sidebar developmentinfo {{ preg_match('/\/admin$/', $_SERVER['REQUEST_URI']) ||
                                        preg_match('/\/admin\/edit/', $_SERVER['REQUEST_URI']) ||
+                                       preg_match('/\/admin\/popup/', $_SERVER['REQUEST_URI']) ||
                                        preg_match('/\/admin\/password/', $_SERVER['REQUEST_URI'])
                                        ? '' : 'hide'}}">
     <div class="sidemenu">기본 관리</div>
@@ -10,6 +11,11 @@
                                    preg_match('/\/admin\/edit/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
                 <a href="/admin">홈 화면 관리</a>
+            </li>
+            <li class="selector {{ preg_match('/\/admin\/popup$/', $_SERVER['REQUEST_URI']) ||
+                                   preg_match('/\/admin\/popup$/', $_SERVER['REQUEST_URI'])
+                                   ? 'active' : '' }}">
+                <a href="/admin/popup">팝업 배너 관리</a>
             </li>
             <li class="selector {{ preg_match('/\/password$/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
