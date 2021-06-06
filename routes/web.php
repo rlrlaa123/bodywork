@@ -52,8 +52,6 @@ Route::get('/admin', 'Admin\HomeController@index');
 Route::get('/admin/edit', 'Admin\HomeController@edit');
 Route::put('/admin/update/{home}', 'Admin\HomeController@update');
 
-Route::get('/admin/popup', 'Admin\PopupController@index');
-
 Route::get('/branch/1/{branch}', function ($id) {
     $branch = \App\Branch::find($id);
     $branches = \App\Branch::all();
@@ -335,4 +333,26 @@ Route::prefix('admin')->group(function () {
         'alliance/{alliance}',
         'Admin\AlliancesController@destroy'
     )->name('admin.alliance.destroy');
+
+    Route::get('popup', 'Admin\PopupController@index')->name(
+        'admin.popup.index'
+    );
+    Route::get('popup/create', 'Admin\PopupController@create')->name(
+        'admin.popup.create'
+    );
+    Route::post('popup', 'Admin\PopupController@store')->name(
+        'admin.popup.store'
+    );
+    Route::get('popup/{popup}', 'Admin\PopupController@show')->name(
+        'admin.popup.show'
+    );
+    Route::get('popup/{popup}/edit', 'Admin\PopupController@edit')->name(
+        'admin.popup.edit'
+    );
+    Route::put('popup/{popup}', 'Admin\PopupController@update')->name(
+        'admin.popup.update'
+    );
+    Route::delete('popup/{popup}', 'Admin\PopupController@destroy')->name(
+        'admin.popup.destroy'
+    );
 });

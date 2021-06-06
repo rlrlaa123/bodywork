@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <header>
-        <h4 style="display: inline-block;">※ 공지사항</h4>
+        <h4 style="display: inline-block;">※ 팝업 배너 관리</h4>
         <button class="create-btn" onclick="location.href='popup/create'">새 글 쓰기</button>
     </header>
     <hr>
@@ -38,7 +38,6 @@
                         {!! nl2br($popup->contents) !!}
                     </a>
                 </td>
-                <td>{{ $popup->author }}</td>
                 <td><a class="delete" onclick="deleteConversation({{ $popup->id }})">삭제</a></td>
             </tr>
         @empty
