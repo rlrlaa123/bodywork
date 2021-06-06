@@ -56,7 +56,21 @@
                     @endif
                 </td>
             </tr>
-
+            <tr>
+                <td><label for="checked">표시</label></td>
+                <td class="td-input">
+                    @if ($popup->checked == 1)
+                        <input id="checked" name="checked" type="checkbox" checked>
+                    @else
+                        <input id="checked" name="checked" type="checkbox">
+                    @endif
+                    @if ($errors->has('checked'))
+                        <div class="help-block">
+                            {{ $errors->first('checked') }}
+                        </div>
+                    @endif
+                </td>
+            </tr>
         </table>
         <hr style="visibility: hidden;">
         <div class="button-wrapper">

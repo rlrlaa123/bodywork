@@ -19,6 +19,7 @@
             <th>이미지</th>
             <th>제목</th>
             <th>내용</th>
+            <th>표시</th>
             <th>삭제</th>
         </tr>
         </thead>
@@ -37,6 +38,13 @@
                        href="{{ route('admin.popup.edit', [$popup->id]) }}">
                         {!! nl2br($popup->contents) !!}
                     </a>
+                </td>
+                <td>
+                  @if ($popup->checked == 1)
+                    <input id="checked" name="checked" type="checkbox" checked disabled>
+                  @else
+                    <input id="checked" name="checked" type="checkbox" disabled>
+                  @endif
                 </td>
                 <td><a class="delete" onclick="deleteConversation({{ $popup->id }})">삭제</a></td>
             </tr>

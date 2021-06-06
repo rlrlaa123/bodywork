@@ -18,6 +18,7 @@ class CreatePopupTable extends Migration
             $table->string('title');
             $table->string('contents');
             $table->string('image')->nullable();
+            $table->boolean('checked')->default(true);
             $table->timestamps();
         });
     }

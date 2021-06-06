@@ -46,11 +46,14 @@
     }
 
     var video = document.getElementsByTagName("video")[0];
-    video.addEventListener("click", function() {
-        if(video.muted){
-            video.muted = false;
-        } else {
-            video.muted = true;
-        }
-    });
+    if (video !== undefined) {
+        video.addEventListener("click", function() {
+            if(video.muted){
+                video.muted = false;
+            } else {
+                video.muted = true;
+            }
+        });
+    // window.open("http://www.laravel.com", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500,left=500,width=400, height=400");
+    };
 </script>
