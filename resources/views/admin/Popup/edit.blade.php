@@ -46,17 +46,6 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="contents">내용</label></td>
-                <td class="td-input">
-                    <textarea id="contents" name="contents" type="text" rows="5">{{ old('contents', $popup->contents) }}</textarea>
-                    @if ($errors->has('contents'))
-                        <div class="help-block">
-                            {{ $errors->first('contents') }}
-                        </div>
-                    @endif
-                </td>
-            </tr>
-            <tr>
                 <td><label for="checked">표시</label></td>
                 <td class="td-input">
                     @if ($popup->checked == 1)

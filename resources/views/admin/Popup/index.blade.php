@@ -18,7 +18,6 @@
         <tr>
             <th>이미지</th>
             <th>제목</th>
-            <th>내용</th>
             <th>표시</th>
             <th>삭제</th>
         </tr>
@@ -32,11 +31,10 @@
                     @else
                         <img src="/{{ $popup->image }}" width="100px"></td>
                     @endif
-                <td>{{ $popup->title }}</td>
                 <td>
                     <a class="name-selector"
-                       href="{{ route('admin.popup.edit', [$popup->id]) }}">
-                        {!! nl2br($popup->contents) !!}
+                        href="{{ route('admin.popup.edit', [$popup->id]) }}">
+                        {!! nl2br($popup->title) !!}
                     </a>
                 </td>
                 <td>

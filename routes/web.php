@@ -14,7 +14,13 @@
 Route::get('/', function () {
     $home = \App\HomeImage::first();
 
-    return view('home', compact('home'));
+    $popups = App\Popup::where('checked', 1)
+        ->select('title', 'image', 'top', 'left', 'width', 'height')
+        ->get();
+
+    // dd($popups);
+
+    return view('home', compact('home', 'popups'));
 });
 
 Route::get('/admin/password', 'Admin\PasswordController@edit');

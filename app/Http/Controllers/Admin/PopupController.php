@@ -48,7 +48,6 @@ class PopupController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-            'contents' => 'required',
         ]);
 
         $validator->after(function () {});
@@ -78,7 +77,6 @@ class PopupController extends Controller
         $popup = new popup();
 
         $popup->title = $request->title;
-        $popup->contents = $request->contents;
         $popup->checked = $request->checked != null ? true : false;
 
         if ($request->has('image')) {
@@ -146,7 +144,6 @@ class PopupController extends Controller
 
         Popup::where('id', $id)->update([
             'title' => $request->title,
-            'contents' => $request->contents,
             'checked' => $request->checked != null ? true : false,
         ]);
 

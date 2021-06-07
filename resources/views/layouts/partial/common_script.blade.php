@@ -54,6 +54,11 @@
                 video.muted = true;
             }
         });
-    // window.open("http://www.laravel.com", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500,left=500,width=400, height=400");
+    var popups = {!! json_encode($popups) !!};
+        // console.log(popups);
+        popups.map(function(ele) {
+            window.open(ele.image, "_blank", "scrollbars=yes, resizable=yes, top="+ ele.top + ", left=" + ele.left+800 +", width=" + ele.width +", height=" + ele.height);
+        });
+        // window.open("http://www.laravel.com", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=0,left=800,width=400, height=400");
     };
 </script>

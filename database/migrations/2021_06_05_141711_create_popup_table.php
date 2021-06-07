@@ -16,9 +16,12 @@ class CreatePopupTable extends Migration
         Schema::create('popups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('contents');
             $table->string('image')->nullable();
             $table->boolean('checked')->default(true);
+            $table->integer('top')->default(500);
+            $table->integer('left')->default(500);
+            $table->integer('width')->default(400);
+            $table->integer('height')->default(400);
             $table->timestamps();
         });
     }
