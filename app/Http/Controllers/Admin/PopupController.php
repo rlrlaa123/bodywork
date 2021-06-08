@@ -48,6 +48,10 @@ class PopupController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'title' => 'required',
+            'top' => 'integer',
+            'left' => 'integer',
+            'width' => 'integer',
+            'height' => 'integer',
         ]);
 
         $validator->after(function () {});
@@ -121,6 +125,21 @@ class PopupController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'top' => 'integer',
+            'left' => 'integer',
+            'width' => 'integer',
+            'height' => 'integer',
+        ]);
+
+        $validator->after(function () {});
+
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         if ($request->hasFile('image')) {
             if (!file_exists('storage')) {
                 File::makeDirectory('storage');
@@ -144,6 +163,10 @@ class PopupController extends Controller
 
         Popup::where('id', $id)->update([
             'title' => $request->title,
+            'top' => $request->top,
+            'left' => $request->left,
+            'width' => $request->width,
+            'height' => $request->height,
             'checked' => $request->checked != null ? true : false,
         ]);
 

@@ -6,7 +6,7 @@
 @section('content')
     <header>
         <h4 style="display: inline-block;">※ 팝업 배너 관리</h4>
-        <button class="create-btn" onclick="location.href='popup/create'">새 글 쓰기</button>
+        <button class="create-btn" onclick="location.href='popup/create'">새 팝업 추가</button>
     </header>
     <hr>
     <table class="table">
@@ -18,6 +18,7 @@
         <tr>
             <th>이미지</th>
             <th>제목</th>
+            <th>위치 및 크기</th>
             <th>표시</th>
             <th>삭제</th>
         </tr>
@@ -29,12 +30,16 @@
                     @if($popup->image == null)
                         <img src="/img/noimage.png" width="100px">
                     @else
-                        <img src="/{{ $popup->image }}" width="100px"></td>
+                        <img src="/{{ $popup->image }}" width="100px">
                     @endif
+                </td>
+                <td>
+                        {!! nl2br($popup->title) !!}
+                </td>
                 <td>
                     <a class="name-selector"
                         href="{{ route('admin.popup.edit', [$popup->id]) }}">
-                        {!! nl2br($popup->title) !!}
+                        x: {{ $popup->top }}, y: {{ $popup->left }}, width: {{ $popup->width }}, height: {{ $popup->height }}
                     </a>
                 </td>
                 <td>
