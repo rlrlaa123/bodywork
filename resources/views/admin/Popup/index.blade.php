@@ -43,11 +43,16 @@
                     </a>
                 </td>
                 <td>
-                  @if ($popup->checked == 1)
-                    <input id="checked" name="checked" type="checkbox" checked disabled>
-                  @else
-                    <input id="checked" name="checked" type="checkbox" disabled>
-                  @endif
+                    <form method="POST" action="{{ route('admin.popup.checked', $popup->id) }}">
+                        {!! csrf_field() !!}
+                        @if ($popup->checked == 1)
+                            <input id="checked" name="checked" type="checkbox" checked>
+                        @else
+                            <input id="checked" name="checked" type="checkbox">
+                        @endif
+                        <hr style="visibility: hidden; margin: 0;">
+                        <button type="submit" style="font-size: 11px;"><label for="checked" style="margin: 0">변경</label></button>
+                    </form>
                 </td>
                 <td><a class="delete" onclick="deleteConversation({{ $popup->id }})">삭제</a></td>
             </tr>

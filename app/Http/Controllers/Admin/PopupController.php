@@ -195,4 +195,15 @@ class PopupController extends Controller
 
         return response('success', 200);
     }
+
+    public function checkedChange(Request $request, $id)
+    {
+        $popup = Popup::find($id);
+
+        $popup->checked = $request->checked != null ? true : false;
+
+        $popup->save();
+
+        return redirect('admin/popup');
+    }
 }

@@ -361,4 +361,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('popup/{popup}', 'Admin\PopupController@destroy')->name(
         'admin.popup.destroy'
     );
+    Route::post('popup/{popup}', 'Admin\PopupController@checkedChange')->name(
+        'admin.popup.checked'
+    );
 });
