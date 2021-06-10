@@ -270,10 +270,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /*background-image: url('img/menu.png');*/
-            /*background-position: center;*/
-            /*background-size: 100%;*/
-            /*background-repeat: no-repeat;*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             height: 300px;
             cursor: pointer;
             position: relative;
@@ -446,7 +445,15 @@
 
             .bodywork-menu {
                 height: 120px;
-                background-size: 90%;
+                /* background-size: 90%; */
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                cursor: pointer;
                 position: relative;
             }
 
@@ -584,28 +591,28 @@
         <p>그들은 어떻게 다이어트에 성공했을까?</p>
         <div class="bodywork-menu-container" style="margin-bottom: 10px;">
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu1_link }}'">
-                <div class="bodywork-menu" style="margin-right: 5px;">
-                    <img class="bodywork-menu-image" src="{{ $home->menu1 }}" width="100%">
+                <div class="bodywork-menu" style="margin-right: 5px; background-image: url({{ $home->menu1 }})">
+                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu1 }}" width="100%"> -->
                     <button class="bodywork-menu-text">8주 바디체인지</button>
                 </div>
             </div>
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu2_link }}'">
-                <div class="bodywork-menu" style="margin-left: 5px;">
-                    <img class="bodywork-menu-image" src="{{ $home->menu2 }}" width="100%">
+                <div class="bodywork-menu" style="margin-left: 5px; background-image: url({{ $home->menu2 }})">
+                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu2 }}" width="100%"> -->
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
             </div>
         </div>
         <div class="bodywork-menu-container">
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu3_link }}'">
-                <div class="bodywork-menu" style="margin-right: 5px;">
-                    <img class="bodywork-menu-image" src="{{ $home->menu3 }}" width="100%">
+                <div class="bodywork-menu" style="margin-right: 5px; background-image: url({{ $home->menu3 }})">
+                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu3 }}" width="100%"> -->
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>
             </div>
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu4_link }}'">
-                <div class="bodywork-menu" style="margin-left: 5px;">
-                    <img class="bodywork-menu-image" src="{{ $home->menu4 }}" width="100%">
+                <div class="bodywork-menu" style="margin-left: 5px; background-image: url({{ $home->menu4 }})">
+                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu4 }}" width="100%"> -->
                     <button class="bodywork-menu-text">상담신청</button>
                 </div>
             </div>
