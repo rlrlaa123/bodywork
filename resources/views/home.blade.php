@@ -592,13 +592,11 @@
         <div class="bodywork-menu-container" style="margin-bottom: 10px;">
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu1_link }}'">
                 <div class="bodywork-menu" style="margin-right: 5px; background-image: url({{ $home->menu1 }})">
-                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu1 }}" width="100%"> -->
                     <button class="bodywork-menu-text">8주 바디체인지</button>
                 </div>
             </div>
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu2_link }}'">
                 <div class="bodywork-menu" style="margin-left: 5px; background-image: url({{ $home->menu2 }})">
-                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu2 }}" width="100%"> -->
                     <button class="bodywork-menu-text">이벤트</button>
                 </div>
             </div>
@@ -606,13 +604,11 @@
         <div class="bodywork-menu-container">
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu3_link }}'">
                 <div class="bodywork-menu" style="margin-right: 5px; background-image: url({{ $home->menu3 }})">
-                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu3 }}" width="100%"> -->
                     <button class="bodywork-menu-text">오시는 길</button>
                 </div>
             </div>
             <div class="bodywork-menu-box" onclick="location.href='{{ $home->menu4_link }}'">
                 <div class="bodywork-menu" style="margin-left: 5px; background-image: url({{ $home->menu4 }})">
-                    <!-- <img class="bodywork-menu-image" src="{{ $home->menu4 }}" width="100%"> -->
                     <button class="bodywork-menu-text">상담신청</button>
                 </div>
             </div>
@@ -637,6 +633,12 @@
         </div>
     </div>
 
+    <div>
+        <div style="position:fixed; right: 20px; bottom: 20px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: black; color: white; border-radius: 5%; z-index: 200">
+            <span><img src="/img/call.png" width="20px" style="margin-right: 5px;"> 전화연결</span>
+        </div>
+        <img src="/img/kakaoplus.png" width="40px" style="position:fixed; right: 20px; bottom: 80px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: yellow; border-radius: 5%; z-index: 200"/>
+    </div>
     <div class="bodywork-call-wrapper">
         <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px"
                                                                                  style="margin-right: 5px;">클릭하시면 바디웍
