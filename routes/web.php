@@ -15,7 +15,7 @@ Route::get('/', function () {
     $home = \App\HomeImage::first();
 
     $popups = App\Popup::where('checked', 1)
-        ->select('title', 'image', 'top', 'left', 'width', 'height')
+        ->select('title', 'image', 'top', 'left', 'width', 'height', 'id')
         ->get();
 
     // dd($popups);

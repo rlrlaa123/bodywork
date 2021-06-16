@@ -634,7 +634,7 @@
     </div>
 
     <div>
-        <div style="position:fixed; right: 20px; bottom: 20px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: black; color: white; border-radius: 5%; z-index: 200">
+        <div style="position:fixed; right: 20px; bottom: 20px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: black; color: white; border-radius: 5%; z-index: 200; font-size: 16px;">
             <span><img src="/img/call.png" width="20px" style="margin-right: 5px;"> 전화연결</span>
         </div>
         <img src="/img/kakaoplus.png" width="40px" style="position:fixed; right: 20px; bottom: 80px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: yellow; border-radius: 5%; z-index: 200"/>
@@ -659,6 +659,7 @@
         </div>
     </div>
 @endsection
+@each('Components.popup', $popups, 'popup')
 @section('script')
     <script>
         $(document).ready(function () {
