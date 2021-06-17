@@ -1,5 +1,6 @@
 <style>
   #popup{{ $popup->id }} {
+    display: none;
     position: absolute;
     width: {{ $popup->width + 6 }}px;
     height: {{ $popup->height }}px;
@@ -22,7 +23,7 @@
           오늘 하루 이창을 열지 않음.
         </label>
       </div>
-      <button class="popup-close-button">닫기</button>
+      <button class="popup-close-button" onclick='closePopUp({{ $popup->id }}, 1)'>닫기</button>
     </div>
   </div>
 </div>

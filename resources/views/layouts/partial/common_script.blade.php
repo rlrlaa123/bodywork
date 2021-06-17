@@ -54,11 +54,39 @@
                 video.muted = true;
             }
         });
+    }
+    
     var popups = {!! json_encode($popups) !!};
-        // console.log(popups);
-        popups.map(function(ele) {
-            // window.open(ele.image, "_blank", "scrollbars=yes, resizable=yes, top="+ ele.top + ", left=" + ele.left+800 +", width=" + ele.width +", height=" + ele.height);
-        });
-        // window.open("http://www.laravel.com", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=0,left=1090,width=400, height=400");
-    };
+    popups.map(function(ele) {
+        if(getCookie('popup-check' + ele.id) != 'Y') {
+            document.getElementById('popup' + ele.id).style.display = 'block';
+        }
+    });
+
+    function setCookie(name, value, expiredays) {
+        var date = new Date();
+        date.setDate(date.getDate() + expiredays);
+        document.cookie = escape(name) + "=" + escape(value) + "; path=/; expires=" + date.toUTCString();
+    }
+
+    function getCookie(name) {
+        var cookie = document.cookie;
+        if (document.cookie != "") {
+            var cookieArray = cookie.split("; ");
+            for ( var index in cookieArray) {
+                var cookieName = cookieArray[index].split("=");
+                if (cookieName[0] == name) {
+                    return cookieName[1];
+                }
+            }
+        } return ;
+    }
+
+    function closePopUp(id, day) {
+        var popupName = "popup-check" + id;
+        if (document.getElementById(popupName).checked) {
+            setCookie(popupName, "Y", day);
+        }
+        document.getElementById('popup' + id).style.display = 'none';
+    }
 </script>
