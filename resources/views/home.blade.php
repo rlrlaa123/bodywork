@@ -14,6 +14,54 @@
             margin: auto;
         }
 
+        .popup-inner {
+            position: relative;
+            height: 40px;
+            border: 3px solid #cdcdcd;
+            width: 100%;
+            height: 100%;
+        }
+        .popup-image-container {
+            padding-bottom: 40px;
+        }
+        .popup-check-container {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: left;
+        }
+        .popup-check-container input {
+            cursor: pointer;
+            position: absolute;
+        }
+        .popup-check-container label {
+            font-size: 12px;
+            margin: 0;
+            position: relative;
+            padding-left: 24px;
+            cursor: pointer;
+        }
+
+        .popup-label-container {
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+
+        .popup-close-button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 5px;
+            color: #333333;
+            line-height: 14px;
+            border: 1px solid #999999;
+            font-size: 12px;
+            cursor: pointer;
+            margin-bottom: 3px;
+            margin-right: 3px;
+        }
+
         @media screen and (min-width: 1024px) and (max-width: 1440px) {
             #main-carousel-inner img {
                 height: 550px;

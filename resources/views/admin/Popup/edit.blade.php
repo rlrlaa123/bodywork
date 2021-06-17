@@ -17,6 +17,7 @@
 @section('content')
     <h4 style="text-align: left;">※ 팝업 배너 관리 -> 수정</h4>
     <p style="margin: 0; color: red; text-align: left;">* 첨부 이미지는 1MB를 넘지 않도록 해주세요.</p>
+    <p style="margin: 0; color: red; text-align: left;">* 너비 높이 길이는 300 이상으로 지정해주세요.</p>
     <hr>
     <form method="POST" action="{{ route('admin.popup.update', $popup->id) }}" enctype="multipart/form-data">
         {!! csrf_field() !!}
@@ -42,7 +43,7 @@
                             {{ $errors->first('image') }}
                         </div>
                     @endif
-                    <a class="image-name" href="/{{ $popup->image }}">[ {{ substr($popup->image, 16) }} ]</a>
+                    <a class="image-name" href="/{{ $popup->image }}">[ {{ substr($popup->image, 15) }} ]</a>
                 </td>
             </tr>
             <tr>
@@ -79,7 +80,7 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="height">너비</label></td>
+                <td><label for="height">높이</label></td>
                 <td class="td-input">
                     <input id="height" name="height" type="int" value="{{ old('height', $popup->height) }}">
                     @if ($errors->has('height'))
