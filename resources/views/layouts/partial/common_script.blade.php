@@ -46,16 +46,23 @@
     }
 
     var video = document.getElementsByTagName("video")[0];
+    var control = document.getElementById("video-control");
+
     if (video !== undefined) {
         video.addEventListener("click", function() {
-            if(video.muted){
-                video.muted = false;
+            if(!video.paused){
+                video.pause();
+                control.src = '/img/play.png';
+                control.style.transition = '0.1s all';
+                control.style.opacity = 1;
             } else {
-                video.muted = true;
+                video.play();
+                control.style.transition = '1.5s all';
+                control.style.opacity = 0;
             }
         });
     }
-    
+
     var popups = {!! json_encode($popups) !!};
     popups.map(function(ele) {
         if(getCookie('popup-check' + ele.id) != 'Y') {

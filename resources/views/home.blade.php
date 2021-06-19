@@ -561,8 +561,9 @@
     </style>
 @endsection
 @section('content')
-    <div>
-        <video class="d-block w-100" src="/{{ $home->video }}" autoplay muted loop height="750px">
+    <div style="position: relative; margin: 0 50px;">
+        <img id="video-control" src="/img/play.png" width="64" height="64" style="position: absolute; top: 50%; left: 50%; transition: 1.5s all; ">
+        <video class="d-block w-100" src="/{{ $home->video }}" preload="metadata" height="750px">
     </div>
     <div id="carouselMainIndicators" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: 50px;">
         <ol id="main-carousel-indicator" class="carousel-indicators">
