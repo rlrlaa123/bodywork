@@ -62,6 +62,38 @@
             margin-right: 3px;
         }
 
+        #phone-button {
+            position:fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 114px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            border-radius: 5%;
+            z-index: 200;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #kakao-channel-button {
+            position:fixed;
+            right: 20px;
+            bottom: 80px;
+            width: 114px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+            border-radius: 5%;
+            z-index: 200;
+            cursor: pointer;
+        }
+
         @media screen and (min-width: 1024px) and (max-width: 1440px) {
             #main-carousel-inner img {
                 height: 550px;
@@ -561,8 +593,8 @@
     </style>
 @endsection
 @section('content')
-    <div style="position: relative; margin: 0 50px;">
-        <img id="video-control" src="/img/play.png" width="64" height="64" style="position: absolute; top: 50%; left: 50%; transition: 1.5s all; ">
+    <div style="position: relative; margin: 0 50px; cursor: pointer;">
+        <img id="video-control" src="/img/play.png" width="64" height="64" style="position: absolute; top: 50%; left: 50%; transition: 1.5s all;">
         <video class="d-block w-100" src="/{{ $home->video }}" preload="metadata" height="750px">
     </div>
     <div id="carouselMainIndicators" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: 50px;">
@@ -683,10 +715,34 @@
     </div>
 
     <div>
-        <div style="position:fixed; right: 20px; bottom: 20px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: black; color: white; border-radius: 5%; z-index: 200; font-size: 16px;">
+        <div id="phone-button">
             <span><img src="/img/call.png" width="20px" style="margin-right: 5px;"> 전화연결</span>
         </div>
-        <img src="/img/kakaoplus.png" width="40px" style="position:fixed; right: 20px; bottom: 80px; width: 114px; height: 45px; display: flex; justify-content: center; align-items: center; background-color: yellow; border-radius: 5%; z-index: 200"/>
+        <img id="kakao-channel-button" src="/img/kakaoplus.png" width="40px"/>
+    </div>
+    <style>
+        .consult: {
+            width: 50%;
+            margin: auto;
+        }
+        .bodywork-kakao {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 50px;
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #3f2121;
+        }
+
+        .bodywork-kakao div {
+            margin: 0 20px;
+        }
+    </style>
+    <div style="position: fixed; top: 0; left:0; width: 100%; height: 100%; background-color: black;  z-index: 300;">
+        <span style="z-index: 300; opacity: 0.8;"></span>
+        @component('Components.consult')
+        @endcomponent
+    </div>
     </div>
     <div class="bodywork-call-wrapper">
         <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px"
@@ -730,5 +786,58 @@
                 owl.trigger('prev.owl.carousel', [500])
             })
         });
+
+        var video = document.getElementsByTagName("video")[0];
+        var control = document.getElementById("video-control");
+
+        if (video !== undefined) {
+            video.addEventListener("click", function() {
+                if(!video.paused){
+                    video.pause();
+                    control.src = '/img/play.png';
+                    control.style.transition = '0.1s all';
+                    control.style.opacity = 1;
+                } else {
+                    video.play();
+                    control.style.transition = '1.5s all';
+                    control.style.opacity = 0;
+                }
+            });
+        }
+        if ({!! $popups !!}) {
+            var popups = {!! json_encode($popups) !!};
+            popups.map(function(ele) {
+                if(getCookie('popup-check' + ele.id) != 'Y') {
+                    document.getElementById('popup' + ele.id).style.display = 'block';
+                }
+            });
+        }
+
+        function setCookie(name, value, expiredays) {
+            var date = new Date();
+            date.setDate(date.getDate() + expiredays);
+            document.cookie = escape(name) + "=" + escape(value) + "; path=/; expires=" + date.toUTCString();
+        }
+
+        function getCookie(name) {
+            var cookie = document.cookie;
+            if (document.cookie != "") {
+                var cookieArray = cookie.split("; ");
+                for ( var index in cookieArray) {
+                    var cookieName = cookieArray[index].split("=");
+                    if (cookieName[0] == name) {
+                        return cookieName[1];
+                    }
+                }
+            } return ;
+        }
+
+        function closePopUp(id, day) {
+            var popupName = "popup-check" + id;
+            if (document.getElementById(popupName).checked) {
+                setCookie(popupName, "Y", day);
+            }
+            document.getElementById('popup' + id).style.display = 'none';
+        }
     </script>
 @endsection

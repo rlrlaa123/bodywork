@@ -45,55 +45,17 @@
         });
     }
 
-    var video = document.getElementsByTagName("video")[0];
-    var control = document.getElementById("video-control");
+    var kakaoBtn = document.getElementById("phone-button");
+    var phoneBtn = document.getElementById("kakao-channel-button");
 
-    if (video !== undefined) {
-        video.addEventListener("click", function() {
-            if(!video.paused){
-                video.pause();
-                control.src = '/img/play.png';
-                control.style.transition = '0.1s all';
-                control.style.opacity = 1;
-            } else {
-                video.play();
-                control.style.transition = '1.5s all';
-                control.style.opacity = 0;
-            }
-        });
-    }
+    // if (kakaoBtn !== undefined) {
+    //     kakaoBtn.addEventListener("click", function() {
 
-    var popups = {!! json_encode($popups) !!};
-    popups.map(function(ele) {
-        if(getCookie('popup-check' + ele.id) != 'Y') {
-            document.getElementById('popup' + ele.id).style.display = 'block';
-        }
-    });
+    //     });
+    // }
 
-    function setCookie(name, value, expiredays) {
-        var date = new Date();
-        date.setDate(date.getDate() + expiredays);
-        document.cookie = escape(name) + "=" + escape(value) + "; path=/; expires=" + date.toUTCString();
-    }
-
-    function getCookie(name) {
-        var cookie = document.cookie;
-        if (document.cookie != "") {
-            var cookieArray = cookie.split("; ");
-            for ( var index in cookieArray) {
-                var cookieName = cookieArray[index].split("=");
-                if (cookieName[0] == name) {
-                    return cookieName[1];
-                }
-            }
-        } return ;
-    }
-
-    function closePopUp(id, day) {
-        var popupName = "popup-check" + id;
-        if (document.getElementById(popupName).checked) {
-            setCookie(popupName, "Y", day);
-        }
-        document.getElementById('popup' + id).style.display = 'none';
-    }
+    // if (phoneBtn !== undefined) {
+    //     phoneBtn.addEventListener("click", function() {
+    //     });
+    // }
 </script>
