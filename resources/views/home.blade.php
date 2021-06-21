@@ -721,9 +721,10 @@
         <img id="kakao-channel-button" src="/img/kakaoplus.png" width="40px"/>
     </div>
     <style>
-        .consult: {
+        .consult {
             width: 50%;
             margin: auto;
+            z-index: 300;
         }
         .bodywork-kakao {
             display: flex;
@@ -737,12 +738,63 @@
         .bodywork-kakao div {
             margin: 0 20px;
         }
+
+        .backdrop {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 300;
+        }
+
+        .modal-wrapper {
+            background-color: #3f2121;
+            width: 50%;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: auto;
+            height: 750px;
+        }
+
+        .modal-wrapper div {
+            border-bottom: 1px solid grey;
+        }
     </style>
-    <div style="position: fixed; top: 0; left:0; width: 100%; height: 100%; background-color: black;  z-index: 300;">
-        <span style="z-index: 300; opacity: 0.8;"></span>
-        @component('Components.consult')
-        @endcomponent
-    </div>
+    <div class="backdrop"></div>
+    <div class="modal">
+        <div class="modal-wrapper">
+            <div>
+                <a href="http://pf.kakao.com/_VZdxoC">
+                    <img src="/img/consult2.png" width="75%">
+                </a>
+            </div>
+            <div>
+                <a href="http://pf.kakao.com/_VZdxoC">
+                    <img src="/img/consult3.png" width="75%">
+                </a>
+            </div>
+            <div>
+                <a href="http://pf.kakao.com/_VZdxoC">
+                    <img src="/img/consult4.png" width="75%">
+                </a>
+            </div>
+            <div>
+                <a href="http://pf.kakao.com/_VZdxoC">
+                    <img src="/img/consult4.png" width="75%">
+                </a>
+            </div>
+            <div>
+                <a href="http://pf.kakao.com/_VZdxoC">
+                    <img src="/img/consult4.png" width="75%">
+                </a>
+            </div>
+        </div>
     </div>
     <div class="bodywork-call-wrapper">
         <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px"
