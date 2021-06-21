@@ -762,38 +762,28 @@
             height: 750px;
         }
 
-        .modal-wrapper div {
+        .modal-wrapper img {
             border-bottom: 1px solid grey;
         }
     </style>
     <div class="backdrop"></div>
     <div class="modal">
         <div class="modal-wrapper">
-            <div>
-                <a href="http://pf.kakao.com/_VZdxoC">
-                    <img src="/img/consult2.png" width="75%">
-                </a>
-            </div>
-            <div>
-                <a href="http://pf.kakao.com/_VZdxoC">
-                    <img src="/img/consult3.png" width="75%">
-                </a>
-            </div>
-            <div>
-                <a href="http://pf.kakao.com/_VZdxoC">
-                    <img src="/img/consult4.png" width="75%">
-                </a>
-            </div>
-            <div>
-                <a href="http://pf.kakao.com/_VZdxoC">
-                    <img src="/img/consult4.png" width="75%">
-                </a>
-            </div>
-            <div>
-                <a href="http://pf.kakao.com/_VZdxoC">
-                    <img src="/img/consult4.png" width="75%">
-                </a>
-            </div>
+            <a href="http://pf.kakao.com/_VZdxoC">
+                <img src="/img/consult2.png" width="100%">
+            </a>
+            <a href="http://pf.kakao.com/_cpSAj">
+                <img src="/img/consult3.png" width="100%">
+            </a>
+            <a href="http://pf.kakao.com/_pxjpxoC">
+                <img src="/img/consult4.png" width="100%">
+            </a>
+            <a href="http://pf.kakao.com/_VZdxoC">
+                <img src="/img/consult4.png" width="100%">
+            </a>
+            <a href="http://pf.kakao.com/_VZdxoC">
+                <img src="/img/consult4.png" width="100%">
+            </a>
         </div>
     </div>
     <div class="bodywork-call-wrapper">

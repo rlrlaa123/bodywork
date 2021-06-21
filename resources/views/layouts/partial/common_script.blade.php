@@ -47,19 +47,19 @@
 
     var modal = document.getElementsByClassName("modal")[0];
     var kakaoBtn = document.getElementById("kakao-channel-button");
-    var backdrop = document.getElementsByClassName("backdrop")[0];
+    var backDrop = document.getElementsByClassName("backdrop")[0];
 
     if (modal !== undefined) {
         modal.addEventListener("click", function() {
             modal.style.display = 'none';
-            backdrop.style.display = 'none';
+            backDrop.style.display = 'none';
         });
     }
 
     if (kakaoBtn !== undefined) {
         kakaoBtn.addEventListener("click", function() {
             modal.style.display = 'block';
-            backdrop.style.display = 'block';
+            backDrop.style.display = 'block';
         });
     }
 </script>
