@@ -46,19 +46,39 @@
     }
 
     var modal = document.getElementsByClassName("modal")[0];
+    var modal1 = document.getElementsByClassName("modal")[1];
+    var kakaoModal = document.getElementsByClassName("kakao-modal")[0];
+    var phoneModal = document.getElementsByClassName("phone-modal")[0];
     var kakaoBtn = document.getElementById("kakao-channel-button");
+    var phoneBtn = document.getElementById("phone-button");
     var backDrop = document.getElementsByClassName("backdrop")[0];
 
     if (modal !== undefined) {
         modal.addEventListener("click", function() {
             modal.style.display = 'none';
+            kakaoModal.style.display = 'none';
+            backDrop.style.display = 'none';
+        });
+    }
+
+    if (modal1 !== undefined) {
+        modal1.addEventListener("click", function() {
+            modal1.style.display = 'none';
+            phoneModal.style.display = 'none';
             backDrop.style.display = 'none';
         });
     }
 
     if (kakaoBtn !== undefined) {
         kakaoBtn.addEventListener("click", function() {
-            modal.style.display = 'block';
+            kakaoModal.style.display = 'block';
+            backDrop.style.display = 'block';
+        });
+    }
+
+    if (phoneBtn !== undefined) {
+        phoneBtn.addEventListener("click", function() {
+            phoneModal.style.display = 'block';
             backDrop.style.display = 'block';
         });
     }
