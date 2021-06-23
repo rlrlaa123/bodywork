@@ -745,36 +745,38 @@
 
         .modal-wrapper {
             background-color: #3f2121;
-            width: 35%;
+            width: 400px;
             margin: auto;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             overflow: auto;
+            padding: 20px;
         }
 
         .phone-wrapper {
             background-color: #3b3b3b;
-            width: 35%;
+            width: 400px;
             margin: auto;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             overflow: auto;
-            height: 750px;
+            color: white;
+            padding: 20px;
         }
 
         .modal-wrapper img {
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid white;
         }
     </style>
     <div class="backdrop"></div>
     <div class="modal kakao-modal">
         <div class="modal-wrapper">
             <a href="http://pf.kakao.com/_VZdxoC">
-                <img src="/img/consult2.png" width="75%">
+                <img src="/img/consult2.png" width="75%" style="border-top: 1px solid white;">
             </a>
             <a href="http://pf.kakao.com/_cpSAj">
                 <img src="/img/consult3.png" width="75%">
@@ -782,31 +784,95 @@
             <a href="http://pf.kakao.com/_pxjpxoC">
                 <img src="/img/consult4.png" width="75%">
             </a>
-            <a href="http://pf.kakao.com/_VZdxoC">
-                <img src="/img/consult4.png" width="75%">
-            </a>
-            <a href="http://pf.kakao.com/_VZdxoC">
-                <img src="/img/consult4.png" width="75%">
-            </a>
         </div>
     </div>
+    <style>
+        .phone-modal-container {
+            width: 100%;
+        }
+        .phone-modal-box {
+            padding: 15px;
+            width: 80%;
+            height: 120px;
+            margin: auto;
+            border-bottom: 1px solid white;
+        }
+        .phone-modal-label {
+            font-size: 11px;
+            height: 30px;
+            padding: 5px;
+        }
+        .phone-modal-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 200px;
+            height: 60px;
+            margin: auto;
+            background-color: black;
+        }
+        .phone-modal-btn-image {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid white;
+        }
+        .phone-modal-btn-text {
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+        }
+    </style>
     <div class="modal phone-modal">
         <div class="phone-wrapper" style="height: inherit;">
-            <a href="http://pf.kakao.com/_VZdxoC" class="phone-container">
-                <span>본점 1호점<br> 전화하기</span>
-            </a>
-            <a href="http://pf.kakao.com/_cpSAj" class="phone-container">
-                <span>본점 1호점<br> 전화하기</span>
-            </a>
-            <a href="http://pf.kakao.com/_pxjpxoC" class="phone-container">
-                <span>본점 1호점<br> 전화하기</span>
-            </a>
-            <a href="http://pf.kakao.com/_VZdxoC" class="phone-container">
-                <span>본점 1호점<br> 전화하기</span>
-            </a>
-            <a href="http://pf.kakao.com/_VZdxoC" class="phone-container">
-                <span>본점 1호점<br> 전화하기</span>
-            </a>
+            <div class="phone-modal-container">
+                <div class="phone-modal-box" style="border-top: 1px solid white;">
+                    <div class="phone-modal-label">
+                        <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
+                    </div>
+                    <div class="phone-modal-btn">
+                        <div class="phone-modal-btn-image">
+                            <img src="/img/phone-call.png" width="25px"/>
+                        </div>
+                        <div class="phone-modal-btn-text">
+                            본점 1호점 전화하기
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="phone-modal-container">
+                <div class="phone-modal-box">
+                    <div class="phone-modal-label">
+                        <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
+                    </div>
+                    <div class="phone-modal-btn">
+                        <div class="phone-modal-btn-image">
+                            <img src="/img/phone-call.png" width="25px"/>
+                        </div>
+                        <div class="phone-modal-btn-text">
+                            방이 2호점 전화하기
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="phone-modal-container">
+                <div class="phone-modal-box">
+                    <div class="phone-modal-label">
+                        <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
+                    </div>
+                    <div class="phone-modal-btn">
+                        <div class="phone-modal-btn-image">
+                            <img src="/img/phone-call.png" width="25px"/>
+                        </div>
+                        <div class="phone-modal-btn-text">
+                            오금 3호점 전화하기
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="bodywork-call-wrapper">
