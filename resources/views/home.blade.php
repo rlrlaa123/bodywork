@@ -753,9 +753,11 @@
             transform: translate(-50%, -50%);
             overflow: auto;
             padding: 20px;
+            border: 3px solid grey;
         }
 
         .phone-wrapper {
+            border: 3px solid grey;
             background-color: #3b3b3b;
             width: 400px;
             margin: auto;
@@ -838,7 +840,7 @@
                             <img src="/img/phone-call.png" width="25px"/>
                         </div>
                         <div class="phone-modal-btn-text">
-                            본점 1호점 전화하기
+                            {{ $}} 전화하기
                         </div>
                     </div>
                 </div>

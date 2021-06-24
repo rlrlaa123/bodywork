@@ -18,6 +18,9 @@ Route::get('/', function () {
         ->select('title', 'image', 'top', 'left', 'width', 'height', 'id')
         ->get();
 
+    $branches = \App\Branch::select('name', 'phone')->get();
+    dd($branches);
+
     // dd($popups);
 
     return view('home', compact('home', 'popups'));
