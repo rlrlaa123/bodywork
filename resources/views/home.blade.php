@@ -791,6 +791,7 @@
     <style>
         .phone-modal-container {
             width: 100%;
+            cursor: pointer;
         }
         .phone-modal-box {
             padding: 15px;
@@ -821,7 +822,7 @@
             border-right: 1px solid white;
         }
         .phone-modal-btn-text {
-            font-size: 15px;
+            font-size: 13px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -830,51 +831,23 @@
     </style>
     <div class="modal phone-modal">
         <div class="phone-wrapper" style="height: inherit;">
-            <div class="phone-modal-container">
-                <div class="phone-modal-box" style="border-top: 1px solid white;">
-                    <div class="phone-modal-label">
-                        <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
-                    </div>
-                    <div class="phone-modal-btn">
-                        <div class="phone-modal-btn-image">
-                            <img src="/img/phone-call.png" width="25px"/>
+            @foreach($branches as $branch)
+                <div class="phone-modal-container" onclick="location.href='tel:{{ $branch->phone }}'">
+                    <div class="phone-modal-box" style="border-top: 1px solid white;">
+                        <div class="phone-modal-label">
+                            <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
                         </div>
-                        <div class="phone-modal-btn-text">
-                            {{ $}} 전화하기
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="phone-modal-container">
-                <div class="phone-modal-box">
-                    <div class="phone-modal-label">
-                        <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
-                    </div>
-                    <div class="phone-modal-btn">
-                        <div class="phone-modal-btn-image">
-                            <img src="/img/phone-call.png" width="25px"/>
-                        </div>
-                        <div class="phone-modal-btn-text">
-                            방이 2호점 전화하기
+                        <div class="phone-modal-btn">
+                            <div class="phone-modal-btn-image">
+                                <img src="/img/phone-call.png" width="25px"/>
+                            </div>
+                            <div class="phone-modal-btn-text">
+                                {{ $branch->name }} <br> 전화하기
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="phone-modal-container">
-                <div class="phone-modal-box">
-                    <div class="phone-modal-label">
-                        <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
-                    </div>
-                    <div class="phone-modal-btn">
-                        <div class="phone-modal-btn-image">
-                            <img src="/img/phone-call.png" width="25px"/>
-                        </div>
-                        <div class="phone-modal-btn-text">
-                            오금 3호점 전화하기
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="bodywork-call-wrapper">

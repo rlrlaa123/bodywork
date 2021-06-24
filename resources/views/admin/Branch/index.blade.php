@@ -10,7 +10,8 @@
     <hr>
     <table class="table">
         <col width="5%">
-        <col width="50%">
+        <col width="15%">
+        <col width="35%">
         <col width="15%">
         <col width="15%">
         <col width="10%">
@@ -18,6 +19,7 @@
         <thead>
         <tr>
             <th>호점</th>
+            <th>지점 이름</th>
             <th>소개글</th>
             <th>주소</th>
             <th>전화번호</th>
@@ -29,6 +31,7 @@
         @forelse($branches as $branch)
             <tr>
                 <td>{{ $branch->number }}호점</td>
+                <td>{{ $branch->name }}</td>
                 <td>
                     <a class="name-selector"
                        href="{{ route('admin.branch.edit', [$branch->id]) }}">

@@ -19,11 +19,10 @@ Route::get('/', function () {
         ->get();
 
     $branches = \App\Branch::select('name', 'phone')->get();
-    dd($branches);
 
     // dd($popups);
 
-    return view('home', compact('home', 'popups'));
+    return view('home', compact('home', 'popups', 'branches'));
 });
 
 Route::get('/admin/password', 'Admin\PasswordController@edit');

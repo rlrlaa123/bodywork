@@ -42,6 +42,7 @@ class BranchesController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'number' => 'required|integer|unique:branches',
+            'name' => 'required',
             'description' => 'required|min:6',
             'time1' => 'required',
             'time2' => 'required',
@@ -49,8 +50,7 @@ class BranchesController extends Controller
             'location' => 'required',
         ]);
 
-        $validator->after(function () {
-        });
+        $validator->after(function () {});
 
         if ($validator->fails()) {
             return back()
@@ -58,9 +58,7 @@ class BranchesController extends Controller
                 ->withInput();
         }
 
-        $branch_list = [
-            null, null, null, null, null, null, null, null
-        ];
+        $branch_list = [null, null, null, null, null, null, null, null];
 
         for ($i = 1; $i <= 8; $i++) {
             if ($request->hasFile('image' . $i)) {
@@ -68,24 +66,36 @@ class BranchesController extends Controller
                     File::makeDirectory('storage');
                     if (!file_exists('storage/branches')) {
                         File::makeDirectory('storage/branches');
-                        if (!file_exists('storage/branches' . $request->number)) {
-                            File::makeDirectory('storage/branches/' . $request->number);
+                        if (
+                            !file_exists('storage/branches' . $request->number)
+                        ) {
+                            File::makeDirectory(
+                                'storage/branches/' . $request->number
+                            );
                         }
                     }
                 }
 
                 $branch = $request->file('image' . $i);
-                $branch_name = 'branch' . $i . time() . '.' . $branch->getClientOriginalExtension();
-                $destinationPath_branch = public_path('storage/branches/' . $request->number);
+                $branch_name =
+                    'branch' .
+                    $i .
+                    time() .
+                    '.' .
+                    $branch->getClientOriginalExtension();
+                $destinationPath_branch = public_path(
+                    'storage/branches/' . $request->number
+                );
                 $branch->move($destinationPath_branch, $branch_name);
 
                 $branch_list[$i - 1] = $branch_name;
             }
         }
 
-        $branch = new Branch;
+        $branch = new Branch();
 
         $branch->number = $request->number;
+        $branch->name = $request->name;
         $branch->description = $request->description;
         $branch->time1 = $request->time1;
         $branch->time2 = $request->time2;
@@ -102,7 +112,11 @@ class BranchesController extends Controller
 
         for ($i = 1; $i <= 8; $i++) {
             if ($request->has('image' . $i)) {
-                $branch['image' . $i] = 'storage/branches/' . $request->number . '/' . $branch_list[$i - 1];
+                $branch['image' . $i] =
+                    'storage/branches/' .
+                    $request->number .
+                    '/' .
+                    $branch_list[$i - 1];
             }
         }
 
@@ -144,13 +158,10 @@ class BranchesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $branch_list = [
-            null, null, null, null, null, null, null, null
-        ];
+        $branch_list = [null, null, null, null, null, null, null, null];
 
         for ($i = 1; $i <= 8; $i++) {
             if ($request->hasFile('image' . $i)) {
-
                 $branch = Branch::find($id);
 
                 if ($branch['image' . $i] != null) {
@@ -158,8 +169,15 @@ class BranchesController extends Controller
                 }
 
                 $branch = $request->file('image' . $i);
-                $branch_name = 'branch' . $i . time() . '.' . $branch->getClientOriginalExtension();
-                $destinationPath_branch = public_path('storage/branches/' . $request->number . '/');
+                $branch_name =
+                    'branch' .
+                    $i .
+                    time() .
+                    '.' .
+                    $branch->getClientOriginalExtension();
+                $destinationPath_branch = public_path(
+                    'storage/branches/' . $request->number . '/'
+                );
                 $branch->move($destinationPath_branch, $branch_name);
 
                 $branch_list[$i - 1] = $branch_name;
@@ -168,6 +186,7 @@ class BranchesController extends Controller
         }
 
         Branch::where('id', $id)->update([
+            'name' => $request->name,
             'description' => $request->description,
             'time1' => $request->time1,
             'location' => $request->location,
@@ -189,7 +208,11 @@ class BranchesController extends Controller
         for ($i = 1; $i <= 8; $i++) {
             if ($request->has('image' . $i)) {
                 Branch::where('id', $id)->update([
-                    'image' . $i => 'storage/branches/' . $request->number . '/' . $branch_list[$i - 1],
+                    'image' . $i =>
+                        'storage/branches/' .
+                        $request->number .
+                        '/' .
+                        $branch_list[$i - 1],
                 ]);
             }
         }

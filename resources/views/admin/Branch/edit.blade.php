@@ -35,6 +35,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="name">지점 이름</label></td>
+                <td class="td-input">
+                    <input id="name" name="name" type="text" rows="4">{{ old('name', $branch->name) }}</textarea>
+                    @if ($errors->has('name'))
+                        <div class="help-block">
+                            {{ $errors->first('name') }}
+                        </div>
+                    @endif
+                    <span style="font-weight: bold;"></span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="description">소개</label></td>
                 <td class="td-input">
                     <textarea id="description" name="description" type="text" rows="4">{{ old('description', $branch->description) }}</textarea>
