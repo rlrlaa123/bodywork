@@ -579,6 +579,10 @@
             .owl-carousel img {
                 height: 125px;
             }
+
+            .popup-image {
+                width: 80%;
+            }
         }
     </style>
 @endsection

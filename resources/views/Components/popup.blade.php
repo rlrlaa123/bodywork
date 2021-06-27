@@ -3,18 +3,35 @@
     display: none;
     position: absolute;
     width: {{ $popup->width + 6 }}px;
-    height: {{ $popup->height }}px;
     z-index: 200;
     top: {{ $popup->top }}px;
     left: {{ $popup->left }}px;
     background-color: white;
   }
-  {}
+  @media (orientation: portrait) {
+    #popup{{ $popup->id }} {
+      width: 80%;
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+
+  @media (orientation: landscape) {
+    #popup{{ $popup->id }} {
+      height: {{ $popup->height }}px;
+    }
+    .popup-image {
+      width: 100%;
+      height: 100%;
+    }
+    .temp{}
+  }
 </style>
-<div id="popup{{ $popup->id }}">
+<div id="popup{{ $popup->id }}" class="popup-wrapper">
   <div class="popup-inner">
     <div class="popup-image-container">
-      <img src="{{ $popup->image }}" width="{{ $popup->width }}" height="{{ $popup->height - 40 }}">
+      <img src="{{ $popup->image }}" class="popup-image">
     </div>
     <div class="popup-check-container">
       <div class="popup-label-container">
