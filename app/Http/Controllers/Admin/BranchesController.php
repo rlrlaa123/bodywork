@@ -47,6 +47,7 @@ class BranchesController extends Controller
             'time1' => 'required',
             'time2' => 'required',
             'phone' => 'required',
+            'kakao' => 'required',
             'location' => 'required',
         ]);
 
@@ -92,6 +93,17 @@ class BranchesController extends Controller
             }
         }
 
+        if ($request->hasFile('kakao_image')) {
+            $kakao = $request->file('kakao_image');
+            $kakao_name =
+                'kakao' . time() . '.' . $kakao->getClientOriginalExtension();
+            $destinationPath_kakao = public_path(
+                'storage/branches/' . $request->number
+            );
+            $kakao->move($destinationPath_kakao, $kakao_name);
+            // chmod($destinationPath_kakao . $kakao_name, 0775);
+        }
+
         $branch = new Branch();
 
         $branch->number = $request->number;
@@ -101,6 +113,7 @@ class BranchesController extends Controller
         $branch->time2 = $request->time2;
         $branch->location = $request->location;
         $branch->phone = $request->phone;
+        $branch->kakao = $request->kakao;
 
         if ($request->has('time3')) {
             $branch->time3 = $request->time3;
@@ -118,6 +131,14 @@ class BranchesController extends Controller
                     '/' .
                     $branch_list[$i - 1];
             }
+        }
+
+        if ($request->has('kakao_image')) {
+            $branch->kakao_image =
+                'storage/branches/' .
+                $request->number .
+                '/' .
+                $request->kakao_image;
         }
 
         $branch->save();
@@ -185,12 +206,30 @@ class BranchesController extends Controller
             }
         }
 
+        if ($request->hasFile('kakao_image')) {
+            $branch = Branch::find($id);
+
+            if ($branch['kakao_image'] != null) {
+                File::delete($branch['kakao_image']);
+            }
+
+            $kakao = $request->file('kakao_image');
+            $kakao_name =
+                'kakao' . time() . '.' . $kakao->getClientOriginalExtension();
+            $destinationPath_kakao = public_path(
+                'storage/branches/' . $request->number
+            );
+            $kakao->move($destinationPath_kakao, $kakao_name);
+            chmod($destinationPath_kakao . '/' . $kakao_name, 0775);
+        }
+
         Branch::where('id', $id)->update([
             'name' => $request->name,
             'description' => $request->description,
             'time1' => $request->time1,
             'location' => $request->location,
             'phone' => $request->phone,
+            'kakao' => $request->kakao,
         ]);
 
         if ($request->has('time3')) {
@@ -215,6 +254,13 @@ class BranchesController extends Controller
                         $branch_list[$i - 1],
                 ]);
             }
+        }
+
+        if ($request->has('kakao_image')) {
+            Branch::where('id', $id)->update([
+                'kakao_image' =>
+                    'storage/branches/' . $request->number . '/' . $kakao_name,
+            ]);
         }
 
         return redirect('admin/branch');

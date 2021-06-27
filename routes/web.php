@@ -18,7 +18,12 @@ Route::get('/', function () {
         ->select('title', 'image', 'top', 'left', 'width', 'height', 'id')
         ->get();
 
-    $branches = \App\Branch::select('name', 'phone')->get();
+    $branches = \App\Branch::select(
+        'name',
+        'phone',
+        'kakao',
+        'kakao_image'
+    )->get();
 
     // dd($popups);
 

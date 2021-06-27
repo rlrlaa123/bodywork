@@ -62,6 +62,10 @@
             margin-right: 3px;
         }
 
+        #btn-wrapper {
+            display: none;
+        }
+
         #phone-button {
             position:fixed;
             right: 20px;
@@ -373,34 +377,6 @@
             width: 100%;
         }
 
-        .bodywork-call-wrapper {
-            display: none;
-            background-color: #3b3b3b;
-            height: 100px;
-            align-items: center;
-            color: white;
-            border: 1px solid black;
-        }
-
-        .bodywork-call-box {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .bodywork-call-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 20px;
-            border: 1px solid #f9f9f9;
-            margin: 10px;
-            height: 50px;
-            padding: 5px;
-            font-size: 11px;
-            box-shadow: 4px 4px 4px black;
-        }
-
         .owl-prev {
             position: absolute;
             left: 0;
@@ -418,10 +394,6 @@
             color: black !important;
             opacity: 0.7;
             background-color: white !important;
-        }
-
-        .bodywork-kakao-wrapper {
-            display: none;
         }
 
         @media (orientation: portrait) {
@@ -545,43 +517,16 @@
                 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
             }
 
-            .bodywork-call-wrapper {
-                display: block;
-            }
-
-            .bodywork-kakao-wrapper {
-                display: block;
-                background-color: #fce94e;
-                color: #402a2d;
-                padding-top: 10px;
-            }
-
-            .bodywork-kakao-container {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .bodywork-kakao {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 20px;
-                margin: 10px;
-                height: 50px;
-                padding: 5px;
-                font-size: 11px;
-                background-color: #402a2d;
-                color: white;
-                box-shadow: 2px 2px 2px 2px #999;
-            }
-
             .owl-carousel img {
                 height: 125px;
             }
 
             .popup-image {
                 width: 80%;
+            }
+
+            #btn-wrapper {
+                display: block;
             }
         }
     </style>
@@ -687,26 +632,7 @@
             </div>
         </div>
     </div>
-
-    <div class="bodywork-kakao-wrapper">
-        <p style="margin: 0; text-align: center; font-size: 11px">
-            <img src="/img/kakaoplus.png" width="15px" style="margin-right: 5px;">
-            클릭하시면 카카오 플러스 친구 페이지로 이동합니다.
-        </p>
-        <div class="bodywork-kakao-container">
-            <div class="bodywork-kakao" onclick="location.href='http://pf.kakao.com/_VZdxoC'">
-                <span>본점 1호점<br> 친구추가</span>
-            </div>
-            <div class="bodywork-kakao" onclick="location.href='http://pf.kakao.com/_cpSAj'">
-                <span>방이 2호점<br> 친구추가</span>
-            </div>
-            <div class="bodywork-kakao" onclick="location.href='http://pf.kakao.com/_pxjpxoC'">
-                <span>오금 3호점<br> 친구추가</span>
-            </div>
-        </div>
-    </div>
-
-    <div>
+    <div id="btn-wrapper">
         <div id="phone-button">
             <span><img src="/img/call.png" width="20px" style="margin-right: 5px;"> 전화연결</span>
         </div>
@@ -758,15 +684,11 @@
     <div class="backdrop"></div>
     <div class="modal kakao-modal">
         <div class="modal-wrapper">
-            <a href="http://pf.kakao.com/_VZdxoC">
-                <img src="/img/consult2.png" width="75%" style="border-top: 1px solid white;">
+            @foreach($branches as $branch)
+            <a href="{{ $branch->kakao }}">
+                <img src="{{ $branch->kakao_image }}" width="75%" style="border-top: 1px solid white;">
             </a>
-            <a href="http://pf.kakao.com/_cpSAj">
-                <img src="/img/consult3.png" width="75%">
-            </a>
-            <a href="http://pf.kakao.com/_pxjpxoC">
-                <img src="/img/consult4.png" width="75%">
-            </a>
+            @endforeach
         </div>
     </div>
     <style>
@@ -829,25 +751,6 @@
                     </div>
                 </div>
             @endforeach
-        </div>
-    </div>
-    <div class="bodywork-call-wrapper">
-        <p style="text-align: center; margin: 10px 0 0 0; font-size: 11px;"><img src="/img/phone-call.png" width="15px"
-                                                                                 style="margin-right: 5px;">클릭하시면 바디웍
-            지점으로 전화연결이 됩니다.</p>
-        <div class="bodywork-call-box">
-            <div class="bodywork-call-container"
-                 onclick="location.href='tel:{{ \App\Branch::where('number', 1)->first()->phone }}'">
-                <span>본점 1호점<br> 전화하기</span>
-            </div>
-            <div class="bodywork-call-container"
-                 onclick="location.href='tel:{{ \App\Branch::where('number', 2)->first()->phone }}'">
-                <span>방이 2호점<br> 전화하기</span>
-            </div>
-            <div class="bodywork-call-container"
-                 onclick="location.href='tel:{{ \App\Branch::where('number', 3)->first()->phone }}'">
-                <span>오금 3호점<br> 전화하기</span>
-            </div>
         </div>
     </div>
 @endsection

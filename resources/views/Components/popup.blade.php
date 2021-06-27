@@ -24,8 +24,8 @@
     .popup-image {
       width: 100%;
       height: 100%;
+      padding-bottom: 40px;
     }
-    .temp{}
   }
 </style>
 <div id="popup{{ $popup->id }}" class="popup-wrapper">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnNameInBranchesTable extends Migration
+class AddColumnNameKakaoInBranchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,8 @@ class AddColumnNameInBranchesTable extends Migration
     {
         Schema::table('branches', function (Blueprint $table) {
             $table->string('name')->nullable();
+            $table->string('kakao')->nullable();
+            $table->string('kakao_image')->nullable();
         });
     }
 
@@ -27,6 +29,8 @@ class AddColumnNameInBranchesTable extends Migration
     {
         Schema::table('branches', function (Blueprint $table) {
             $table->dropColumn('name');
+            $table->dropColumn('kakao');
+            $table->dropColumn('kakao_image');
         });
     }
 }

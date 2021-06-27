@@ -119,6 +119,18 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="kakao">카카오 채널</label></td>
+                <td class="td-input">
+                    <input id="kakao" name="kakao" type="text" value="{{ old('kakao') }}">
+                    @if ($errors->has('kakao'))
+                        <div class="help-block">
+                            {{ $errors->first('kakao') }}
+                        </div>
+                    @endif
+                    <span style="font-weight: bold;">다음과 같이 입력해주세요.<br> http://pf.kakao.com/_VZdxoC</span>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="location">주소</label></td>
                 <td class="td-input">
                     <input id="location" name="location" type="text" value="{{ old('location') }}">
@@ -214,6 +226,17 @@
                     @if ($errors->has('image8'))
                         <div class="help-block">
                             {{ $errors->first('image8') }}
+                        </div>
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kakao_image">카카오 채널 이미지</label></td>
+                <td class="td-input">
+                    <input id="kakao_image" name="kakao_image" type="file" accept='image/*' value="{{ old('kakao_image') }}">
+                    @if ($errors->has('kakao_image'))
+                        <div class="help-block">
+                            {{ $errors->first('kakao_image') }}
                         </div>
                     @endif
                 </td>

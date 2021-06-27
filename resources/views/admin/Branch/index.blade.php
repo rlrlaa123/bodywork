@@ -11,9 +11,10 @@
     <table class="table">
         <col width="5%">
         <col width="15%">
-        <col width="35%">
+        <col width="25%">
         <col width="15%">
         <col width="15%">
+        <col width="10%">
         <col width="10%">
         <col width="5%">
         <thead>
@@ -24,6 +25,7 @@
             <th>주소</th>
             <th>전화번호</th>
             <th>운영시간</th>
+            <th>카카오채널</th>
             <th>삭제</th>
         </tr>
         </thead>
@@ -45,6 +47,7 @@
                     <p>{{ $branch->time2 }}</p>
                     <p>{{ $branch->time3 }}</p>
                 </td>
+                <td>{{ $branch->kakao }}</td>
                 <td><a class="delete" onclick="deleteConversation({{ $branch->id }})">삭제</a></td>
             </tr>
         @empty

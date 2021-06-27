@@ -37,7 +37,7 @@
             <tr>
                 <td><label for="name">지점 이름</label></td>
                 <td class="td-input">
-                    <input id="name" name="name" type="text" rows="4">{{ old('name', $branch->name) }}</textarea>
+                <input id="name" name="name" type="text" value="{{ old('name', $branch->name) }}">
                     @if ($errors->has('name'))
                         <div class="help-block">
                             {{ $errors->first('name') }}
@@ -116,6 +116,18 @@
                         </div>
                     @endif
                     <span style="font-weight: bold;">'-' 포함해서 다음과 같이 입력해주세요.<br> 02-408-3966</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kakao">카카오 채널</label></td>
+                <td class="td-input">
+                    <input id="kakao" name="kakao" type="text" value="{{ old('kakao', $branch->kakao) }}">
+                    @if ($errors->has('kakao'))
+                        <div class="help-block">
+                            {{ $errors->first('kakao') }}
+                        </div>
+                    @endif
+                    <span style="font-weight: bold;">다음과 같이 입력해주세요.<br> http://pf.kakao.com/_VZdxoC</span>
                 </td>
             </tr>
             <tr>
@@ -224,6 +236,18 @@
                         </div>
                     @endif
                     <a class="image-name" href="/{{ $branch->image8 }}">[ {{ substr($branch->image8, 19) }} ]</a>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kakao_image">카카오 채널 이미지</label></td>
+                <td class="td-input">
+                    <input id="kakao_image" name="kakao_image" type="file" accept='image/*' value="{{ old('kakao_image') }}">
+                    @if ($errors->has('kakao_image'))
+                        <div class="help-block">
+                            {{ $errors->first('kakao_image') }}
+                        </div>
+                    @endif
+                    <a class="image-name" href="/{{ $branch->kakao_image }}">[ {{ substr($branch->kakao_image, 19) }} ]</a>
                 </td>
             </tr>
         </table>
