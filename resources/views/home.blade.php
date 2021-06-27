@@ -387,27 +387,6 @@
             justify-content: space-between;
         }
 
-        /*.bodywork-call-container:nth-child(1) {*/
-        /*background-image: url('/img/main2.jpg');*/
-        /*-webkit-background-size: 100%;*/
-        /*background-size: 100%;*/
-        /*opacity: 0.9;*/
-        /*}*/
-
-        /*.bodywork-call-container:nth-child(2) {*/
-        /*background-image: url('/img/main2.jpg');*/
-        /*-webkit-background-size: 100%;*/
-        /*background-size: 100%;*/
-        /*opacity: 0.9;*/
-        /*}*/
-
-        /*.bodywork-call-container:nth-child(3) {*/
-        /*background-image: url('/img/main2.jpg');*/
-        /*-webkit-background-size: 100%;*/
-        /*background-size: 100%;*/
-        /*opacity: 0.9;*/
-        /*}*/
-
         .bodywork-call-container {
             width: 100%;
             display: flex;
@@ -604,10 +583,8 @@
     </style>
 @endsection
 @section('content')
-    <div style="position: relative; margin: 0 50px; cursor: pointer;">
-        <img id="video-control" src="/img/play.png" width="64" height="64" style="position: absolute; top: 50%; left: 50%; transition: 1.5s all;">
-        <video class="d-block w-100" src="/{{ $home->video }}" preload="metadata" height="750px">
-    </div>
+    @component('Components.video', ['home' => $home])
+    @endcomponent
     <div id="carouselMainIndicators" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: 50px;">
         <ol id="main-carousel-indicator" class="carousel-indicators">
             <li data-target="#carouselMainIndicators" data-slide-to="0" class="active"></li>
