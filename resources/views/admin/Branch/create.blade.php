@@ -37,7 +37,7 @@
             <tr>
                 <td><label for="name">지점 이름</label></td>
                 <td class="td-input">
-                    <input id="name" name="name" type="text" rows="4">{{ old('name') }}</textarea>
+                    <input id="name" name="name" type="text" value="{{ old('name') }}">
                     @if ($errors->has('name'))
                         <div class="help-block">
                             {{ $errors->first('name') }}

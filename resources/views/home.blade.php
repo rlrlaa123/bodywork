@@ -652,7 +652,8 @@
 
         .modal-wrapper {
             background-color: #3f2121;
-            width: 400px;
+            width: 80%;
+            max-height: 500px;
             margin: auto;
             position: absolute;
             top: 50%;
@@ -666,7 +667,8 @@
         .phone-wrapper {
             border: 3px solid grey;
             background-color: #3b3b3b;
-            width: 400px;
+            width: 80%;
+            max-height: 500px;
             margin: auto;
             position: absolute;
             top: 50%;

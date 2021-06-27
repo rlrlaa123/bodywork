@@ -135,10 +135,7 @@ class BranchesController extends Controller
 
         if ($request->has('kakao_image')) {
             $branch->kakao_image =
-                'storage/branches/' .
-                $request->number .
-                '/' .
-                $request->kakao_image;
+                'storage/branches/' . $request->number . '/' . $kakao_name;
         }
 
         $branch->save();
