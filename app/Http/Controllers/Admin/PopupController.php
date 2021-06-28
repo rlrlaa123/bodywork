@@ -113,7 +113,7 @@ class PopupController extends Controller
     {
         $popup = Popup::find($id);
 
-        return view('admin.popup.edit', compact('popup'));
+        return view('admin.Popup.edit', compact('popup'));
     }
 
     /**
