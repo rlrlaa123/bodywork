@@ -13,7 +13,7 @@ class HomeImageSeeder extends Seeder
     {
         $home = new \App\HomeImage;
 
-        $home->video = 'img/bodywork.mp4'
+        $home->video = 'img/bodywork.mp4';
 
         $home->home1 = 'img/main1.jpg';
         $home->link1 = '/';
