@@ -2,6 +2,7 @@
   #popup{{ $popup->id }} {
     display: none;
     position: absolute;
+    width: {{ $popup->width + 6 }}px;
     z-index: 200;
     top: {{ $popup->top }}px;
     left: {{ $popup->left }}px;
@@ -18,6 +19,7 @@
 
   @media (orientation: landscape) {
     .popup-image {
+      width: 100%;
       height: 100%;
       padding-bottom: 40px;
     }

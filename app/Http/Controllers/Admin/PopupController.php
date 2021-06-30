@@ -50,6 +50,8 @@ class PopupController extends Controller
             'title' => 'required',
             'top' => 'integer',
             'left' => 'integer',
+            'width' => 'integer',
+            'height' => 'integer',
         ]);
 
         $validator->after(function () {});
@@ -126,6 +128,8 @@ class PopupController extends Controller
         $validator = Validator::make($request->all(), [
             'top' => 'integer',
             'left' => 'integer',
+            'width' => 'integer',
+            'height' => 'integer',
         ]);
 
         $validator->after(function () {});
@@ -161,6 +165,8 @@ class PopupController extends Controller
             'title' => $request->title,
             'top' => $request->top,
             'left' => $request->left,
+            'width' => $request->width,
+            'height' => $request->height,
             'checked' => $request->checked != null ? true : false,
         ]);
 

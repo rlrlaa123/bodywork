@@ -18,7 +18,7 @@
         <tr>
             <th>이미지</th>
             <th>제목</th>
-            <th>위치</th>
+            <th>위치 및 크기</th>
             <th>표시</th>
             <th>삭제</th>
         </tr>
@@ -34,13 +34,13 @@
                     @endif
                 </td>
                 <td>
-                    <a class="name-selector"
-                        href="{{ route('admin.popup.edit', [$popup->id]) }}">
                         {!! nl2br($popup->title) !!}
-                    </a>
                 </td>
                 <td>
-                    x: {{ $popup->top }}, y: {{ $popup->left }}
+                    <a class="name-selector"
+                        href="{{ route('admin.popup.edit', [$popup->id]) }}">
+                        x: {{ $popup->top }}, y: {{ $popup->left }}, width: {{ $popup->width }}, height: {{ $popup->height }}
+                    </a>
                 </td>
                 <td>
                     <form method="POST" action="{{ route('admin.popup.checked', $popup->id) }}">
