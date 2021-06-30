@@ -69,28 +69,6 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="width">너비</label></td>
-                <td class="td-input">
-                    <input id="width" name="width" type="int" value="{{ old('width', $popup->width) }}">
-                    @if ($errors->has('width'))
-                        <div class="help-block">
-                            {{ $errors->first('width') }}
-                        </div>
-                    @endif
-                </td>
-            </tr>
-            <tr>
-                <td><label for="height">높이</label></td>
-                <td class="td-input">
-                    <input id="height" name="height" type="int" value="{{ old('height', $popup->height) }}">
-                    @if ($errors->has('height'))
-                        <div class="help-block">
-                            {{ $errors->first('height') }}
-                        </div>
-                    @endif
-                </td>
-            </tr>
-            <tr>
                 <td><label for="checked">표시</label></td>
                 <td class="td-input">
                     @if ($popup->checked == 1)

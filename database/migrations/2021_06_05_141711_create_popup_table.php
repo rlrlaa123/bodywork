@@ -20,8 +20,8 @@ class CreatePopupTable extends Migration
             $table->boolean('checked')->default(true);
             $table->integer('top')->default(500);
             $table->integer('left')->default(500);
-            $table->integer('width')->default(400);
-            $table->integer('height')->default(400);
+            $table->integer('width')->nullable();
+            $table->integer('height')->nullable();
             $table->timestamps();
         });
     }
