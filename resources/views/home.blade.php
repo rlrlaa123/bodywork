@@ -522,7 +522,7 @@
             }
 
             .popup-image {
-                width: 80%;
+                width: 100%;
             }
 
             #btn-wrapper {
