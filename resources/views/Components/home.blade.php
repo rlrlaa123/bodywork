@@ -13,8 +13,8 @@
                 <a href="/admin">홈 화면 관리</a>
             </li>
             <li class="selector {{ preg_match('/\/admin\/popup$/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/popup$/', $_SERVER['REQUEST_URI']) ||
-                                   preg_match('/\/admin\/popup\/create/', $_SERVER['REQUEST_URI'])
+                                   preg_match('/\/admin\/popup\/create/', $_SERVER['REQUEST_URI']) ||
+                                   preg_match('/\/admin\/popup\/[1-9]|[1-9][0-9]\/edit/', $_SERVER['REQUEST_URI'])
                                    ? 'active' : '' }}">
                 <a href="/admin/popup">팝업 배너 관리</a>
             </li>

@@ -17,6 +17,12 @@
     .video {
       max-height: 750px;
     }
+
+    @media (orientation: portrait) {
+        .video-wrapper {
+            margin: 0;
+        }
+    }
 </style>
 <div class="video-wrapper">
     <img id="video-control" class="video-play-btn" src="/img/play.png">
