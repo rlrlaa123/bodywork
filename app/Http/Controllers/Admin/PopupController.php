@@ -199,8 +199,9 @@ class PopupController extends Controller
     public function checkedChange(Request $request, $id)
     {
         $popup = Popup::find($id);
-
-        $popup->checked = $request->checked != null ? true : false;
+        // dd($request, $id);
+        $popup->checked =
+            $request['checked' . (string) $id] != null ? true : false;
 
         $popup->save();
 
