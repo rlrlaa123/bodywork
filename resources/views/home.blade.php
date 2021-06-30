@@ -70,8 +70,8 @@
             position:fixed;
             right: 20px;
             bottom: 20px;
-            width: 114px;
-            height: 45px;
+            width: 80px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,7 +79,7 @@
             color: white;
             border-radius: 5%;
             z-index: 200;
-            font-size: 16px;
+            font-size: 11px;
             cursor: pointer;
         }
 
@@ -87,8 +87,8 @@
             position:fixed;
             right: 20px;
             bottom: 80px;
-            width: 114px;
-            height: 45px;
+            width: 80px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -634,9 +634,9 @@
     </div>
     <div id="btn-wrapper">
         <div id="phone-button">
-            <span><img src="/img/call.png" width="20px" style="margin-right: 5px;"> 전화연결</span>
+            <span><img src="/img/call.png" width="15px" style="margin-right: 5px;"> 전화문의</span>
         </div>
-        <img id="kakao-channel-button" src="/img/kakaoplus.png" width="40px"/>
+        <img id="kakao-channel-button" src="/img/kakaoplus.png"/>
     </div>
     <style>
         .backdrop {
