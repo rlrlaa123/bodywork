@@ -18,14 +18,11 @@ Route::get('/', function () {
         ->select('title', 'image', 'top', 'left', 'width', 'height', 'id')
         ->get();
 
-    $branches = \App\Branch::select(
-        'name',
-        'phone',
-        'kakao',
-        'kakao_image'
-    )->get();
+    $branches = \App\Branch::select('name', 'phone', 'kakao', 'kakao_image')
+        ->where('kakao_image', '!=', 'null')
+        ->get();
 
-    // dd($popups);
+    // dd($branches);
 
     return view('home', compact('home', 'popups', 'branches'));
 });
