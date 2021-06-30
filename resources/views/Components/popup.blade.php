@@ -16,7 +16,14 @@
       left: 50%;
     }
   }
-
+  @media (max-width: 1024px) {
+    #popup{{ $popup->id }} {
+      width: 80%;
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
   @media (orientation: landscape) {
     #popup{{ $popup->id }} {
       height: {{ $popup->height }}px;
