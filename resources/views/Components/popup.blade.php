@@ -8,15 +8,7 @@
     left: {{ $popup->left }}px;
     background-color: white;
   }
-  @media (orientation: portrait) {
-    #popup{{ $popup->id }} {
-      width: 80%;
-      transform: translateX(-50%) translateY(-50%);
-      top: 50%;
-      left: 50%;
-    }
-  }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px), (orientation: portrait) {
     #popup{{ $popup->id }} {
       width: 80%;
       transform: translateX(-50%) translateY(-50%);

@@ -529,6 +529,11 @@
                 display: block;
             }
         }
+        @media (max-width: 1024px), (orientation: portrait) {
+            #btn-wrapper {
+                display: block;
+            }
+        }
     </style>
 @endsection
 @section('content')
