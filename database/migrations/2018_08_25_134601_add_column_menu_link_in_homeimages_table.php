@@ -18,6 +18,7 @@ class AddColumnMenuLinkInHomeimagesTable extends Migration
             $table->string('menu2_link')->nullable();
             $table->string('menu3_link')->nullable();
             $table->string('menu4_link')->nullable();
+            $table->string('video')->nullable();
         });
     }
 
@@ -33,6 +34,7 @@ class AddColumnMenuLinkInHomeimagesTable extends Migration
             $table->dropColumn('menu2_link');
             $table->dropColumn('menu3_link');
             $table->dropColumn('menu4_link');
+            $table->dropColumn('video');
         });
     }
 }
