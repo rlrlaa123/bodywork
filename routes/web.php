@@ -15,7 +15,16 @@ Route::get('/', function () {
     $home = \App\HomeImage::first();
 
     $popups = App\Popup::where('checked', 1)
-        ->select('title', 'image', 'top', 'left', 'width', 'height', 'id')
+        ->select(
+            'title',
+            'image',
+            'top',
+            'left',
+            'width',
+            'height',
+            'id',
+            'link'
+        )
         ->get();
 
     $branches = \App\Branch::select('name', 'phone', 'kakao', 'kakao_image')

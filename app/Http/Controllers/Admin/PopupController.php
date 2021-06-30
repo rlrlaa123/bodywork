@@ -52,6 +52,7 @@ class PopupController extends Controller
             'left' => 'integer',
             'width' => 'integer',
             'height' => 'integer',
+            'link' => 'url',
         ]);
 
         $validator->after(function () {});
@@ -82,6 +83,7 @@ class PopupController extends Controller
 
         $popup->title = $request->title;
         $popup->checked = $request->checked != null ? true : false;
+        $popup->link = $request->link;
 
         if ($request->has('image')) {
             $popup->image = 'storage/popups/' . $popup_name;
@@ -130,6 +132,7 @@ class PopupController extends Controller
             'left' => 'integer',
             'width' => 'integer',
             'height' => 'integer',
+            'link' => 'url',
         ]);
 
         $validator->after(function () {});
@@ -168,6 +171,7 @@ class PopupController extends Controller
             'width' => $request->width,
             'height' => $request->height,
             'checked' => $request->checked != null ? true : false,
+            'link' => $request->link,
         ]);
 
         if ($request->has('image')) {

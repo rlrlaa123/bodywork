@@ -10,15 +10,17 @@
     </header>
     <hr>
     <table class="table">
-        <col width="20%">
-        <col width="20%">
-        <col width="45%">
+        <col width="15%">
+        <col width="15%">
+        <col width="40%">
+        <col width="15%">
         <col width="10%">
         <thead>
         <tr>
             <th>이미지</th>
             <th>제목</th>
             <th>위치 및 크기</th>
+            <th>링크</th>
             <th>표시</th>
             <th>삭제</th>
         </tr>
@@ -34,13 +36,16 @@
                     @endif
                 </td>
                 <td>
-                        {!! nl2br($popup->title) !!}
+                    {!! nl2br($popup->title) !!}
                 </td>
                 <td>
                     <a class="name-selector"
                         href="{{ route('admin.popup.edit', [$popup->id]) }}">
                         x: {{ $popup->top }}, y: {{ $popup->left }}, width: {{ $popup->width }}, height: {{ $popup->height }}
                     </a>
+                </td>
+                <td>
+                    {{ $popup->link }}
                 </td>
                 <td>
                     <form method="POST" action="{{ route('admin.popup.checked', $popup->id) }}">

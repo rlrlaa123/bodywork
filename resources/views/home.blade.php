@@ -523,6 +523,7 @@
 
             .popup-image {
                 width: 100%;
+                cursor: pointer;
             }
 
             #btn-wrapper {

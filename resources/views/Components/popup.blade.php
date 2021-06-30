@@ -24,13 +24,14 @@
       width: 100%;
       height: 100%;
       padding-bottom: 40px;
+      cursor: pointer;
     }
   }
 </style>
 <div id="popup{{ $popup->id }}" class="popup-wrapper">
   <div class="popup-inner">
     <div class="popup-image-container">
-      <img src="{{ $popup->image }}" class="popup-image">
+      <img src="{{ $popup->image }}" class="popup-image" onclick="location.href='{{ $popup->link }}'">
     </div>
     <div class="popup-check-container">
       <div class="popup-label-container">

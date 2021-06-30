@@ -91,6 +91,17 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="link">링크</label></td>
+                <td class="td-input">
+                    <input id="link" name="link" type="text" value="{{ old('link', $popup->link) }}">
+                    @if ($errors->has('link'))
+                        <div class="help-block">
+                            {{ $errors->first('link') }}
+                        </div>
+                    @endif
+                </td>
+            </tr>
+            <tr>
                 <td><label for="checked">표시</label></td>
                 <td class="td-input">
                     @if ($popup->checked == 1)

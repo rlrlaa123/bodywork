@@ -22,6 +22,7 @@ class CreatePopupTable extends Migration
             $table->integer('left')->default(500);
             $table->integer('width')->default(400);
             $table->integer('height')->default(400);
+            $table->string('link')->default('/');
             $table->timestamps();
         });
     }
