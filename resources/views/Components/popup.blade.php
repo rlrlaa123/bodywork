@@ -17,9 +17,6 @@
   }
 
   @media (orientation: landscape) {
-    #popup{{ $popup->id }} {
-      height: {{ $popup->height }}px;
-    }
     .popup-image {
       height: 100%;
       padding-bottom: 40px;
