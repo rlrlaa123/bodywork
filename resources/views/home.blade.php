@@ -673,7 +673,7 @@
         .phone-wrapper {
             border: 3px solid grey;
             background-color: #3b3b3b;
-            width: 80%;
+            width: 300px;
             max-height: 500px;
             margin: auto;
             position: absolute;
@@ -705,16 +705,13 @@
             cursor: pointer;
         }
         .phone-modal-box {
-            padding: 15px;
-            width: 80%;
-            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 100px;
             margin: auto;
             border-bottom: 1px solid white;
-        }
-        .phone-modal-label {
-            font-size: 11px;
-            height: 30px;
-            padding: 5px;
         }
         .phone-modal-btn {
             display: flex;
@@ -724,6 +721,7 @@
             height: 60px;
             margin: auto;
             background-color: black;
+            border: 1px solid white;
         }
         .phone-modal-btn-image {
             width: 30%;
@@ -745,9 +743,6 @@
             @foreach($branches as $branch)
                 <div class="phone-modal-container" onclick="location.href='tel:{{ $branch->phone }}'">
                     <div class="phone-modal-box" style="border-top: 1px solid white;">
-                        <div class="phone-modal-label">
-                            <span style="border-bottom: 1px solid white;">클릭하시면 바디웍 지점으로 전화연결이 됩니다.</span>
-                        </div>
                         <div class="phone-modal-btn">
                             <div class="phone-modal-btn-image">
                                 <img src="/img/phone-call.png" width="25px"/>
