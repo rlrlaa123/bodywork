@@ -642,7 +642,7 @@
         <div id="phone-button">
             <span><img src="/img/call.png" width="15px" style="margin-right: 5px;"> 전화문의</span>
         </div>
-        <img id="kakao-channel-button" src="/img/kakaoplus.png"/>
+        <img id="kakao-channel-button" src="/img/kakaoplus2.jpeg"/>
     </div>
     <style>
         .backdrop {
