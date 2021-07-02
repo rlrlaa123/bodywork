@@ -5,6 +5,7 @@
         cursor: pointer;
     }
     .video-play-btn {
+        opacity: 0;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -26,5 +27,5 @@
 </style>
 <div class="video-wrapper">
     <img id="video-control" class="video-play-btn" src="/img/play.png">
-    <video class="d-block w-100 video" src="/{{ $home->video }}" preload="metadata">
+    <video class="d-block w-100 video" src="/{{ $home->video }}" preload="metadata" autoplay muted loop>
 </div>
