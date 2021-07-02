@@ -4,9 +4,10 @@
     position: absolute;
     width: {{ $popup->width + 6 }}px;
     z-index: 200;
-    top: {{ $popup->top }}px;
-    left: {{ $popup->left }}px;
+    top: {{ $popup->top }}%;
+    left: {{ $popup->left }}%;
     background-color: white;
+    transform: translateX(-50%) translateY(-50%);
   }
   @media (max-width: 1024px), (orientation: portrait) {
     #popup{{ $popup->id }} {

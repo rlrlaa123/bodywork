@@ -43,6 +43,7 @@
                             {{ $errors->first('top') }}
                         </div>
                     @endif
+                    (%)
                 </td>
             </tr>
             <tr>
@@ -54,6 +55,7 @@
                             {{ $errors->first('left') }}
                         </div>
                     @endif
+                    (%)
                 </td>
             </tr>
             <tr>
