@@ -53,7 +53,7 @@
     <header style="font-size: 2vw;">
         <div style="width: 100px;"></div>
         <div>
-            <img class="header-image" src="/img/logo3.png">
+            <img class="header-image" src="/img/logo4.png">
         </div>
         <div class="sns-wrapper">
             <a href="https://cafe.naver.com/bodywork119"><img src="/img/sns3.jpg" width="30px"></a>
