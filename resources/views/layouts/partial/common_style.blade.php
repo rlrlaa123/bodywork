@@ -87,10 +87,8 @@
 
     @media screen and (max-width: 768px) and (orientation: landscape) {
         .header-image {
-            width: 120px;
+            width: 480px;
             height: 120px;
-            border-radius: 100%;
-            margin-right: 10px;
         }
 
         .footer-image {
@@ -102,10 +100,8 @@
 
     @media screen and (min-width: 1024px) and (max-width: 1440px) {
         .header-image {
-            width: 120px;
+            width: 480px;
             height: 120px;
-            border-radius: 100%;
-            margin-right: 10px;
         }
 
         .footer-image {
@@ -117,10 +113,8 @@
 
     @media screen and (min-width: 768px) and (max-width: 1024px) {
         .header-image {
-            width: 80px;
+            width: 320px;
             height: 80px;
-            border-radius: 100%;
-            margin-right: 10px;
         }
 
         .footer-image {
@@ -132,10 +126,8 @@
 
     @media screen and (min-width: 1441px) and (orientation: landscape) {
         .header-image {
-            width: 150px;
+            width: 600px;
             height: 150px;
-            border-radius: 100%;
-            margin-right: 10px;
         }
 
         .footer-image {
@@ -147,9 +139,8 @@
 
     @media (orientation: portrait) {
         .header-image {
-            width: 100px;
+            width: 400px;
             height: 100px;
-            border-radius: 100%;
         }
     }
 
@@ -359,10 +350,8 @@
         }
 
         .header-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
-            margin-right: 10px;
+            width: 320px;
+            height: 80px;
         }
 
         footer {
@@ -511,6 +500,12 @@
         .fa-caret-down {
             float: right;
             padding-right: 8px;
+        }
+    }
+    @media screen and (max-width: 400px) and (orientation: portrait) {
+        .header-image {
+            width: 200px;
+            height: 50px;
         }
     }
 </style>
