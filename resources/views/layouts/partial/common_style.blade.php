@@ -502,7 +502,7 @@
             padding-right: 8px;
         }
     }
-    @media screen and (max-width: 400px) and (orientation: portrait) {
+    @media screen and (max-width: 450px) and (orientation: portrait) {
         .header-image {
             width: 200px;
             height: 50px;
