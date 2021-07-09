@@ -53,8 +53,7 @@
     <div style="width: 100px;"></div>
     <div>
         <a href="/">
-            <img class="header-image" src="/img/logo.jpg">
-            BODY WORK
+            <img class="header-image" src="/img/logo4.png">
         </a>
     </div>
     <div class="sns-wrapper">
