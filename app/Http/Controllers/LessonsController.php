@@ -16,9 +16,50 @@ class LessonsController extends Controller
      */
     public function index()
     {
-        $lessons = Lesson::orderby('created_at', 'desc')->paginate(10);
+        $b_pageNum_list = 10;
 
-        return view('CustomerCenter.Lesson.index', compact('lessons'));
+        $lessons = Lesson::orderby('created_at', 'desc')->paginate(
+            $b_pageNum_list
+        );
+
+        $pageNum = $lessons->currentPage();
+        $list = $lessons;
+
+        $block = ceil($pageNum / $b_pageNum_list);
+
+        $b_start_page = ($block - 1) * $b_pageNum_list + 1;
+        $b_end_page = $b_start_page + $b_pageNum_list - 1;
+
+        $total_page = ceil($lessons->total() / $b_pageNum_list);
+
+        if ($b_end_page > $total_page) {
+            $b_end_page = $total_page;
+        }
+
+        $total_block = ceil($total_page / $b_pageNum_list);
+
+        // dd(
+        //     $pageNum,
+        //     $list,
+        //     $b_pageNum_list,
+        //     $block,
+        //     $b_start_page,
+        //     $b_end_page,
+        //     $total_page
+        // );
+
+        return view(
+            'CustomerCenter.Lesson.index',
+            compact(
+                'lessons',
+                'pageNum',
+                'block',
+                'b_start_page',
+                'b_end_page',
+                'total_page',
+                'total_block'
+            )
+        );
     }
 
     /**
@@ -47,25 +88,20 @@ class LessonsController extends Controller
             'contents' => 'required',
         ]);
 
-        $validator->after(function () {
-        });
+        $validator->after(function () {});
 
         if ($validator->fails()) {
             return back()
                 ->withErrors($validator)
                 ->withInput();
         }
-
-        $lesson = new Lesson;
-
+        $lesson = new Lesson();
         $lesson->name = $request->name;
         $lesson->email = $request->email;
         $lesson->password = Hash::make($request->password);
         $lesson->title = $request->title;
         $lesson->contents = $request->contents;
-
         $lesson->save();
-
         return redirect('/lesson');
     }
 
@@ -78,17 +114,13 @@ class LessonsController extends Controller
     public function show(Request $request, $id)
     {
         $lesson = Lesson::find($id);
-
-        $password =  $request->session()->get('password');
+        $password = $request->session()->get('password');
 
         if (Hash::check($password, $lesson->password)) {
             $lesson->view = $lesson->view + 1;
-
             $lesson->save();
-
             return view('CustomerCenter.Lesson.show', compact('lesson'));
-        }
-        else {
+        } else {
             return view('CustomerCenter.error');
         }
     }
@@ -141,11 +173,11 @@ class LessonsController extends Controller
         $validator = Validator::make($request->all(), [
             'password' => 'required|min:6',
         ]);
-
-        $validator->after(function () use ($id ,$request, $validator, $lesson) {
-
+        $validator->after(function () use ($id, $request, $validator, $lesson) {
             if (!Hash::check($request->password, $lesson->password)) {
-                $validator->errors()->add('password', '비밀번호가 맞지 않습니다.');
+                $validator
+                    ->errors()
+                    ->add('password', '비밀번호가 맞지 않습니다.');
             }
         });
 

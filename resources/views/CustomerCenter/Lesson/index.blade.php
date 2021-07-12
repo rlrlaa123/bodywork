@@ -94,15 +94,19 @@
         <a href="{{ route('lesson.create') }}"><button class="btn">글쓰기</button></a>
     </div>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $lessons->previousPageUrl() }}">이전</a></li>
-        @if($lessons->total()/10 < 1)
-            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+        <li class="page-item"><a class="page-link" href="?page=1">처음</a></li>
+        @if($block <= 1)
         @else
-            @for($i = 1; $i <= $lessons->total()/10; $i++)
-                <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
-            @endfor
+            <li class="page-item"><a class="page-link" href="?page={{ $b_start_page - 1 }}">이전</a></li>
         @endif
-        <li class="page-item"><a class="page-link" href="{{ $lessons->nextPageUrl() }}">다음</a></li>
+        @for($i = $b_start_page; $i <=$b_end_page; $i++)
+            <li class="page-item"><a class="page-link" href="?page={{ $i }}">{{ $i }}</a></li>
+        @endfor
+        @if($block >= $total_block)
+        @else
+            <li class="page-item"><a class="page-link" href="?page={{ $b_end_page + 1 }}">다음</a></li>
+        @endif
+        <li class="page-item"><a class="page-link" href="?page={{ $total_page }}">마지막</a></li>
     </ul>
 @endsection
 @section('script')
